@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/excel/sandbox/project/javastudio.id'
+let g:netrw_dirhist_2='/home/excel/sandbox/project'
+let g:netrw_dirhist_3='/home/excel/sandbox/project/javastudio.id'
+let g:netrw_dirhist_4='/home/excel/sandbox/project/javastudio.id/app'
+let g:netrw_dirhist_5='/home/excel/sandbox/project/javastudio.id/app/Http'
+let g:netrw_dirhist_6='/etc/init.d'
