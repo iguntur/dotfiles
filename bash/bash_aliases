@@ -1,12 +1,21 @@
 # ubuntu command
 alias q="exit"
 alias remove="rm -rf"
+alias bashconf="vim ~/.bash_aliases"
+
+# npmjs
+alias ns="npm i --save"
+alias nd="npm i --save-dev"
 
 # laravel command
 alias art="php artisan"
 alias serve="php artisan serve"
 alias tinker="php artisan tinker"
-alias reload="php artisan cache:clear && php artisan view:clear && php artisan optimize && php artisan serve --host=javastudio.dev"
+alias fresh="art clear-compiled && art cache:clear && art view:clear && art optimize"
+alias reload="fresh && art serve"
+
+# Vagrant
+alias vg="vagrant"
 
 # VIM Config
 alias vimconf="vim ~/.vimrc"
@@ -15,5 +24,17 @@ alias vimconf="vim ~/.vimrc"
 alias php:serve="php -S 127.0.0.1:8000 -t public"
 
 # Apache Server
-alias restart:apache="sudo service apache2 restart"
-alias restart:mysql="sudo service mysql restart"
+alias apache:restart="sudo service apache2 restart"
+alias apache:stop"sudo service apache2 stop"
+alias nginx:restart="sudo service nginx restart"
+alias nginx:stop="sudo service nginx stop"
+alias mysql:restart="sudo service mysql restart"
+alias mysql:stop="sudo service mysql stop"
+
+# edit files
+alias edit:hosts="sudo vim /etc/hosts"
+
+
+# test
+alias run:qemu-fd="sudo qemu-system-x86_64 -machine accel=kvm:tcg -m 512 -hda /dev/sdb"
+/home/$USER/dotfiles/bash/startup.sh
