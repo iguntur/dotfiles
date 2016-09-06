@@ -1,0 +1,14 @@
+# make directorie and enter it
+mkcd () {
+    mkdir -p "$@" && cd "$@"
+}
+
+# web server
+# ex: sudo service nginx restart
+suse () {
+    sudo service "$@"
+}
+
+icebox () {
+    sshfs guntur@192.168.1.88:/home/$USER /media/IceBox/
+}
