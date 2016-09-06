@@ -1,0 +1,8 @@
+# autorun at startup
+. $HOME/dotfiles/shell/startup.sh
+
+# bash aliases
+. $HOME/dotfiles/shell/aliases
+
+# bash functions
+. $HOME/dotfiles/shell/functions
