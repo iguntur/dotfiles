@@ -1,0 +1,7 @@
+[user]
+	email = poetra.guntur@gmail.com
+	name = Guntur
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/dotfiles/config/git/.gitignore_global
