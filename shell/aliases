@@ -1,0 +1,15 @@
+# shell command
+alias q="exit"  # exit terminal
+
+
+# edit files
+alias conf:aliases="vim ~/.bash_aliases"   # edit bash_aliases file
+alias conf:hosts="sudo vim /etc/hosts"  # edit hosts file
+alias conf:vim="vim ~/.vimrc"   # edit vimrc file
+alias conf:zsh="vim ~/.zshrc"   # edit zshrc file
+
+
+# php laravel command
+alias art="php artisan"
+alias serve="art serve"
+alias tinker="art tinker"
