@@ -1,0 +1,51 @@
+###
+### By operating system
+###
+.DS_Store
+.directory
+.Trash-*
+._*
+*~
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+
+###
+### Text editor and IDE
+###
+/.idea
+
+## SublimeText
+*.sublime-*
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+###
+### Java compile
+###
+*.class
+
+
+###
+### Node JS and Dependencies
+###
+npm-debug.log
+/node_modules
+/bower_components
+
+
+###
+### User specifics
+###
+*.log
+*.logs
+yarn.*
+*-todo-*
+*extra*
+/.tmp
+/.temp
+/.cache
+/.caches

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# remap capslock to esc
+setxkbmap -option caps:swapescape
+
+# disable noteboook keyboard
+#   automatic grep "id"
+#   xinput float `id`
+# xinput float $(xinput list|grep AT|grep id=|cut -f 2|cut -f 2 -d =)
