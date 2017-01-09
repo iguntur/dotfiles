@@ -43,7 +43,7 @@ npm-debug.log
 *.log
 *.logs
 yarn.*
-*-todo-*
+*todo*
 *extra*
 /.tmp
 /.temp
