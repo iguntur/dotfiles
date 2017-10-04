@@ -1,0 +1,26 @@
+#!/bin/bash
+
+##
+## Extra ENV
+##
+[ -f "$HOME/.extra/main" ] && source "$HOME/.extra/main"
+
+
+source "$HOME/.autoload/workspace"
+source "$HOME/.autoload/lscolor"
+source "$HOME/.autoload/function"
+source "$HOME/.autoload/aliases"
+
+
+##
+## Handling duplicate PATH
+##
+
+##   This is how you do it with AWK
+##
+##   Oneliners for Removing the duplicates in your $PATH
+##   http://linuxg.net/oneliners-for-removing-the-duplicates-in-your-path/
+##   for me, I'm using options 'three'
+##
+# export PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
+# export NODE_PATH=`echo -n $NODE_PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`

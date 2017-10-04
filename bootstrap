@@ -1,31 +1,7 @@
 #!/bin/bash
 
-# Load our dotfiles
-#   Use it to configure your PATH, this it being first in line.
-for file in ~/.autoload/*; do
-    [ -f "$file" ] && source "$file"
-done
-
-unset file
-
-
-## Extra
-if [ -d "$HOME/.extra" ]; then
-	for fp in ~/.extra/*; do
-		[ -f "$fp" ] && source "$fp"
-	done
-
-	unset fp
-fi
-
-
-# ---------------------------------------------------------------------------
-# Handling duplicate PATH
-#
-#   This is how you do it with AWK
-#
-#   Oneliners for Removing the duplicates in your $PATH
-#   http://linuxg.net/oneliners-for-removing-the-duplicates-in-your-path/
-#   for me, I'm using options 'three'
-
-export PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
+##
+## Load our dotfiles
+##   Use it to configure your PATH, this it being first in line.
+##
+[ -f "$HOME/.autoload/main" ] && source "$HOME/.autoload/main"

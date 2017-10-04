@@ -1,0 +1,52 @@
+#!/bin/bash
+
+## User Registry
+export AUTHOR_USER_NAME="Guntur Poetra"
+export AUTHOR_USER_EMAIL="poetra.guntur@gmail.com"
+export AUTHOR_USER_GITHUB_URL="https://github.com/iguntur"
+
+## export vim as default editor
+export EDITOR="vim"
+
+## User font directory
+export FONTS_DIR="$HOME/.local/share/fonts"
+
+## Java (Maven)
+export MAVEN_DIR="$HOME/.local/apache-maven/apache-maven-3.3.9"
+
+## NVM (Node Version Manager)
+export NVM_DIR="$HOME/.nvm"
+
+##
+## PATH ENV
+##
+
+## Dropbox
+export PATH="$PATH:$HOME/.dropbox-bin"
+
+## Java (jvm, maven)
+export PATH="$PATH:/usr/lib/jvm/java-8-oracle/bin"
+export PATH="$PATH:/usr/lib/jvm/java-8-oracle/db/bin"
+export PATH="$PATH:/usr/lib/jvm/java-8-oracle/jre/bin"
+export PATH="$PATH:$MAVEN_DIR/bin"
+
+## Ruby
+export PATH="$PATH:$HOME/.rbenv/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+## PHP composer
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+
+## Dart
+export PATH="$PATH:/usr/lib/dart/bin"
+
+## Go
+export PATH="$PATH:/usr/local/go/bin"
+
+## Rust (cargo)
+export PATH="$PATH:$HOME/.cargo/bin"
+
+## NVM (Node Version Manager)
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+export NODE_CURRENT_VERSION=$(node -v)
+export NODE_PATH="$NODE_PATH:$NVM_DIR/versions/node/$NODE_CURRENT_VERSION/lib/node_modules"

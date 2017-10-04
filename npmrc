@@ -1,6 +1,7 @@
-init-author-name=Guntur Poetra
-init-author-email=poetra.guntur@gmail.com
-init-author-url=http://guntur.starmediateknik.com/
+init-author-name=${AUTHOR_USER_NAME}
+init-author-email=${AUTHOR_USER_EMAIL}
+init-author-url=${AUTHOR_USER_GITHUB_URL}
 init-license=MIT
-init-version=0.1.0
-//prefix=/home/guntur/.npm-global
+init-version=0.0.0
+//prefix=${HOME}.npm-global
+//registry.npmjs.org/:_authToken=${NPM_REGISTRY_AUTH_TOKEN}

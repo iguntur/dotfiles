@@ -3,32 +3,45 @@
 	name = Guntur Poetra
 
 [color]
-    ui = always
+	ui = always
 
 [color "diff"]
-    meta = yellow bold
-    commit = green bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-    whitespace = red reverse
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 
 [color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = "red bold 52"
-    newNormal = "green bold"
-    newHighlight = "green bold 22"
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
 
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 
 [core]
-    excludesfile = ~/.gitignore
-    attributesfile = ~/.gitattributes
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+
+[alias]
+	st = status
+	aa = add -A
+	cl = clone
+	ci = commit
+	df = diff
+	br = branch
+	co = checkout
+	cob = checkout -b
+	lo = log
+	lol = log --oneline
+	lola = log --graph --pretty=format:'%C(cyan bold)%h%C(reset) -%C(magenta bold)%d%C(reset) %s - %C(green bold)(%cr)%C(reset) %C(blue)<%an>%C(reset)' --decorate --abbrev-commit --all

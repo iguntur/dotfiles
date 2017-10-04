@@ -1,6 +1,6 @@
-###
-### By operating system
-###
+##
+## By operating system
+##
 .DS_Store
 .directory
 .Trash-*
@@ -12,34 +12,44 @@ Desktop.ini
 $RECYCLE.BIN/
 
 
-###
-### Text editor and IDE
-###
+##
+## Text editor and IDE
+##
 /.idea
+/.vscode
 
+##
 ## SublimeText
+##
 *.sublime-*
 *.tmlanguage.cache
 *.tmPreferences.cache
 *.stTheme.cache
 
-###
-### Java compile
-###
+##
+## Java
+##
 *.class
 
-
-###
-### Node JS and Dependencies
-###
+##
+## Node.js
+##
 npm-debug.log
 /node_modules
 /bower_components
 
+## Node.js test framework
+.nyc_output
+coverage
 
-###
-### User specifics
-###
+##
+## PHP
+##
+php*.diff
+
+##
+## User specifics
+##
 *.log
 *.logs
 yarn.*
@@ -49,3 +59,6 @@ yarn.*
 /.temp
 /.cache
 /.caches
+/*dist*
+/*build*
+/*bundle*

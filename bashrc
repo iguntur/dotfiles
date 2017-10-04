@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## load bash profile
 [ -n "$BASH_VERSION" ] && source ~/.bash_profile
 
@@ -10,4 +12,3 @@ source ~/.bootstrap
 ##
 ## more options here...
 ##
-

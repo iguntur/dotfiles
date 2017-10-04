@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -7,7 +9,10 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="pure"
+# ZSH_THEME="pure"
+
+# https://github.com/sindresorhus/pure#oh-my-zsh
+ZSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,11 +56,14 @@ ZSH_CUSTOM=$HOME/.zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z git git-flow npm composer zsh-syntax-highlighting)
+# plugins=(z git git-flow npm composer zsh-syntax-highlighting)
+plugins=(z git git-flow npm zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+##
+## User configuration
+##
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -84,6 +92,29 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="vim ~/.zshrc"
 
 
-# Load our dotfiles
-#   Use it to configure your PATH, thus it being first in line.
+##
+## Pure prompt
+##
+autoload -U promptinit; promptinit
+
+##
+## Pure prompt options
+##   https://github.com/sindresorhus/pure#options
+##
+
+# PURE_CMD_MAX_EXEC_TIME=5
+# PURE_GIT_PULL=0
+# PURE_GIT_UNTRACKED_DIRTY=0
+# PURE_GIT_DELAY_DIRTY_CHECK=1800
+# PURE_PROMPT_SYMBOL=❯
+# PURE_GIT_DOWN_ARROW=⇣
+# PURE_GIT_UP_ARROW=⇡
+
+prompt pure
+
+
+##
+## Load our dotfiles
+##   Use it to configure your PATH, thus it being first in line.
+##
 source ~/.bootstrap

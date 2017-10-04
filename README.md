@@ -5,4 +5,4 @@
 
 ## License
 
-[MIT License](https://opensource.org/licenses/MIT) @ [Guntur Poetra](http://guntur.starmediateknik.com)
+[MIT License](https://opensource.org/licenses/MIT) @ [Guntur Poetra](https://github.com/iguntur)
