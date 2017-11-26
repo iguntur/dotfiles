@@ -15,7 +15,7 @@
 
 ## Installation
 
-```clone
+```console
 $ git clone git@github.com:iguntur/dotfiles.git $HOME/.dotfiles
 $ cd $HOME/.dotfiles
 $ ./install.sh
@@ -23,10 +23,21 @@ $ ./install.sh
 
 Restart terminal!
 
+### Vim
+
+```console
+$ sudo apt-get install vim
+$ vim +PluginInstall +qall
+```
+
+
 ### Plugins
 
-- [Pure Prompt](https://github.com/sindresorhus/pure) - Pretty, minimal and fast ZSH prompt.
+- [pure-prompt](https://github.com/sindresorhus/pure) - Pretty, minimal and fast ZSH prompt.
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish shell like syntax highlighting for Zsh.
 
+
+**Enjoy 🍵**️️
 
 ## License
 
