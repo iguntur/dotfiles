@@ -1,18 +1,30 @@
 #!/bin/bash
 
+##
+## Load our dotfiles
+##   Use it to configure your PATH, thus it being first in line.
+##
+source ~/.bootstrap
+
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+PURE_PROMPT_PATH="/usr/local/share/zsh/site-functions/prompt_pure_setup"
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="pure"
+if [ -f "$PURE_PROMPT_PATH" ]; then
+	# https://github.com/sindresorhus/pure#oh-my-zsh
+	ZSH_THEME=""
+else
+	ZSH_THEME="pure"
+fi
 
-# https://github.com/sindresorhus/pure#oh-my-zsh
-ZSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -57,7 +69,7 @@ ZSH_CUSTOM=$HOME/.zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(z git git-flow npm composer zsh-syntax-highlighting)
-plugins=(z git git-flow npm zsh-syntax-highlighting)
+plugins=(z git npm zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,30 +103,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="vim ~/.zshrc"
 
-
 ##
 ## Pure prompt
-##
-autoload -U promptinit; promptinit
-
-##
-## Pure prompt options
 ##   https://github.com/sindresorhus/pure#options
 ##
-
-# PURE_CMD_MAX_EXEC_TIME=5
-# PURE_GIT_PULL=0
-# PURE_GIT_UNTRACKED_DIRTY=0
-# PURE_GIT_DELAY_DIRTY_CHECK=1800
-# PURE_PROMPT_SYMBOL=❯
-# PURE_GIT_DOWN_ARROW=⇣
-# PURE_GIT_UP_ARROW=⇡
-
-prompt pure
-
-
-##
-## Load our dotfiles
-##   Use it to configure your PATH, thus it being first in line.
-##
-source ~/.bootstrap
+if [ -f "$PURE_PROMPT_PATH" ]; then
+	autoload -U promptinit; promptinit
+	prompt pure
+fi

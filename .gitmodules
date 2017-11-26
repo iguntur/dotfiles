@@ -1,3 +1,6 @@
-[submodule "zsh/plugins/pure-prompt"]
-	path = zsh/plugins/pure-prompt
-	url = git@github.com:sindresorhus/pure
+[submodule "zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh/plugins/zsh-syntax-highlighting
+	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "vim/bundle/Vundle.vim"]
+	path = vim/bundle/Vundle.vim
+	url = git://github.com/VundleVim/Vundle.vim

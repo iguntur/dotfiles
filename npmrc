@@ -3,5 +3,5 @@ init-author-email=${AUTHOR_USER_EMAIL}
 init-author-url=${AUTHOR_USER_GITHUB_URL}
 init-license=MIT
 init-version=0.0.0
-//prefix=${HOME}.npm-global
+prefix=${HOME}/.npm-packages
 //registry.npmjs.org/:_authToken=${NPM_REGISTRY_AUTH_TOKEN}

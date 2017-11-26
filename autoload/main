@@ -1,15 +1,31 @@
 #!/bin/bash
 
-##
-## Extra ENV
-##
-[ -f "$HOME/.extra/main" ] && source "$HOME/.extra/main"
+DOT_EXTRA="$HOME/.dotfiles/extra"
+
+load_source() {
+	[ -f "$1" ] && source "$1"
+}
 
 
-source "$HOME/.autoload/workspace"
-source "$HOME/.autoload/lscolor"
-source "$HOME/.autoload/function"
-source "$HOME/.autoload/aliases"
+## secret key
+load_source "$DOT_EXTRA/secret"
+
+## environment PATH
+load_source "$HOME/.autoload/workspace"
+load_source "$DOT_EXTRA/workspace"
+
+## function
+load_source "$HOME/.autoload/function"
+load_source "$DOT_EXTRA/function"
+
+## aliases
+load_source "$HOME/.autoload/aliases"
+load_source "$DOT_EXTRA/aliases"
+
+## utils, etc...
+load_source "$HOME/.autoload/lscolor" # ls color
+load_source "$DOT_EXTRA/utils"
+load_source "/etc/profile.d/rvm.sh" # RVM (Ruby Version Management)
 
 
 ##

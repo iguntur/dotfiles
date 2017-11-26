@@ -23,18 +23,18 @@ alias ld="ls -Alhd */" # only directories
 ##
 ## Easier common functions
 ##
-alias q="exit"                   # exit terminal
-alias c="clear"                  # clear terminal
-alias cl="clear && l"            # clear terminal and show list FILEs
+alias q="exit" # exit terminal
+alias c="clear" # clear terminal
+alias cl="clear && la" # clear terminal and show list FILEs
 alias add="sudo apt-get install" # shorthand apt-get install
-alias f5="refresh"               # load source
-alias where="which"              # :)
-alias was="echo '\x1Bc'"         # deep clean terminal
+alias f5="refresh" # load source
+alias where="which" # :)
+alias was="echo '\x1Bc'" # deep clean terminal
 
 ##
 ## Disable default keyboard
 ##
-alias dk="xinput float $(xinput list|grep AT|grep id=|cut -f 2|cut -f 2 -d =)"
+alias dk="xinput float $(xinput list | grep AT | grep id= | cut -f 2 | cut -f 2 -d =)"
 
 ##
 ## swapping escape to capslock

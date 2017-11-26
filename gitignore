@@ -54,6 +54,7 @@ php*.diff
 *.logs
 yarn.*
 *todo*
+*TODO*
 *extra*
 /.tmp
 /.temp
