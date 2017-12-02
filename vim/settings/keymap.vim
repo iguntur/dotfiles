@@ -43,4 +43,4 @@ map <leader>qq :q! <CR>
 "" NERD tree
 ""   Stick this in your vimrc to open NERDTree with Ctrl+n (you can set whatever key you want):
 map <C-n> :NERDTreeToggle<CR>
-
+map <C-b> :NERDTreeFind<CR>
