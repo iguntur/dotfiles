@@ -136,3 +136,8 @@ xterm*|rxvt*)
 *)
 	;;
 esac
+
+
+##
+## more options here...
+##

@@ -5,3 +5,7 @@
 ##   Use it to configure your PATH, this it being first in line.
 ##
 [ -f "$HOME/.autoload/main" ] && source "$HOME/.autoload/main"
+
+##
+## more options here...
+##
