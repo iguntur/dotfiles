@@ -12,3 +12,5 @@ source ~/.bootstrap
 ##
 ## more options here...
 ##
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -11,9 +11,16 @@ create_symlink() {
 ## Plugins
 ##
 if [ -f "$(which npm)" ]; then
+	echo "installing `pure-prompt`..."
 	sudo mkdir -p /usr/local/share/zsh/site-function
 	sudo chown $USER -R /usr/local/share/zsh
 	npm install --global pure-prompt
+fi
+
+if [ -f "$(which git)" ]; then
+	echo "installing `command-line fuzy finder`..."
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install
 fi
 
 

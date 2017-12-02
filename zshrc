@@ -111,3 +111,9 @@ if [ -f "$PURE_PROMPT_PATH" ]; then
 	autoload -U promptinit; promptinit
 	prompt pure
 fi
+
+##
+## more options here...
+##
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
