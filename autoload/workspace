@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ## User Registry
-export AUTHOR_USER_NAME="Guntur Poetra"
-export AUTHOR_USER_EMAIL="poetra.guntur@gmail.com"
-export AUTHOR_USER_GITHUB_URL="https://github.com/iguntur"
+export AUTHOR_NAME="Guntur Poetra"
+export AUTHOR_EMAIL="poetra.guntur@gmail.com"
+export AUTHOR_GITHUB_URL="https://github.com/iguntur"
 
 ## export vim as default editor
 export EDITOR="vim"
