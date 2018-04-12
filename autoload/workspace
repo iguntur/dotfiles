@@ -15,7 +15,7 @@ export FONTS_DIR="$HOME/.local/share/fonts"
 
 ## Go
 export PATH="$PATH:/usr/local/go/bin"
-if [ -f "/usr/local/go/bin" ]; then
+if [ -f "$(which go)" ]; then
 	export GOPATH="$(go env GOPATH)"
 	export PATH="$PATH:$GOPATH/bin"
 fi
