@@ -26,6 +26,11 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mattn/emmet-vim'
+Plugin 'raimondi/delimitmate'
+Plugin 'tpope/vim-markdown'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'bronson/vim-trailing-whitespace'
 
 call vundle#end() " required
 
@@ -60,7 +65,7 @@ set cursorline
 
 "" Text editing
 """""""""""""""
-" set backspace=indent,eol,start
+set backspace=indent,eol,start
 set list lcs=tab:•⁖,trail:⁖ " remove trailing white space
 set shiftwidth=4
 set textwidth=80
