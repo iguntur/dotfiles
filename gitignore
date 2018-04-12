@@ -27,39 +27,13 @@ $RECYCLE.BIN/
 *.stTheme.cache
 
 ##
-## Java
-##
-*.class
-
-##
-## Node.js
-##
-npm-debug.log
-/node_modules
-/bower_components
-
-## Node.js test framework
-.nyc_output
-coverage
-
-##
-## PHP
-##
-php*.diff
-
-##
 ## User specifics
 ##
 *.log
 *.logs
-yarn.*
 *todo*
 *TODO*
-*extra*
 /.tmp
 /.temp
 /.cache
 /.caches
-/*dist*
-/*build*
-/*bundle*
