@@ -1,7 +1,6 @@
-init-author-name=${AUTHOR_NAME}
-init-author-email=${AUTHOR_EMAIL}
-init-author-url=${AUTHOR_GITHUB_URL}
+init-author-name=Guntur Poetra
+init-author-email=poetra.guntur@gmail.com
+init-author-url=https://github.com/iguntur
 init-license=MIT
 init-version=0.0.0
-prefix=${HOME}/.npm-packages
-//registry.npmjs.org/:_authToken=${NPM_REGISTRY_AUTH_TOKEN}
+prefix=/home/guntur/.npm-packages

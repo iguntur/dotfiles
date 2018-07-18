@@ -22,7 +22,7 @@ if [ -f "$PURE_PROMPT_PATH" ]; then
 	# https://github.com/sindresorhus/pure#oh-my-zsh
 	ZSH_THEME=""
 else
-	ZSH_THEME="pure"
+	ZSH_THEME="refined"
 fi
 
 

@@ -15,8 +15,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "" Normal mode
-no <up> ddkP
-no <down> ddp
+no <up> <Nop>
+no <down> <Nop>
 no <left> <Nop>
 no <right> <Nop>
 
@@ -33,14 +33,19 @@ vno <left> <Nop>
 vno <right> <Nop>
 
 
-map <leader>w :w <CR>
-map <leader>wq :wq <CR>
-map <leader>qq :q! <CR>
+"" Leader Keymap
+""""""""""""""""
+map <leader>w :w<CR>
+map <leader>wq :wq<CR>
+map <leader>qq :q!<CR>
+map <leader>;; <Esc>A;<Esc>
 
 
-"" Plugin Mapping
+"""""""""""""""""""
+"" Plugin Mapping "
+"""""""""""""""""""
 
 "" NERD tree
-""   Stick this in your vimrc to open NERDTree with Ctrl+n (you can set whatever key you want):
+""""""""""""
 map <C-n> :NERDTreeToggle<CR>
-map <C-b> :NERDTreeFind<CR>
+map <C-b> :NERDTreeFocus<CR>

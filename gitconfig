@@ -1,23 +1,23 @@
 [user]
 	email = poetra.guntur@gmail.com
-	name = Guntur Poetra
+	name = Guntur
 
 [color]
 	ui = true
 
 [color "diff"]
-	meta = yellow
 	commit = yellow bold
 	frag = magenta bold
-	old = red bold
+	meta = yellow
 	new = green bold
+	old = red bold
 	whitespace = red reverse
 
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
 	newHighlight = green bold 22
+	newNormal = green bold
+	oldHighlight = red bold 52
+	oldNormal = red bold
 
 [color "branch"]
 	current = yellow reverse
@@ -30,19 +30,20 @@
 	untracked = cyan
 
 [core]
-	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
+	excludesfile = ~/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [alias]
-	st = status
 	aa = add -A
-	cl = clone
-	ci = commit
-	df = diff
 	br = branch
+	ci = commit
+	cl = clone
 	co = checkout
 	cob = checkout -b
+	df = diff
 	lo = log
 	lol = log --oneline
 	lola = log --graph --pretty=format:'%C(cyan bold)%h%C(reset) -%C(magenta bold)%d%C(reset) %s - %C(green bold)(%cr)%C(reset) %C(blue)<%an>%C(reset)' --decorate --abbrev-commit --all
+	st = status
+    sync = remote update --prune
