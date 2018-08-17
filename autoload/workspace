@@ -14,11 +14,11 @@ export FONTS_DIR="$HOME/.local/share/fonts"
 ################################################################################
 
 ## Go
-export PATH="$PATH:/usr/local/go/bin"
-if [ -f "$(which go)" ]; then
-	export GOPATH="$(go env GOPATH)"
-	export PATH="$PATH:$GOPATH/bin"
-fi
+# if [ -f "$(which go)" ]; then
+# 	export PATH="$PATH:/usr/local/go/bin"
+# 	export GOPATH="$(go env GOPATH)"
+# 	export PATH="$PATH:$GOPATH/bin"
+# fi
 
 
 ## Dropbox
