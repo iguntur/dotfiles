@@ -69,7 +69,12 @@ ZSH_CUSTOM=$HOME/.zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(z git git-flow npm composer zsh-syntax-highlighting)
-plugins=(z git npm zsh-syntax-highlighting)
+plugins=(
+	z git npm npx
+	docker docker-compose
+	zsh-syntax-highlighting
+	vim sudo
+)
 
 source $ZSH/oh-my-zsh.sh
 
