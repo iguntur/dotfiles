@@ -3,41 +3,97 @@
 	<p style='color: #333333'>My personal dotfiles</p>
 </div>
 
+___
 
-## Prerequisite
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+- [Setup](#setup)
+    - [Install](#install)
+    - [Uninstall](#uninstall)
+- [Applications](#applications)
+    - [Vim](#vim)
+    - [Utilities](#utilities)
+        - [pure-prompt](#pure-prompt)
+        - [fuzy-finder](#fuzy-finder)
+- [License](#license)
 
-- [GIT](https://git-scm.com)
-- [ZSH](https://www.zsh.org)
-- [.oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-- [NodeJS](https://nodejs.org)
-	- [NPM](https://npmjs.com)
+---
+
+## Getting Started
+
+### Prerequisites
+
+| Dependencies                                            |         Required        |
+|---------------------------------------------------------|:-----------------------:|
+| [GIT](https://git-scm.com)                              | <ul><li> [x] </li></ul> |
+| [ZSH](https://www.zsh.org)                              | <ul><li> [x] </li></ul> |
+| [.oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) | <ul><li> [x] </li></ul> |
+| [NodeJS](https://nodejs.org)                            | <ul><li> [x] </li></ul> |
 
 
-## Installation
+## Setup
+
+### Install
 
 ```console
 $ git clone git@github.com:iguntur/dotfiles.git $HOME/.dotfiles
 $ cd $HOME/.dotfiles
-$ ./install.sh
+$ git submodule update --init --recursive
+$ ./dotfile.sh install
 ```
 
-Restart terminal!
+**Done**
+
+☕ Restart your terminal or system.
+
+### Uninstall
+
+```console
+$ cd $HOME/.dotfiles
+$ ./dotfile.sh uninstall
+```
+
+
+## Applications
 
 ### Vim
+
+- Debian/Ubuntu Based
 
 ```console
 $ sudo apt-get install vim
 $ vim +PluginInstall +qall
 ```
 
+- OpenSuse
 
-### Plugins
+```console
+$ sudo zypper install vim
+$ vim +PluginInstall +qall
+```
 
-- [pure-prompt](https://github.com/sindresorhus/pure) - Pretty, minimal and fast ZSH prompt.
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish shell like syntax highlighting for Zsh.
+### Utilities
 
+#### [pure-prompt](https://github.com/sindresorhus/pure)
 
-**Enjoy 🍵**️️
+> Pretty, minimal and fast ZSH prompt
+
+```console
+$ sudo mkdir -p /usr/local/share/zsh/site-function \
+    && sudo chown $USER -R /usr/local/share/zsh \
+    && npm install --global pure-prompt \
+    && sudo chown root -R /usr/local/share/zsh
+```
+
+#### [fuzy-finder](https://github.com/junegunn/fzf)
+
+> 🌸 A command-line fuzzy finder
+
+```console
+$ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+$ ~/.fzf/install
+```
+
 
 ## License
 
