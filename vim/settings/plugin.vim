@@ -1,11 +1,11 @@
 "" scrooloose/nerdtree
 """"""""""""""""""""""
-let NERDTreeShowHidden=1 "" Show hidden folders and files
+let NERDTreeShowHidden=1 " Show hidden folders and files
 
 
 "" Base 16 colors
 """""""""""""""""
-let base16colorspace=256 "" Access colors present in 256 colorspacea
+let base16colorspace=256 " Access colors present in 256 colorspacea
 
 
 "" vim-airline/vim-airline
@@ -15,7 +15,7 @@ let g:airline#extensions#tabline#formatter='default'
 let g:airline#extensions#tabline#left_alt_sep='|'
 let g:airline#extensions#tabline#left_sep=' '
 let g:airline_powerline_fonts=1
-let g:airline_theme='base16_chalk'
+let g:airline_theme='molokai'
 let g:tabular_loaded=1
 
 autocmd StdinReadPre * let s:std_in=1

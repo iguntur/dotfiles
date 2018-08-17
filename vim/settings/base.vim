@@ -7,7 +7,7 @@ let mapleader=','
 "" Interface
 """"""""""""
 syntax on
-colorscheme brogrammer
+colorscheme SlateDark
 
 set background=dark
 set cursorline
@@ -30,14 +30,14 @@ set backspace=indent,eol,start
 set cindent
 set cino=:0 "" No indent for case:/default:
 set encoding=utf-8
-set expandtab
 set noswapfile
-set nowrap
-set shiftwidth=4
-set smarttab
-set softtabstop=4
-set tabstop=4
 set textwidth=80
+set nowrap
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
+set smarttab
+" set expandtab
 
 
 "" Search
