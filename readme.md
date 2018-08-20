@@ -15,6 +15,7 @@ ___
     - [Utilities](#utilities)
         - [pure-prompt](#pure-prompt)
         - [fuzy-finder](#fuzy-finder)
+        - [diff-so-fancy](#diff-so-fancy)
 - [License](#license)
 
 ---
@@ -44,7 +45,7 @@ $ ./dotfile.sh install
 
 **Done**
 
-☕ Restart your terminal or system.
+:coffee: Restart your terminal or system.
 
 ### Uninstall
 
@@ -87,11 +88,19 @@ $ sudo mkdir -p /usr/local/share/zsh/site-function \
 
 #### [fuzy-finder](https://github.com/junegunn/fzf)
 
-> 🌸 A command-line fuzzy finder
+> :cherry_blossom: A command-line fuzzy finder
 
 ```console
 $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 $ ~/.fzf/install
+```
+
+#### [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
+
+> Good-lookin' diffs. Actually… nah… The best-lookin' diffs. :tada:
+
+```console
+$ npm install --global diff-so-fancy
 ```
 
 
