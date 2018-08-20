@@ -48,3 +48,4 @@
 	st = status
 	sync = remote update --prune
 	reinit = !rm -rf .git && git init && git add --all && git commit -am "init"
+	nah = !git reset --hard && git clean -df
