@@ -26,27 +26,12 @@ alias ld="ls -Alhd */" # only directories
 alias q="exit" # exit terminal
 alias c="clear" # clear terminal
 alias cl="clear && la" # clear terminal and show list FILEs
-alias add="sudo apt-get install" # shorthand apt-get install
-alias f5="refresh" # load source
 alias where="which" # :)
-alias was="echo '\x1Bc'" # deep clean terminal
 
 ##
 ## Disable default keyboard
 ##
-alias dk="xinput float $(xinput list | grep AT | grep id= | cut -f 2 | cut -f 2 -d =)"
-
-##
-## swapping escape to capslock
-##
-alias kbmap:caps_esc="setxkbmap -option caps:swapescape"
-
-##
-## edit files
-##
-alias @hosts="sudo $EDITOR /etc/hosts" # edit hosts file
-alias @vim="$EDITOR $HOME/.vimrc" # edit vimrc file
-alias @zsh="$EDITOR $HOME/.zshrc" # edit zshrc file
+# alias dk="xinput float $(xinput list | grep AT | grep id= | cut -f 2 | cut -f 2 -d =)"
 
 ##
 ## Networking. IP address, dig, DNS
@@ -63,45 +48,18 @@ alias ni="npm install"
 alias nis="npm install --save"
 alias nid="npm install --save-dev"
 alias nig="npm install --global"
-alias nt="npm test"
 alias nit="npm install && npm test"
 alias nk="npm link"
-alias nr="npm run"
 alias nf="npm cache clean --force && rm -rf node_modules && npm install"
 alias nlg="npm list --global --depth=0"
 alias npr="npm prune"
 alias ncc="npm cache clean --force"
+alias nr="npm run"
 alias nrb="npm run build"
 alias nrs="npm run start"
-
-##
-## Yarn shorthand command
-##
-alias yas="yarn add"
-alias yad="yarn add --dev"
-alias yag="yarn global add"
-alias yf="yarn cache clean && rm -rf yarn.lock node_modules && yarn install"
-alias yrl="rm yarn.lock"
-alias ycc="yarn cache clean"
-
-##
-## php laravel command
-##
-alias art="php artisan"
-alias tinker="php artisan tinker"
-alias art:f5="php artisan clear-compiled && php artisan cache:clear && php artisan view:clear && php artisan optimize"
-
-##
-## PHP unit
-##
-alias p="phpunit"
+alias nrt="npm run test"
 
 ##
 ## Python Server
 ##
 alias py-serve="python -m SimpleHTTPServer$@"
-
-##
-## Git
-##
-alias nah="git reset --hard; git clean -df"
