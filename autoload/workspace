@@ -12,7 +12,7 @@ export EDITOR="vim"
 export FONTS_DIR="$HOME/.local/share/fonts"
 
 ################################################################################
-export PATH="${PATH}:/${HOME}/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 
 ## Dropbox
