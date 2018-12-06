@@ -58,13 +58,13 @@ plugins=(
 	cargo
 )
 
-fpath+=~/.zfunc
-source $ZSH/oh-my-zsh.sh
+fpath+="$HOME/.zfunc"
+source "$ZSH/oh-my-zsh.sh"
 
 ##
 ## Bootstrap dotfiles
 ##
-source ~/.bootstrap
+source "$HOME/.bootstrap"
 
 ##
 ## more options here...
