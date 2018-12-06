@@ -25,6 +25,10 @@ remove_symlink() {
 	fi
 }
 
+copy_files() {
+	cp "./files/.npmrc" "$HOME/.npmrc"
+}
+
 dotfiles=(
 	"autoload"
 	"bin"
@@ -45,6 +49,7 @@ dotfiles=(
 case $1 in
 	install)
 		shift;
+		copy_files
 		for filename in ${dotfiles[@]}; do
 			create_symlink "$filename" "$@"
 		done
