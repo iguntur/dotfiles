@@ -38,8 +38,8 @@ export PATH="$PATH:$ANDROID_HOME/emulator"
 
 
 ## NPM (NodeJS)
-export NPM_PACKAGES="${HOME}/.npm-packages"
-export PATH="$PATH:$NPM_PACKAGES/bin" # global npm package
+# export NPM_PACKAGES="${HOME}/.npm-packages"
+# export PATH="$PATH:$NPM_PACKAGES/bin" # global npm package
 
 
 ## Rust (cargo)
@@ -66,3 +66,7 @@ export PATH="$PATH:./node_modules/.bin"
 
 ## PHP (composer packagist)
 # export PATH="$PATH:./vendor/bin"
+
+
+## Dotfiles
+export PATH="$PATH:$HOME/.dotfiles/bin"

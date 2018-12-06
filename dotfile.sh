@@ -29,6 +29,11 @@ copy_files() {
 	cp "./files/.npmrc" "$HOME/.npmrc"
 }
 
+install_plugins() {
+	curl -fsSl "https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy" --output "$HOME/.dotfiles/bin/diff-so-fancy"
+	chmod +x "$HOME/.dotfiles/bin/diff-so-fancy"
+}
+
 dotfiles=(
 	"autoload"
 	"bin"
@@ -50,6 +55,7 @@ case $1 in
 	install)
 		shift;
 		copy_files
+		install_plugins
 		for filename in ${dotfiles[@]}; do
 			create_symlink "$filename" "$@"
 		done

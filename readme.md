@@ -12,7 +12,6 @@ ___
 - [Plugins](#plugins)
     - [Vim](#vim)
     - [fuzy-finder](#fuzy-finder)
-    - [diff-so-fancy](#diff-so-fancy)
 
 ---
 
@@ -21,7 +20,6 @@ ___
 - [GIT](https://git-scm.com)
 - [ZSH](https://www.zsh.org)
 - [.oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-- [NodeJS](https://nodejs.org)
 
 
 ### Setup
@@ -68,12 +66,6 @@ $ vim +PluginInstall +qall
 ```console
 $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 $ ~/.fzf/install
-```
-
-#### [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
-
-```console
-$ npm install --global diff-so-fancy
 ```
 
 
