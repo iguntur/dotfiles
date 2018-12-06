@@ -20,11 +20,11 @@ export PATH="$PATH:$HOME/.dropbox-bin"
 
 
 ## Java
-export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
-export PATH="$PATH:$JAVA_HOME/bin"
-export PATH="$PATH:$JAVA_HOME/db/bin"
-export PATH="$PATH:$JAVA_HOME/jre/bin"
-export PATH="$PATH:$HOME/.local/apache-maven/apache-maven-3.3.9/bin" # maven
+#export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+#export PATH="$PATH:$JAVA_HOME/bin"
+#export PATH="$PATH:$JAVA_HOME/db/bin"
+#export PATH="$PATH:$JAVA_HOME/jre/bin"
+#export PATH="$PATH:$HOME/.local/apache-maven/apache-maven-3.3.9/bin" # maven
 
 
 ## Android and stuff
@@ -32,8 +32,9 @@ export PATH="$PATH:$HOME/.local/apache-maven/apache-maven-3.3.9/bin" # maven
 ## https://facebook.github.io/react-native/docs/getting-started.html#3-configure-the-android-home-environment-variable
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH="$PATH:$ANDROID_HOME/tools"
-#export PATH="$PATH:$ANDROID_HOME/tools/bin"
+export PATH="$PATH:$ANDROID_HOME/tools/bin"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export PATH="$PATH:$ANDROID_HOME/emulator"
 
 
 ## NPM (NodeJS)
