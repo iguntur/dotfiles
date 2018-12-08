@@ -54,10 +54,14 @@ alias nf="npm cache clean --force && rm -rf node_modules && npm install"
 alias nlg="npm list --global --depth=0"
 alias npr="npm prune"
 alias ncc="npm cache clean --force"
-alias nr="npm run"
-alias nrb="npm run build"
-alias nrs="npm run start"
-alias nrt="npm run test"
+alias nrb="npm run build --"
+alias nrs="npm run start --"
+alias nrt="npm run test --"
+nr() {
+	argv1=$1
+	shift
+	npm run $argv1 -- $@
+}
 
 ##
 ## Python Server
