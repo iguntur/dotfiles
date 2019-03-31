@@ -34,8 +34,14 @@ $RECYCLE.BIN/
 *.logs
 *todo*
 *TODO*
-*.skip
 /.tmp
 /.temp
 /.cache
 /.caches
+
+*-skip
+*-skip-*
+skip-*
+*-off
+off-*
+*-off-*
