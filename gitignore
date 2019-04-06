@@ -30,6 +30,7 @@ $RECYCLE.BIN/
 ##
 ## User specifics
 ##
+npmrc
 *.log
 *.logs
 *todo*
