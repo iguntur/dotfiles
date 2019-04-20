@@ -18,6 +18,8 @@ export PATH="$PATH:$HOME/.local/bin"
 ## Dropbox
 export PATH="$PATH:$HOME/.dropbox-bin"
 
+## Anaconda
+export PATH="$PATH:$HOME/anaconda3/bin"
 
 ## Java
 #export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
