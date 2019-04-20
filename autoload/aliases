@@ -57,11 +57,6 @@ alias ncc="npm cache clean --force"
 alias nrb="npm run build --"
 alias nrs="npm run start --"
 alias nrt="npm run test --"
-nr() {
-	argv1=$1
-	shift
-	npm run $argv1 -- $@
-}
 
 ##
 ## Python Server
