@@ -26,7 +26,7 @@ remove_symlink() {
 }
 
 copy_files() {
-	cp "./files/.npmrc" "$HOME/.npmrc"
+	cp "$base_dir/files/$1" "$HOME/$1"
 }
 
 install_plugins() {
@@ -34,7 +34,7 @@ install_plugins() {
 	chmod +x "$HOME/.dotfiles/bin/diff-so-fancy"
 }
 
-dotfiles=(
+dotfiles_links=(
 	"autoload"
 	"bin"
 	"vim"
@@ -45,24 +45,31 @@ dotfiles=(
 	"gitattributes"
 	"gitconfig"
 	"gitignore"
-	"npmrc"
 	"vimrc"
 	"Xmodmap"
 	"zshrc"
 )
 
+dotfiles_files=(
+	".npmrc"
+)
+
 case $1 in
 	install)
 		shift;
-		copy_files
 		install_plugins
-		for filename in ${dotfiles[@]}; do
+
+		for filename in ${dotfiles_files[@]}; do
+			copy_files "$filename" "$@"
+		done
+
+		for filename in ${dotfiles_links[@]}; do
 			create_symlink "$filename" "$@"
 		done
 		;;
 	uninstall)
 		shift;
-		for filename in ${dotfiles[@]}; do
+		for filename in ${dotfiles_links[@]}; do
 			remove_symlink "$filename" "$@"
 		done
 		;;
