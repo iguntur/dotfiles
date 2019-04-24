@@ -23,6 +23,11 @@ export PATH="$PATH:$HOME/.dropbox-bin"
 ## Anaconda
 export PATH="$PATH:$HOME/anaconda3/bin"
 
+## Golang
+export PATH="$PATH:$HOME/Opt/golang/go/bin"
+export GOPATH="$(go env GOPATH)"
+
+
 ## Java
 #export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 #export PATH="$PATH:$JAVA_HOME/bin"
