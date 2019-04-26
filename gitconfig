@@ -38,6 +38,7 @@
 	aa = add -A
 	br = branch
 	ci = commit
+	cis = commit -S
 	cl = clone
 	co = checkout
 	cob = checkout -b
@@ -47,7 +48,8 @@
 	lola = log --graph --pretty=format:'%C(cyan bold)%h%C(reset) -%C(magenta bold)%d%C(reset) %s - %C(green bold)(%cr)%C(reset) %C(blue)<%an>%C(reset)' --decorate --abbrev-commit --all
 	st = status
 	sync = remote update --prune
-	reinit = !rm -rf .git && git init && git add --all && git commit -am "init"
+	reinit = !rm -rf .git && git init && git add --all && git commit -S -m ":rocket: Initialize"
+	rehead = !git update-ref -d HEAD && git add --all && git commit -S -m ":rocket: Initialize"
 	nah = !git reset --hard && git clean -df
 
 [gpg]
