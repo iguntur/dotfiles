@@ -8,6 +8,8 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="themes/spaceship-prompt/spaceship"
 
+SPACESHIP_BATTERY_SHOW="false"
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -56,6 +58,7 @@ plugins=(
 	docker docker-compose
 	zsh-syntax-highlighting
 	cargo
+	autojump
 )
 
 fpath+="$HOME/.zfunc"
