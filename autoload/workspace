@@ -25,7 +25,7 @@ export PATH="$PATH:$HOME/anaconda3/bin"
 
 ## Golang
 export PATH="$PATH:$HOME/Opt/golang/go/bin"
-export GOPATH="$(go env GOPATH)"
+[ -f "$(which go)" ] && export GOPATH="$(go env GOPATH)"
 
 
 ## Java
@@ -79,3 +79,7 @@ export PATH="$PATH:./node_modules/.bin"
 
 ## Dotfiles
 export PATH="$PATH:$HOME/.dotfiles/bin"
+
+
+## Snap
+export PATH="$PATH:/var/lib/snapd/snap/bin"
