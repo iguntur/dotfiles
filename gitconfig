@@ -35,10 +35,10 @@
 	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [alias]
-	aa = add -A
+	aa = add --all
 	br = branch
 	ci = commit
-	cis = commit -S
+	cis = commit --gpg-sign
 	cl = clone
 	co = checkout
 	cob = checkout -b
