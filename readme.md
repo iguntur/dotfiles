@@ -20,6 +20,7 @@
   - [Powerline Fonts](#powerline-fonts)
 - [Suggested](#suggested)
   - [Hub](#hub)
+  - [Hosts](#hosts)
 
 ---
 
@@ -152,6 +153,21 @@ $ hub --version
 ```console
 $ sudo dnf install hub
 $ hub --version
+```
+
+
+### [Hosts](https://github.com/StevenBlack/hosts)
+
+Extending and consolidating hosts files from several well-curated sources like adaway.org, mvps.org, malwaredomainlist.com, someonewhocares.org, and potentially others. You can optionally invoke extensions to block additional sites by category.
+
+```console
+$ git clone https://github.com/StevenBlack/hosts.git /tmp/tweak-hosts
+$ cd /tmp/tweak-hosts
+$ python -m venv venv
+$ source venv/bin/activate
+$ pip install --upgrade pip
+$ pip install -r requirements.txt
+$ python updateHostsFile.py
 ```
 
 
