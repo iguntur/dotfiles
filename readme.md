@@ -3,28 +3,77 @@
 	<p style='color: #333333'>My personal dotfiles</p>
 </div>
 
-___
+---
+
+## Contents <!-- omit in toc -->
 
 - [Prerequisites](#prerequisites)
-- [Setup](#setup)
-    - [Install](#install)
-    - [Uninstall](#uninstall)
+  - [GIT](#git)
+  - [ZSH](#zsh)
+  - [.oh-my-zsh](#oh-my-zsh)
+- [Setup Dotfiles](#setup-dotfiles)
+  - [Install](#install)
+  - [Uninstall](#uninstall)
 - [Plugins](#plugins)
-    - [Vim](#vim)
-    - [fuzy-finder](#fuzy-finder)
+  - [Vim](#vim)
+  - [Fuzy Finder](#fuzy-finder)
+  - [Powerline Fonts](#powerline-fonts)
+- [Suggested](#suggested)
+  - [Hub](#hub)
 
 ---
 
-### Prerequisites
+## Prerequisites
 
-- [GIT](https://git-scm.com)
-- [ZSH](https://www.zsh.org)
-- [.oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+### [GIT](https://git-scm.com)
+
+#### Arch <!-- omit in toc -->
+
+```console
+$ sudo pacman -S git
+```
+
+#### Fedora <!-- omit in toc -->
+
+```console
+$ sudo dnf install git
+```
 
 
-### Setup
+### [ZSH](https://www.zsh.org)
 
-#### Install
+> Also see [Installing ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
+
+#### Arch <!-- omit in toc -->
+
+```console
+$ sudo pacman -S zsh
+```
+
+#### Fedora <!-- omit in toc -->
+
+```console
+$ sudo dnf install zsh
+```
+
+### [.oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+
+#### curl <!-- omit in toc -->
+
+```console
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+#### wget <!-- omit in toc -->
+
+```console
+$ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+```
+
+
+## Setup Dotfiles
+
+### Install
 
 ```console
 $ git clone git@github.com:iguntur/dotfiles.git $HOME/.dotfiles
@@ -35,7 +84,7 @@ $ ./dotfile.sh install
 
 Restart terminal.
 
-#### Uninstall
+### Uninstall
 
 ```console
 $ cd $HOME/.dotfiles
@@ -43,29 +92,66 @@ $ ./dotfile.sh uninstall
 ```
 
 
-### Plugins
+## Plugins
 
-#### Vim
+### Vim
 
-- Debian/Ubuntu Based
+#### Debian/Ubuntu Based <!-- omit in toc -->
 
 ```console
 $ sudo apt-get install vim
 $ vim +PluginInstall +qall
 ```
 
-- OpenSuse
+#### OpenSuse <!-- omit in toc -->
 
 ```console
 $ sudo zypper install vim
 $ vim +PluginInstall +qall
 ```
 
-#### [fuzy-finder](https://github.com/junegunn/fzf)
+### [Fuzy Finder](https://github.com/junegunn/fzf)
 
 ```console
 $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 $ ~/.fzf/install
+```
+
+### [Powerline Fonts](https://github.com/powerline/fonts)
+
+#### Arch <!-- omit in toc -->
+
+```console
+$ sudo pacman -S powerline-fonts
+$ sudo pacman -S powerline-vim
+$ sudo pacman -S vim-airline
+```
+
+#### Fedora <!-- omit in toc -->
+
+```console
+$ sudo dnf install powerline-fonts
+```
+
+
+## Suggested
+
+### [Hub](https://github.com/github/hub)
+
+Github extended for `git` CLI.
+
+#### Arch <!-- omit in toc -->
+
+```console
+$ sudo pacman -S hub
+$ hub --version
+```
+
+#### Fedora <!-- omit in toc -->
+
+```console
+$ sudo dnf install hub
+$ hub --version
 ```
 
 
