@@ -21,6 +21,8 @@
 - [Suggested](#suggested)
   - [Hub](#hub)
   - [Hosts](#hosts)
+  - [Snap](#snap)
+  - [Flatpak](#flatpak)
 
 ---
 
@@ -169,6 +171,10 @@ $ pip install --upgrade pip
 $ pip install -r requirements.txt
 $ python updateHostsFile.py
 ```
+
+### [Snap](https://snapcraft.io)
+
+### [Flatpak](https://flatpak.org/)
 
 
 ## License <!-- omit in toc -->
