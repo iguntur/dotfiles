@@ -17,6 +17,7 @@ let g:airline#extensions#tabline#left_sep=' '
 let g:airline_powerline_fonts=1
 let g:airline_theme='molokai'
 let g:tabular_loaded=1
+let g:powerline_pycmd='py3'
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
