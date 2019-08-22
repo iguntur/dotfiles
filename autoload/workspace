@@ -64,7 +64,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 ## PHP composer
-# export PATH="$PATH:$HOME/.config/composer/vendor/bin" # global packagist
+export PATH="$PATH:$HOME/.config/composer/vendor/bin" # global packagist
 
 
 ## Dart SDK
