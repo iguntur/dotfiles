@@ -27,6 +27,7 @@ load_source "$HOME/.autoload/lscolor" # ls color
 load_source "$DOT_EXTRA/utils"
 load_source "/etc/profile.d/rvm.sh" # RVM (Ruby Version Management)
 
+load_source "$DOT_EXTRA/misc"
 
 ##
 ## Handling duplicate PATH

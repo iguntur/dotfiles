@@ -27,6 +27,24 @@ fi
 ## Utils !!!
 ##
 
+
+##
+## Check command exist
+##
+cmd_exists() {
+	command -v "$1" > /dev/null 2>&1;
+}
+
+
+## Open
+open() {
+	if cmd_exists xdg-open; then
+		xdg-open "$@";
+	else
+		echo "xdg-open not available";
+	fi
+}
+
 ##
 ## make directorie
 ##
@@ -96,3 +114,5 @@ tree () {
 		/usr/bin/tree --dirsfirst -L "$@"
 	fi
 }
+
+

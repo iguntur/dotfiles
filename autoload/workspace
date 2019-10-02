@@ -24,8 +24,8 @@ export PATH="$PATH:$HOME/.dropbox-bin"
 export PATH="$PATH:$HOME/anaconda3/bin"
 
 ## Golang
-export PATH="$PATH:$HOME/Opt/golang/go/bin"
 [ -f "$(which go)" ] && export GOPATH="$(go env GOPATH)"
+[ -f "$(which go)" ] && export PATH="$PATH:$(go env GOPATH)/bin"
 
 
 ## Java

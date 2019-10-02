@@ -54,3 +54,9 @@
 
 [gpg]
 	program = gpg2
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
+# ~/.netrc
+# machine github.com login iguntur password 3dc9da8992efba7aee8a1359d073e80098258f50

@@ -18,7 +18,7 @@
   - [Vim](#vim)
   - [Fuzy Finder](#fuzy-finder)
   - [Powerline Fonts](#powerline-fonts)
-- [Suggested](#suggested)
+- [Miscellaneous](#miscellaneous)
   - [Hub](#hub)
   - [Hosts](#hosts)
   - [Snap](#snap)
@@ -115,9 +115,10 @@ $ vim +PluginInstall +qall
 
 ### [Fuzy Finder](https://github.com/junegunn/fzf)
 
+#### Arch <!-- omit in toc -->
+
 ```console
-$ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-$ ~/.fzf/install
+$ sudo pacman -S fzf
 ```
 
 ### [Powerline Fonts](https://github.com/powerline/fonts)
@@ -137,7 +138,11 @@ $ sudo dnf install powerline-fonts
 ```
 
 
-## Suggested
+## Miscellaneous
+
+```console
+$ sudo pacman -S highlight
+```
 
 ### [Hub](https://github.com/github/hub)
 
