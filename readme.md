@@ -142,6 +142,7 @@ $ sudo dnf install powerline-fonts
 
 ```console
 $ sudo pacman -S highlight
+$ sudo pacman -S python-pipenv
 ```
 
 ### [Hub](https://github.com/github/hub)
