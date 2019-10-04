@@ -60,6 +60,7 @@ alias nrt="npm run test --"
 alias nr="npm run"
 
 ##
-## Python Server
+## Python stuff
 ##
-alias py-serve="python -m SimpleHTTPServer$@"
+alias py="python"
+alias py-serve="python -m SimpleHTTPServer"
