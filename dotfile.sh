@@ -16,6 +16,7 @@ dotfiles_links=(
 	"vimrc"
 	"Xmodmap"
 	"zshrc"
+	"tmux.conf"
 )
 
 dotfiles_files=(
@@ -61,16 +62,10 @@ remove_files() {
 	done
 }
 
-install_plugins() {
-	curl -fsSl "https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy" --output "$HOME/.dotfiles/bin/diff-so-fancy"
-	chmod +x "$HOME/.dotfiles/bin/diff-so-fancy"
-}
-
 case $1 in
 	install)
 		shift;
-		install_plugins
-		copy_files
+		# copy_files
 		create_symlink
 		;;
 	uninstall)

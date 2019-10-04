@@ -19,6 +19,7 @@
   - [Fuzy Finder](#fuzy-finder)
   - [Powerline Fonts](#powerline-fonts)
 - [Miscellaneous](#miscellaneous)
+  - [PHP Composer](#php-composer)
   - [Hub](#hub)
   - [Hosts](#hosts)
   - [Snap](#snap)
@@ -143,6 +144,14 @@ $ sudo dnf install powerline-fonts
 ```console
 $ sudo pacman -S highlight
 $ sudo pacman -S python-pipenv
+$ sudo pacman -S diff-so-fancy
+```
+
+
+### [PHP Composer](https://getcomposer.org/)
+
+```console
+$ sudo pacman -S composer
 ```
 
 ### [Hub](https://github.com/github/hub)
