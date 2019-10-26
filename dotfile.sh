@@ -51,7 +51,7 @@ remove_symlink() {
 }
 
 copy_files() {
-	for filename in ${dotfiles_links[@]}; do
+	for filename in ${dotfiles_files[@]}; do
 		cp "$base_dir/files/$filename" "$HOME/$filename"
 	done
 }
