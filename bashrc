@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+PS1='[\u@\h \W]\$ '
+
+
+
 # Load our dotfiles
 #   Use it to configure your PATH, thus it being first in line.
 source ~/.bootstrap
