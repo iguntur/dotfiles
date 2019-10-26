@@ -6,6 +6,10 @@
 ##
 [ -f "$HOME/.autoload/main" ] && source "$HOME/.autoload/main"
 
+# Install nvm from aur repo.
+# yay -S nvm
+[ -f "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
+
 ##
 ## more options here...
 ##

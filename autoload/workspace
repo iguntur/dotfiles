@@ -1,5 +1,9 @@
 #!/bin/bash
 
+## Locale
+export LC_ALL="en_US.UTF-8"
+
+
 ## User Registry
 export AUTHOR_NAME="Guntur Poetra"
 export AUTHOR_EMAIL="poetra.guntur@gmail.com"
@@ -58,9 +62,9 @@ export PATH="$PATH:$HOME/.cargo/bin"
 ## Node Version Manager
 # export N_PREFIX="$HOME/.local/share/node-version-manager"
 # export PATH="$PATH:$N_PREFIX/bin"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 ## PHP composer
