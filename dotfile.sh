@@ -63,9 +63,12 @@ remove_files() {
 }
 
 case $1 in
+	copy)
+		shift;
+		copy_files
+		;;
 	install)
 		shift;
-		# copy_files
 		create_symlink
 		;;
 	uninstall)
@@ -77,6 +80,7 @@ case $1 in
 		echo "  ./dotfile.sh <command> [options]"
 		echo
 		echo "  Commands:"
+		echo "    copy      Copy static files"
 		echo "    install   Create all dotfiles symlinks"
 		echo "    uninstall Remove all dotfiles symlinks"
 		echo
