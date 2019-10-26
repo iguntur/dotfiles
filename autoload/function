@@ -111,8 +111,20 @@ tree () {
 	if [ -z "$1" ]; then
 		/usr/bin/tree --dirsfirst -L 1 "$@"
 	else
-		/usr/bin/tree --dirsfirst -L "$@"
+		/usr/bin/tree --dirsfirst "$@"
 	fi
 }
 
 
+lx () {
+	if cmd_exists exa; then
+		exa -Tgalh \
+			--git \
+			--git-ignore \
+			--ignore-glob .git \
+			--group-directories-first \
+			"$@"
+	else
+		echo "exa command not found"
+	fi
+}
