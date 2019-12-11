@@ -22,7 +22,7 @@ plugins=(
 	z git npm pip
 	# docker docker-compose
 	zsh-syntax-highlighting
-	autojump
+	# autojump
 )
 
 fpath+="$HOME/.zfunc"

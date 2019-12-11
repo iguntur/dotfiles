@@ -28,8 +28,10 @@ export PATH="$PATH:$HOME/.dropbox-bin"
 export PATH="$PATH:$HOME/anaconda3/bin"
 
 ## Golang
-[ -f "$(which go)" ] && export GOPATH="$(go env GOPATH)"
-[ -f "$(which go)" ] && export PATH="$PATH:$(go env GOPATH)/bin"
+if [ -f "$(which go)" ]; then
+	export GOPATH="$(go env GOPATH)"
+	export PATH="$PATH:$(go env GOPATH)/bin"
+fi
 
 
 ## Java

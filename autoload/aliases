@@ -64,3 +64,8 @@ alias nr="npm run"
 ##
 alias py="python"
 alias py-serve="python -m SimpleHTTPServer"
+
+##
+## PHP Laravel
+##
+alias art="php artisan"
