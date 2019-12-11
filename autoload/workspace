@@ -75,7 +75,7 @@ export PATH="$PATH:$HOME/.config/composer/vendor/bin" # global packagist
 # export PATH="$PATH:/usr/lib/dart/bin"
 
 ## Node.js (npm)
-export PATH="$PATH:./node_modules/.bin"
+#export PATH="$PATH:./node_modules/.bin"
 
 ## PHP (composer packagist)
 # export PATH="$PATH:./vendor/bin"
