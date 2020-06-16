@@ -25,7 +25,8 @@ set smarttab
 "" Interface
 """"""""""""
 syntax on
-colorscheme SlateDark
+"colorscheme SlateDark
+colorscheme Atelier_LakesideDark
 
 set background=dark
 set cursorline

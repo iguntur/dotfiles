@@ -35,8 +35,11 @@ fi
 
 
 ## Java
-#export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
-#export PATH="$PATH:$JAVA_HOME/bin"
+# export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+# export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
+export JAVA_HOME="/usr/lib/jvm/java-14-openjdk"
+export PATH="$PATH:$JAVA_HOME/bin"
+
 #export PATH="$PATH:$JAVA_HOME/db/bin"
 #export PATH="$PATH:$JAVA_HOME/jre/bin"
 #export PATH="$PATH:$HOME/.local/apache-maven/apache-maven-3.3.9/bin" # maven
