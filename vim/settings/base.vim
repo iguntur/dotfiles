@@ -25,6 +25,7 @@ set smarttab
 "" Interface
 """"""""""""
 syntax on
+"colorscheme slate
 "colorscheme SlateDark
 colorscheme Atelier_LakesideDark
 

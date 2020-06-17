@@ -49,3 +49,5 @@ map <leader>;; <Esc>A;<Esc>
 """"""""""""
 map <C-n> :NERDTreeToggle<CR>
 map <C-b> :NERDTreeFocus<CR>
+
+map <C-u> source ~/.vimrc<CR>

@@ -1,43 +1,49 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Vundle (Plugin Manager)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible " be iMproved, required
 filetype off     " required
 
-"" Set the runtime path to include Vundle and initialize.
-set rtp+=~/.vim/bundle/Vundle.vim " required
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Vim Plug (Plugin Manager)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-call vundle#begin() " required
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'HerringtonDarkholme/yats.vim'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'chriskempson/base16-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'mxw/vim-jsx'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'pangloss/vim-javascript'
-Plugin 'raimondi/delimitmate'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Make sure you use single quotes
 
-call vundle#end() " required
+" Plug 'SirVer/ultisnips'
+Plug 'airblade/vim-gitgutter'
+Plug 'chriskempson/base16-vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'honza/vim-snippets'
+Plug 'junegunn/vim-easy-align'
+Plug 'leafgarland/typescript-vim'
+Plug 'mattn/emmet-vim'
+Plug 'mxw/vim-jsx'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'pangloss/vim-javascript'
+Plug 'Quramy/tsuquyomi'
+Plug 'raimondi/delimitmate'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/vimproc.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
-"" See :h vundle for more details or wiki for FAQ
+" Initialize plugin system
+call plug#end()
+
+
 "" Put your non-Plugin stuff after this line
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -47,6 +53,8 @@ source ~/.vim/settings/base.vim
 source ~/.vim/settings/function.vim
 source ~/.vim/settings/keymap.vim
 source ~/.vim/settings/plugin.vim
+
+
 " ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
 let s:opam_share_dir = system("opam config var share")
 let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')
