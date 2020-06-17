@@ -43,7 +43,6 @@ $ sudo pacman -S git
 $ sudo dnf install git
 ```
 
-
 ### [ZSH](https://www.zsh.org)
 
 > Also see [Installing ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
@@ -74,7 +73,6 @@ $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/m
 $ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
 
-
 ## Setup Dotfiles
 
 ### Install
@@ -95,7 +93,6 @@ $ cd $HOME/.dotfiles
 $ ./dotfile.sh uninstall
 ```
 
-
 ## Plugins
 
 ### Vim
@@ -112,6 +109,14 @@ $ vim +PluginInstall +qall
 ```console
 $ sudo zypper install vim
 $ vim +PluginInstall +qall
+```
+
+##### Vim Plugin Manager <!-- omit in toc -->
+
+See: https://github.com/junegunn/vim-plug
+
+```console
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 ### [Fuzy Finder](https://github.com/junegunn/fzf)
@@ -138,7 +143,6 @@ $ sudo pacman -S vim-airline
 $ sudo dnf install powerline-fonts
 ```
 
-
 ## Miscellaneous
 
 ```console
@@ -146,7 +150,6 @@ $ sudo pacman -S highlight
 $ sudo pacman -S python-pipenv
 $ sudo pacman -S diff-so-fancy
 ```
-
 
 ### [PHP Composer](https://getcomposer.org/)
 
@@ -172,7 +175,6 @@ $ sudo dnf install hub
 $ hub --version
 ```
 
-
 ### [Hosts](https://github.com/StevenBlack/hosts)
 
 Extending and consolidating hosts files from several well-curated sources like adaway.org, mvps.org, malwaredomainlist.com, someonewhocares.org, and potentially others. You can optionally invoke extensions to block additional sites by category.
@@ -190,7 +192,6 @@ $ python updateHostsFile.py
 ### [Snap](https://snapcraft.io)
 
 ### [Flatpak](https://flatpak.org/)
-
 
 ## License <!-- omit in toc -->
 
