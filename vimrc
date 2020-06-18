@@ -3,48 +3,58 @@ filetype off     " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Vim Plug (Plugin Manager)
+"" Make sure you use single quotes
+"" Specify a directory for plugins
+"" - For Neovim: stdpath('data') . '/plugged'
+"" - Avoid using standard Vim directory names like 'plugin'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-" Make sure you use single quotes
-
-" Plug 'SirVer/ultisnips'
-Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
-Plug 'ctrlpvim/ctrlp.vim'
+" EditorConfig
 Plug 'editorconfig/editorconfig-vim'
-Plug 'flazz/vim-colorschemes'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'honza/vim-snippets'
-Plug 'junegunn/vim-easy-align'
-Plug 'leafgarland/typescript-vim'
+
+" Git Integration
+"Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify' """ Git Gutter
+
+" File Manager
+Plug 'preservim/nerdtree'          """ (NERDTree) sidebar file manager
+Plug 'Xuyuanp/nerdtree-git-plugin' """ (NERDTree) git status on sidebar
+Plug 'ctrlpvim/ctrlp.vim'          """ Ctrl+P searching files in project directory
+
+" Programming Language and stuff
 Plug 'mattn/emmet-vim'
+
+" javascript
 Plug 'mxw/vim-jsx'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript'
+Plug 'junegunn/vim-easy-align'
+
+" Vim Airline (powerline)
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+
+" Plug 'tpope/vim-unimpaired'      """ auto pair for (), [], {}
+Plug 'jiangmiao/auto-pairs'        """ auto pair for (), [], {}, "", '', ``
+Plug 'sheerun/vim-polyglot'        """ better syntax highlight
+
+Plug 'NLKNguyen/papercolor-theme'  """ colorscheme
+
+""" Snippets
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' """ Python Snippets
+
+" Need to review
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'Quramy/tsuquyomi'
 Plug 'raimondi/delimitmate'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-airline/vim-airline'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" Initialize plugin system
 call plug#end()
-
-
-"" Put your non-Plugin stuff after this line
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Settings
@@ -53,6 +63,10 @@ source ~/.vim/settings/base.vim
 source ~/.vim/settings/function.vim
 source ~/.vim/settings/keymap.vim
 source ~/.vim/settings/plugin.vim
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Others
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 " ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line

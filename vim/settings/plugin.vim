@@ -1,7 +1,19 @@
-"" scrooloose/nerdtree
-""""""""""""""""""""""
+"" CtrlP
+"""""""""""""""""""""
+" Exclude files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+
+"" preservim/nerdtree
+"""""""""""""""""""""
 let NERDTreeShowHidden=1 " Show hidden folders and files
 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+map <C-n> :NERDTreeToggle<CR>
+map <C-b> :NERDTreeFocus<CR>
 
 "" Base 16 colors
 """""""""""""""""
@@ -19,9 +31,6 @@ let g:airline_theme='molokai'
 let g:tabular_loaded=1
 let g:powerline_pycmd='py3'
 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
 "" ntpeters/vim-better-whitespace

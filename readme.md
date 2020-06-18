@@ -137,6 +137,12 @@ $ sudo pacman -S powerline-vim
 $ sudo pacman -S vim-airline
 ```
 
+### [Bat](https://github.com/sharkdp/bat) <!-- omit in toc -->
+
+```console
+$ sudo pacman -S bat
+```
+
 #### Fedora <!-- omit in toc -->
 
 ```console

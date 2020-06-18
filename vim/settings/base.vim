@@ -4,6 +4,8 @@ set rtp+=~/.fzf
 
 let mapleader=','
 
+set termguicolors
+
 "" Text encoding and editing
 """""""""""""""
 scriptencoding utf-8
@@ -21,18 +23,19 @@ set tabstop=4
 set smarttab
 " set expandtab
 
+set clipboard=unnamedplus "" Copy (yank) clipboard integration
+
 
 "" Interface
 """"""""""""
 syntax on
-"colorscheme slate
-"colorscheme SlateDark
-colorscheme Atelier_LakesideDark
+colorscheme PaperColor
+
 
 set background=dark
 set cursorline
 set laststatus=2
-"set mouse=n
+set mouse=a
 set number
 set numberwidth=5
 set relativenumber
@@ -46,7 +49,7 @@ set list listchars=tab:»\ ,trail:·
 
 "" Search
 """""""""
-set hlsearch "" highlight search result
+set hlsearch  """ highlight search result
 set ignorecase
-set incsearch "" move cursor to search as you type
+set incsearch """ move cursor to search as you type
 set showmatch
