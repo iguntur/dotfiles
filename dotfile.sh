@@ -6,7 +6,6 @@ dotfiles_links=(
 	"autoload"
 	"bin"
 	"vim"
-	"zsh"
 	"bashrc"
 	"bootstrap"
 	"dircolors"

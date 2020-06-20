@@ -1,5 +1,10 @@
 #!/bin/bash
 
+###
+### VIM
+###
+alias v="nvim"
+
 ##
 ## Easier navigation
 ##

@@ -2,12 +2,13 @@
 filetype plugin indent on " required
 set rtp+=~/.fzf
 
-let mapleader=','
+let mapleader=';'
 
 set termguicolors
+" set timeoutlen=100
 
 "" Text encoding and editing
-"""""""""""""""
+""""""""""""""""""""""""""""
 scriptencoding utf-8
 set encoding=utf-8
 set autoindent
@@ -23,13 +24,14 @@ set tabstop=4
 set smarttab
 " set expandtab
 
-set clipboard=unnamedplus "" Copy (yank) clipboard integration
+set clipboard+=unnamedplus "" Copy (yank) clipboard integration
 
 
 "" Interface
 """"""""""""
 syntax on
-colorscheme PaperColor
+"colorscheme PaperColor
+colorscheme falcon
 
 
 set background=dark
@@ -44,7 +46,7 @@ set scrolloff=50
 set t_Co=256
 set title
 set wildmenu
-set list listchars=tab:»\ ,trail:·
+set list listchars=tab:»\ ,space:·,trail:·
 
 
 "" Search

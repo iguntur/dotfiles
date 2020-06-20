@@ -35,6 +35,17 @@ cmd_exists() {
 	command -v "$1" > /dev/null 2>&1;
 }
 
+##
+## Copy anything inside of files to clipboard
+##
+cb() {
+	if cmd_exists xclip; then
+		xclip -sel clip < "$@"
+	else
+		echo "Command 'xclip' does not exists"
+	fi
+}
+
 
 ## Open
 open() {

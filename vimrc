@@ -10,20 +10,29 @@ filetype off     " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-" EditorConfig
+" === common plugins === "
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-commentary'             " commenting
+Plug 'matze/vim-move'                   " Move line
+Plug 'ntpeters/vim-better-whitespace'   " coloring trailing whitespace and remove
+
+" Show Vim Keymap
+" Plug 'liuchengxu/vim-which-key'
+
+" === editor config === "
 Plug 'editorconfig/editorconfig-vim'
 
 " Git Integration
 "Plug 'airblade/vim-gitgutter'
-Plug 'mhinz/vim-signify' """ Git Gutter
+Plug 'mhinz/vim-signify'           " Git Gutter
 
 " File Manager
-Plug 'preservim/nerdtree'          """ (NERDTree) sidebar file manager
-Plug 'Xuyuanp/nerdtree-git-plugin' """ (NERDTree) git status on sidebar
-Plug 'ctrlpvim/ctrlp.vim'          """ Ctrl+P searching files in project directory
+Plug 'preservim/nerdtree'          " (NERDTree) sidebar file manager
+Plug 'Xuyuanp/nerdtree-git-plugin' " (NERDTree) git status on sidebar
+Plug 'ctrlpvim/ctrlp.vim'          " Ctrl+P searching files in project directory
 
 " Programming Language and stuff
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'             " Emmet
 
 " javascript
 Plug 'mxw/vim-jsx'
@@ -34,18 +43,20 @@ Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 
-" Plug 'tpope/vim-unimpaired'      """ auto pair for (), [], {}
-Plug 'jiangmiao/auto-pairs'        """ auto pair for (), [], {}, "", '', ``
-Plug 'sheerun/vim-polyglot'        """ better syntax highlight
+" Plug 'tpope/vim-unimpaired'      " auto pair for (), [], {}
+Plug 'jiangmiao/auto-pairs'        " auto pair for (), [], {}, "", '', ``
+Plug 'sheerun/vim-polyglot'        " better syntax highlight
 
-Plug 'NLKNguyen/papercolor-theme'  """ colorscheme
+" Color Schema
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'fenetikm/falcon'
 
 """ Snippets
 Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips' """ Python Snippets
+Plug 'SirVer/ultisnips'            " Python Snippets
+
 
 " Need to review
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'Quramy/tsuquyomi'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/syntastic'

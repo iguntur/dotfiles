@@ -15,6 +15,7 @@
   - [Install](#install)
   - [Uninstall](#uninstall)
 - [Plugins](#plugins)
+  - [Z](#z)
   - [Vim](#vim)
   - [Fuzy Finder](#fuzy-finder)
   - [Powerline Fonts](#powerline-fonts)
@@ -84,6 +85,12 @@ $ git submodule update --init --recursive
 $ ./dotfile.sh install
 ```
 
+[Zinit]()
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+```
+
 Restart terminal.
 
 ### Uninstall
@@ -94,6 +101,14 @@ $ ./dotfile.sh uninstall
 ```
 
 ## Plugins
+
+### [Z](https://github.com/rupa/z)
+
+```console
+$ sudo pacman -S z
+# or
+$ yay -S z-git
+```
 
 ### Vim
 

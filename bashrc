@@ -21,4 +21,3 @@ source ~/.bootstrap
 # Kubernetes
 # test -x "$(which minikube)" > /dev/null && source <(minikube completion bash);
 # test -x "$(which kubectl)" > /dev/null && source <(kubectl completion bash);
-

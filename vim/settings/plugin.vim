@@ -12,13 +12,18 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-map <C-n> :NERDTreeToggle<CR>
-map <C-b> :NERDTreeFocus<CR>
+map <silent> <C-n> :NERDTreeToggle<CR>
+map <silent> <C-b> :NERDTreeFocus<CR>
 
 "" Base 16 colors
 """""""""""""""""
 let base16colorspace=256 " Access colors present in 256 colorspacea
 
+""" Falcon ColorSchema
+""""""""""""""""""""""
+let g:falcon_lightline = 1
+"let g:lightline.colorscheme = 'falcon'
+let g:falcon_airline = 1
 
 "" vim-airline/vim-airline
 """"""""""""""""""""""""""
@@ -27,9 +32,9 @@ let g:airline#extensions#tabline#formatter='default'
 let g:airline#extensions#tabline#left_alt_sep='|'
 let g:airline#extensions#tabline#left_sep=' '
 let g:airline_powerline_fonts=1
-let g:airline_theme='molokai'
+let g:airline_theme='falcon'
 let g:tabular_loaded=1
-let g:powerline_pycmd='py3'
+"let g:powerline_pycmd='py3'
 
 
 
@@ -50,6 +55,11 @@ let g:javascript_plugin_ngdoc=1
 """""""""""""""""""
 let g:tsuquyomi_completion_detail=1
 
+
 "" mattn/emmet-vim
 """"""""""""""""""
 let g:user_emmet_leader_key='<C-Z>'
+
+
+" Move line
+let g:move_key_modifier = 'C'
