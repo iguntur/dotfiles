@@ -65,6 +65,13 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 
 ################################################################################
+# Prepare
+################################################################################
+
+[ -d "$HOME/.zfunc" ] && fpath+="$HOME/.zfunc"
+
+
+################################################################################
 # Load Plugin
 ################################################################################
 autoload -Uz compinit
@@ -81,7 +88,22 @@ fi;
 ################################################################################
 # Bootstrap dotfiles
 ################################################################################
-source "$HOME/.bootstrap"
+
+## Enable Vi Mode Terminal Emulator
+# bindkey -v
+# bindkey "^?" backward-delete-char
+export KEYTIMEOUT=1
+
+if [ -f "$HOME/.dotfiles/bootstrap" ]; then
+	source "$HOME/.dotfiles/bootstrap"
+fi
+
+
+##
+## No duplicate history command
+##
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 
 # bindkey '^[[A' history-substring-search-up
 # bindkey '^[[B' history-substring-search-down
