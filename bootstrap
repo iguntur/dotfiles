@@ -1,10 +1,12 @@
 #!/bin/bash
 
+SHELL_NAME="$(basename $SHELL)"
+
 ##
 ## Load our dotfiles
 ##   Use it to configure your PATH, this it being first in line.
 ##
-[ -f "$HOME/.autoload/main" ] && source "$HOME/.autoload/main"
+[ -f "$HOME/.dotfiles/autoload/main" ] && source "$HOME/.dotfiles/autoload/main"
 
 # Install nvm from aur repo.
 # yay -S nvm
