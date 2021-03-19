@@ -4,6 +4,7 @@
 ### VIM
 ###
 alias v="nvim"
+alias vim="nvim"
 
 ##
 ## Easier navigation
@@ -74,3 +75,10 @@ alias py-serve="python -m SimpleHTTPServer"
 ## PHP Laravel
 ##
 alias art="php artisan"
+
+
+##
+## System
+##
+alias SP="sudo pacman"
+alias SS="sudo systemctl"
