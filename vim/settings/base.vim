@@ -2,9 +2,8 @@
 filetype plugin indent on " required
 set rtp+=~/.fzf
 
-let mapleader=';'
+let mapleader=','
 
-set termguicolors
 " set timeoutlen=100
 
 "" Text encoding and editing
@@ -16,23 +15,32 @@ set backspace=indent,eol,start
 set cindent
 set cino=:0 "" No indent for case:/default:
 set noswapfile
-set textwidth=80
+set textwidth=110
 set nowrap
 set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 set smarttab
 " set expandtab
+set clipboard+=unnamedplus "" Copy (yank) and paste with clipboard integration
+set shortmess+=I
 
-set clipboard+=unnamedplus "" Copy (yank) clipboard integration
+set linebreak
+" set wrap
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Interface
-""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
+colorscheme molokai_dark
 "colorscheme PaperColor
-colorscheme falcon
+" colorscheme falcon
 
+set termguicolors
+
+"" Base 16 colors
+let base16colorspace=256 " Access colors present in 256 colorspacea
 
 set background=dark
 set cursorline
@@ -42,11 +50,15 @@ set number
 set numberwidth=5
 set relativenumber
 set ruler
-set scrolloff=50
+set colorcolumn=110
+set scrolloff=999
 set t_Co=256
 set title
 set wildmenu
-set list listchars=tab:»\ ,space:·,trail:·
+" set wildmode=longest:full,full
+set wildcharm=<Tab>
+" set list listchars=tab:»\ ,space:·,trail:·
+set list listchars=tab:┊\ ,space:\ ,trail:·
 
 
 "" Search
@@ -55,3 +67,4 @@ set hlsearch  """ highlight search result
 set ignorecase
 set incsearch """ move cursor to search as you type
 set showmatch
+
