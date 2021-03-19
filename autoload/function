@@ -222,3 +222,35 @@ tns() {
 		tmux new -s $sessionName "$@"
 	fi
 }
+
+
+##
+## Open file in current git status using Neovim
+##
+vg () {
+	if git rev-parse --git-dir > /dev/null 2>&1; then
+		nvim $(git status --porcelain --untracked-files=all | sed /^.D/d | sed s/...// | fzf --height 100% --preview 'bat --style=numbers --color=always --line-range :500 {}')
+	else
+		git rev-parse --git-dir
+	fi
+}
+
+##
+## Open file in the current directorie using Neovim
+##
+vf () {
+	nvim $(fzf --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
+}
+
+
+##
+## Show Keyboard Keysym
+##
+keys () {
+	## Docs: https://wiki.archlinux.org/index.php/Keyboard_input#Identifying_keycodes
+	xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+}
+
+fileperms () {
+	stat -c '%a - %n' "$@"
+}
