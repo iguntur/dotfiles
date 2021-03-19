@@ -7,6 +7,7 @@ dotfiles_links=(
 	"bin"
 	"vim"
 	"bashrc"
+	"bash_profile"
 	"bootstrap"
 	"dircolors"
 	"gitattributes"
