@@ -27,6 +27,26 @@
 ## Utils !!!
 ##
 
+##
+## Sourcing file if it exists
+##
+source_if_exists() {
+	source_file=$1
+
+	if [ -f "$source_file" ]; then
+		shift
+		source $source_file
+	fi
+}
+
+
+##
+## Trim Whitespace
+##
+trim() {
+	sed -e 's/^[[:space:]]*//' "$@"
+}
+
 
 ##
 ## Check command exist
@@ -34,6 +54,20 @@
 cmd_exists() {
 	command -v "$1" > /dev/null 2>&1;
 }
+
+
+##
+## Download file using Curl
+##
+download_file() {
+	if cmd_exists curl; then
+		curl -L -O -C - "$@"
+	else
+		echo "curl not found"
+		exit 1
+	fi
+}
+
 
 ##
 ## Copy anything inside of files to clipboard
