@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='scp://ubuntu@vm-ubuntuserver//home/ubuntu/tictag/tictag-backend/'
+let g:netrw_dirhist_8='scp://ubuntu@vm-ubuntuserver//home/ubuntu/tictag/tictag-backend/api-application/'
+let g:netrw_dirhist_7='scp://ubuntu@vm-ubuntuserver//home/ubuntu/tictag/tictag-backend/'
+let g:netrw_dirhist_6='scp://ubuntu@vm-ubuntuserver/home/ubuntu/tictag/tictag-backend/'
+let g:netrw_dirhist_5='/home/guntur/.dotfiles/vim/settings'
+let g:netrw_dirhist_4='/home/guntur/.dotfiles'
+let g:netrw_dirhist_3='/home/guntur/dev/github.com/iguntur/danadinar/frontend/scripts'
+let g:netrw_dirhist_2='/home/guntur/dev/github.com/jintictag/tictag-backend'
+let g:netrw_dirhist_1='/home/guntur/.dotfiles'
