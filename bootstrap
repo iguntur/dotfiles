@@ -26,3 +26,18 @@ test -r ${HOME}/.opam/opam-init/init.zsh && . ${HOME}/.opam/opam-init/init.zsh >
 HEROKU_AC_ZSH_SETUP_PATH=$HOME/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+
+
+##
+## Github CLI
+##
+if cmd_exists gh; then
+	case $SHELL_NAME in
+		bash) source <(gh completion -s bash);;
+		zsh) source <(gh completion -s zsh);;
+	esac
+fi
+
+##
+## more options here...
+##
