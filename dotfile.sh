@@ -80,9 +80,9 @@ case $1 in
 		echo "  ./dotfile.sh <command> [options]"
 		echo
 		echo "  Commands:"
-		echo "    copy      Copy static files"
-		echo "    install   Create all dotfiles symlinks"
-		echo "    uninstall Remove all dotfiles symlinks"
+		echo "    copy                     Copy static files"
+		echo "    install                  Create all dotfiles symlinks"
+		echo "    uninstall                Remove all dotfiles symlinks"
 		echo
 		echo "  Options:"
 		echo "      -y      Prevent prompt"
