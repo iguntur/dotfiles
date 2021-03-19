@@ -214,6 +214,22 @@ $ python updateHostsFile.py
 
 ### [Flatpak](https://flatpak.org/)
 
+
+## TODO
+
+- [ ] How to setup Xmodmap (Custom Keyboard Layout Map)
+- [ ] Setup xorg keyboard detection code
+- [ ] How to configure QTile - Tiling window manager
+- [ ] How to configure mouse trackpad (single/double/triple touch), or possible with gesture (zoom pinch, slide)
+- [ ] How to configure `fn` key on keyboard.
+    This key for controlling volume audio, screen brightness, keyboard led brightness, etc.
+- [ ] How to configure `dmenu`
+- [ ] How to configure xorg-sessions
+- [ ] ...
+- [ ] ...
+- [ ] ...
+
+
 ## License <!-- omit in toc -->
 
 [MIT](https://opensource.org/licenses/MIT) © [Guntur Poetra](https://github.com/iguntur)
