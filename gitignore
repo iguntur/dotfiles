@@ -27,6 +27,14 @@ $RECYCLE.BIN/
 *.tmPreferences.cache
 *.stTheme.cache
 
+
+##
+## Programming Language Spec
+##
+__pycache__
+node_modules
+bower_components
+
 ##
 ## User specifics
 ##
