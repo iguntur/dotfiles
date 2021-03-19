@@ -98,4 +98,4 @@ export PATH="$PATH:$HOME/.dotfiles/bin"
 
 
 ## Snap
-export PATH="$PATH:/var/lib/snapd/snap/bin"
+# export PATH="$PATH:/var/lib/snapd/snap/bin"
