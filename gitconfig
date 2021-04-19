@@ -2,6 +2,9 @@
 	email = poetra.guntur@gmail.com
 	name = Guntur Poetra
 
+[init]
+	defaultBranch = master
+
 [color]
 	ui = true
 
@@ -56,11 +59,8 @@
 [gpg]
 	program = gpg2
 
-; [url "ssh://git@github.com/"]
-; 	insteadOf = https://github.com/
-
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+;[url "git@github.com:"]
+;	insteadOf = https://github.com/
 
 [tig]
 	tab-size = 4
