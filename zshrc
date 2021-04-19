@@ -89,37 +89,30 @@ fi;
 # Bootstrap dotfiles
 ################################################################################
 
-## Enable Vi Mode Terminal Emulator
-# bindkey -v
-# bindkey "^?" backward-delete-char
-export KEYTIMEOUT=1
-
-if [ -f "$HOME/.dotfiles/bootstrap" ]; then
-	source "$HOME/.dotfiles/bootstrap"
-fi
-
-
 ##
 ## No duplicate history command
 ##
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 
+
+################################################################################
+## Enable Vi Mode Terminal Emulator
+################################################################################
+# bindkey -v
+# bindkey "^?" backward-delete-char
 # bindkey '^[[A' history-substring-search-up
 # bindkey '^[[B' history-substring-search-down
-
-################################################################################
-# Kubernetes
-################################################################################
-[ -f $(which minikube) ] && source <(minikube completion zsh)
-[ -f $(which kubectl) ] && source <(kubectl completion zsh)
+export KEYTIMEOUT=1
 
 
 ################################################################################
-# FZF
+# Bootstrap Environment
 ################################################################################
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+if [ -f "$HOME/.dotfiles/bootstrap" ]; then
+	source "$HOME/.dotfiles/bootstrap"
+fi
+
 
 
 ##
