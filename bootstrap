@@ -1,12 +1,14 @@
 #!/bin/bash
 
-SHELL_NAME="$(basename $SHELL)"
+export SHELL_NAME="$(basename $SHELL)"
 
 ##
 ## Load our dotfiles
 ##   Use it to configure your PATH, this it being first in line.
 ##
-[ -f "$HOME/.dotfiles/autoload/main" ] && source "$HOME/.dotfiles/autoload/main"
+if [ -f "$HOME/.dotfiles/autoload/main" ]; then
+	source "$HOME/.dotfiles/autoload/main"
+fi
 
 if cmd_exists neofetch; then
 	neofetch
@@ -14,23 +16,36 @@ elif cmd_exists screenfetch; then
 	screenfetch
 fi
 
+
+################################################################################
+# Z
+################################################################################
+load_source "/usr/share/z/z.sh"
+
+
+################################################################################
+# FZF
+################################################################################
+if [ $SHELL_NAME = "zsh" ]; then
+	load_source "/usr/share/fzf/key-bindings.zsh"
+	load_source "/usr/share/fzf/completion.zsh"
+elif [ $SHELL_NAME = "bash" ]; then
+	load_source "/usr/share/fzf/key-bindings.bash"
+	load_source "/usr/share/fzf/completion.bash"
+fi
+
+
+################################################################################
+# NodeJS Version Manager (NVM)
+################################################################################
 # Install nvm from aur repo.
 # yay -S nvm
-[ -f "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
-
-# opam configuration
-test -r ${HOME}/.opam/opam-init/init.zsh && . ${HOME}/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+load_source "/usr/share/nvm/init-nvm.sh"
 
 
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=$HOME/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
-
-[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
-
-
-##
-## Github CLI
-##
+################################################################################
+# Github CLI
+################################################################################
 if cmd_exists gh; then
 	case $SHELL_NAME in
 		bash) source <(gh completion -s bash);;
@@ -38,6 +53,47 @@ if cmd_exists gh; then
 	esac
 fi
 
-##
-## more options here...
-##
+
+################################################################################
+# Kubernetes
+################################################################################
+if cmd_exists minikube; then
+	case $SHELL_NAME in
+		bash) source <(minikube completion bash);;
+		zsh) source <(minikube completion zsh);;
+	esac
+fi
+
+if cmd_exists kubectl; then
+	case $SHELL_NAME in
+		bash) source <(kubectl completion bash);;
+		zsh) source <(kubectl completion zsh);;
+	esac
+fi
+
+
+################################################################################
+# OCaml - opam configuration
+################################################################################
+if [ $SHELL_NAME = "zsh" ]; then
+	load_source ${HOME}/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+elif [ $SHELL_NAME = "bash" ]; then
+	load_source ${HOME}/.opam/opam-init/init.bash > /dev/null 2> /dev/null || true
+fi
+
+
+################################################################################
+# Heroku - autocomplete setup
+################################################################################
+if [ $SHELL_NAME = "zsh" ]; then
+	HEROKU_AC_ZSH_SETUP_PATH=$HOME/.cache/heroku/autocomplete/zsh_setup
+	load_source $HEROKU_AC_ZSH_SETUP_PATH
+fi
+
+
+################################################################################
+# more options here...
+################################################################################
+if [ $SHELL_NAME = "zsh" ]; then
+	load_source "/usr/share/zsh/site-contrib/powerline.zsh"
+fi
