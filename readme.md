@@ -23,8 +23,7 @@
   - [PHP Composer](#php-composer)
   - [Hub](#hub)
   - [Hosts](#hosts)
-  - [Snap](#snap)
-  - [Flatpak](#flatpak)
+- [TODO](#todo)
 
 ---
 
@@ -32,32 +31,16 @@
 
 ### [GIT](https://git-scm.com)
 
-#### Arch <!-- omit in toc -->
-
 ```console
 $ sudo pacman -S git
-```
-
-#### Fedora <!-- omit in toc -->
-
-```console
-$ sudo dnf install git
 ```
 
 ### [ZSH](https://www.zsh.org)
 
 > Also see [Installing ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
 
-#### Arch <!-- omit in toc -->
-
 ```console
 $ sudo pacman -S zsh
-```
-
-#### Fedora <!-- omit in toc -->
-
-```console
-$ sudo dnf install zsh
 ```
 
 ### [.oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
@@ -112,21 +95,12 @@ $ yay -S z-git
 
 ### Vim
 
-#### Debian/Ubuntu Based <!-- omit in toc -->
-
 ```console
-$ sudo apt-get install vim
+$ sudo pacman -S vim neovim
 $ vim +PluginInstall +qall
 ```
 
-#### OpenSuse <!-- omit in toc -->
-
-```console
-$ sudo zypper install vim
-$ vim +PluginInstall +qall
-```
-
-##### Vim Plugin Manager <!-- omit in toc -->
+#### Vim Plugin Manager <!-- omit in toc -->
 
 See: https://github.com/junegunn/vim-plug
 
@@ -136,32 +110,20 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 ### [Fuzy Finder](https://github.com/junegunn/fzf)
 
-#### Arch <!-- omit in toc -->
-
 ```console
 $ sudo pacman -S fzf
 ```
 
 ### [Powerline Fonts](https://github.com/powerline/fonts)
 
-#### Arch <!-- omit in toc -->
-
 ```console
-$ sudo pacman -S powerline-fonts
-$ sudo pacman -S powerline-vim
-$ sudo pacman -S vim-airline
+$ sudo pacman -S powerline-fonts powerline-vim vim-airline
 ```
 
 ### [Bat](https://github.com/sharkdp/bat) <!-- omit in toc -->
 
 ```console
 $ sudo pacman -S bat
-```
-
-#### Fedora <!-- omit in toc -->
-
-```console
-$ sudo dnf install powerline-fonts
 ```
 
 ## Miscellaneous
@@ -182,17 +144,8 @@ $ sudo pacman -S composer
 
 Github extended for `git` CLI.
 
-#### Arch <!-- omit in toc -->
-
 ```console
 $ sudo pacman -S hub
-$ hub --version
-```
-
-#### Fedora <!-- omit in toc -->
-
-```console
-$ sudo dnf install hub
 $ hub --version
 ```
 
@@ -210,25 +163,19 @@ $ pip install -r requirements.txt
 $ python updateHostsFile.py
 ```
 
-### [Snap](https://snapcraft.io)
-
-### [Flatpak](https://flatpak.org/)
-
-
 ## TODO
 
-- [ ] How to setup Xmodmap (Custom Keyboard Layout Map)
-- [ ] Setup xorg keyboard detection code
-- [ ] How to configure QTile - Tiling window manager
-- [ ] How to configure mouse trackpad (single/double/triple touch), or possible with gesture (zoom pinch, slide)
-- [ ] How to configure `fn` key on keyboard.
-    This key for controlling volume audio, screen brightness, keyboard led brightness, etc.
-- [ ] How to configure `dmenu`
-- [ ] How to configure xorg-sessions
-- [ ] ...
-- [ ] ...
-- [ ] ...
-
+-   [ ] How to setup Xmodmap (Custom Keyboard Layout Map)
+-   [ ] Setup xorg keyboard detection code
+-   [ ] How to configure QTile - Tiling window manager
+-   [ ] How to configure mouse trackpad (single/double/triple touch), or possible with gesture (zoom pinch, slide)
+-   [ ] How to configure `fn` key on keyboard.
+        This key for controlling volume audio, screen brightness, keyboard led brightness, etc.
+-   [ ] How to configure `dmenu`
+-   [ ] How to configure xorg-sessions
+-   [ ] ...
+-   [ ] ...
+-   [ ] ...
 
 ## License <!-- omit in toc -->
 
