@@ -101,9 +101,9 @@ xnoremap <silent> <leader>l :Limelight!!<CR><Esc>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Falcon ColorSchema
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:falcon_lightline = 1
-"let g:lightline.colorscheme = 'falcon'
-let g:falcon_airline = 1
+" let g:falcon_lightline = 1
+" let g:lightline.colorscheme = 'falcon'
+" let g:falcon_airline = 1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -176,4 +176,3 @@ nmap <leader>f  <Plug>(coc-format-selected)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source ~/.vim/lib/coc-nvim.vim
 source ~/.vim/lib/coc-explorer.vim
-
