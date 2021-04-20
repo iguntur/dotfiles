@@ -17,6 +17,7 @@ dotfiles_links=(
 	"Xmodmap"
 	"zshrc"
 	"tmux.conf"
+	"xinitrc"
 )
 
 dotfiles_files=(
@@ -24,56 +25,79 @@ dotfiles_files=(
 )
 
 create_symlink() {
-	for filename in ${dotfiles_links[@]}; do
-		SOURCE="$base_dir/$filename"
-		DEST="$HOME/.$filename"
+	for __filename in ${dotfiles_links[@]}; do
+		SOURCE="$base_dir/$__filename"
+		DEST="$HOME/.$__filename"
 
-		if [ "$2" == "-y" ]; then
+		if [ "$1" == "-y" ]; then
 			ln -fsnv "$SOURCE" "$DEST"
 		else
 			ln -isnv "$SOURCE" "$DEST"
 		fi
 	done
+	unset __filename
 }
 
 remove_symlink() {
-	for filename in ${dotfiles_links[@]}; do
-		filepath="$HOME/.$filename"
+	for __filename in ${dotfiles_links[@]}; do
+		__filepath="$HOME/.$__filename"
 
-		if [ -e "$filepath" ] && [ -L "$filepath" ]; then
-			if [ "$2" == "-y" ]; then
-				rm -v "$filepath"
+		if [ -e "$__filepath" ] && [ -L "$__filepath" ]; then
+			if [ "$1" == "-y" ]; then
+				rm -v "$__filepath"
 			else
-				rm -i -v "$filepath"
+				rm -i -v "$__filepath"
 			fi
 		fi
 	done
+	unset __filename
+	unset __filepath
 }
 
 copy_files() {
-	for filename in ${dotfiles_files[@]}; do
-		cp "$base_dir/files/$filename" "$HOME/$filename"
+	for __filename in ${dotfiles_files[@]}; do
+		cp "$base_dir/files/$__filename" "$HOME/$__filename"
 	done
+	unset __filename
 }
 
 remove_files() {
-	for filename in ${dotfiles_links[@]}; do
-		rm "$HOME/$filename"
+	for __filename in ${dotfiles_links[@]}; do
+		rm "$HOME/$__filename"
 	done
+	unset __filename
+}
+
+setup_config_links() {
+	for __config_path in $base_dir/config/*; do
+		SOURCE="$__config_path"
+		DEST="$HOME/.config/$(basename $__config_path)"
+
+		if [ "$1" == "-y" ]; then
+			ln -fsnv "$SOURCE" "$DEST"
+		else
+			ln -isnv "$SOURCE" "$DEST"
+		fi
+	done
+	unset __config_path
 }
 
 case $1 in
 	copy)
 		shift;
-		copy_files
+		copy_files "$@"
+		;;
+	config)
+		shift;
+		setup_config_links "$@"
 		;;
 	install)
 		shift;
-		create_symlink
+		create_symlink "$@"
 		;;
 	uninstall)
 		shift;
-		remove_symlink
+		remove_symlink "$@"
 		remove_files
 		;;
 	*)
@@ -81,11 +105,12 @@ case $1 in
 		echo
 		echo "  Commands:"
 		echo "    copy                     Copy static files"
+		echo "    config                   Create config symlinks"
 		echo "    install                  Create all dotfiles symlinks"
 		echo "    uninstall                Remove all dotfiles symlinks"
 		echo
 		echo "  Options:"
-		echo "      -y      Prevent prompt"
+		echo "      -y                     Prevent prompt"
 		;;
 esac
 
