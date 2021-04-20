@@ -3,6 +3,7 @@ filetype plugin indent on " required
 set rtp+=~/.fzf
 
 let mapleader=','
+let g:python3_host_prog = expand('~/.config/nvim/venv/bin/python3.9')
 
 " set timeoutlen=100
 
