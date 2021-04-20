@@ -34,9 +34,6 @@ set linebreak
 "" Interface
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
-colorscheme molokai_dark
-"colorscheme PaperColor
-" colorscheme falcon
 
 set termguicolors
 
@@ -69,3 +66,7 @@ set ignorecase
 set incsearch """ move cursor to search as you type
 set showmatch
 
+colorscheme molokai_dark
+" colorscheme molokai
+" colorscheme PaperColor
+" colorscheme falcon
