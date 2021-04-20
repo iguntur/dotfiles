@@ -5,7 +5,7 @@ let &packpath = &runtimepath
 "" Vim Plug (Plugin Manager)
 "" Make sure you use single quotes
 "" Specify a directory for plugins
-"" - For Neovim: stdpath('data') . '/plugged'
+"" - For Neovim: stdpath('data') . '/plugged' => ~/.local/share/nvim/plugged
 "" - Avoid using standard Vim directory names like 'plugin'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin(stdpath('data') . '/plugged')
@@ -40,13 +40,15 @@ Plug 'junegunn/limelight.vim'                   " Hyperfocus-writing in Vim.
 " Plug 'Xuyuanp/nerdtree-git-plugin' " (NERDTree) git status on sidebar
 
 " Vim Airline (powerline)
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'powerline/powerline'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Color Schema
 Plug 'flazz/vim-colorschemes'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'fenetikm/falcon'
+Plug 'ryanoasis/vim-devicons'
+" Plug 'fenetikm/falcon'
 
 
 " Switch color scheme
@@ -137,7 +139,6 @@ source ~/.vim/settings/function.vim
 source ~/.vim/settings/keymap.vim
 source ~/.vim/settings/plugin.vim
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Coc Extensions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -166,4 +167,3 @@ augroup at_end_of_vim_setup
 	autocmd VimEnter set winheight=999
 augroup END
 " }}}
-
