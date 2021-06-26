@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Get Operating System Platform
+# Darwin : MacOS Operating System
+# Linux  : Linux Operating System
+OS_PLATFORM="$(uname -s)"
+
 base_dir="$(cd `dirname $0` && pwd)"
 
 dotfiles_links=(
@@ -9,15 +14,12 @@ dotfiles_links=(
 	"bashrc"
 	"bash_profile"
 	"bootstrap"
-	"dircolors"
 	"gitattributes"
 	"gitconfig"
 	"gitignore"
 	"vimrc"
-	"Xmodmap"
 	"zshrc"
 	"tmux.conf"
-	"xinitrc"
 )
 
 dotfiles_files=(
