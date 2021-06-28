@@ -1,0 +1,201 @@
+#!/bin/bash
+
+load_source() {
+	[ -f "$1" ] && source "$1"
+}
+
+##
+## Check command exist
+##
+cmd_exists () {
+	command -v "$1" > /dev/null 2>&1;
+}
+
+if cmd_exists neofetch; then
+	neofetch
+elif cmd_exists screenfetch; then
+	screenfetch
+fi
+
+# Get Operating System Platform
+# Darwin : MacOS Operating System
+# Linux  : Linux Operating System
+export OS_PLATFORM="$(uname -s)"
+
+# bash : Bash Shell
+# zsh  : ZSH Shell
+export SHELL_NAME="$(basename $SHELL)"
+
+## GPG
+export GPG_TTY="$(tty)"
+
+
+################################################################################
+## Load our dotfiles
+## Use it to configure your PATH, this it being first in line.
+################################################################################
+load_source "$HOME/.dotfiles/autoload/main"
+
+
+################################################################################
+### Programming Language and Plugin Configurations #############################
+################################################################################
+
+################################################################################
+# Rust
+################################################################################
+load_source "$HOME/.cargo/env"
+
+
+################################################################################
+# OCaml - opam configuration
+################################################################################
+if [ $SHELL_NAME = "zsh" ]; then
+	load_source ${HOME}/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+elif [ $SHELL_NAME = "bash" ]; then
+	load_source ${HOME}/.opam/opam-init/init.bash > /dev/null 2> /dev/null || true
+fi
+
+
+################################################################################
+# Z
+################################################################################
+load_source "$(brew --prefix)/etc/profile.d/z.sh"
+
+
+################################################################################
+# FZF
+################################################################################
+if [ $SHELL_NAME = "zsh" ]; then
+	load_source "/usr/share/fzf/key-bindings.zsh"
+	load_source "/usr/share/fzf/completion.zsh"
+elif [ $SHELL_NAME = "bash" ]; then
+	load_source "/usr/share/fzf/key-bindings.bash"
+	load_source "/usr/share/fzf/completion.bash"
+fi
+
+
+################################################################################
+# NodeJS Version Manager (NVM)
+################################################################################
+# Install nvm from "homebrew".
+# brew install nvm
+
+export NVM_DIR="$HOME/.nvm"
+load_source "/usr/local/opt/nvm/nvm.sh"
+
+if [ $SHELL_NAME = "bash" ]; then
+	load_source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+fi
+
+
+################################################################################
+# Github CLI
+################################################################################
+if cmd_exists gh; then
+	case $SHELL_NAME in
+		bash) source <(gh completion --shell bash);;
+		zsh) source <(gh completion --shell zsh);;
+	esac
+fi
+
+
+################################################################################
+# Kubernetes
+################################################################################
+if cmd_exists minikube; then
+	case $SHELL_NAME in
+		bash) source <(minikube completion bash);;
+		zsh) source <(minikube completion zsh);;
+	esac
+fi
+
+if cmd_exists kubectl; then
+	case $SHELL_NAME in
+		bash) source <(kubectl completion bash);;
+		zsh) source <(kubectl completion zsh);;
+	esac
+fi
+
+
+
+################################################################################
+# Heroku - autocomplete setup
+################################################################################
+if [ $SHELL_NAME = "zsh" ]; then
+	HEROKU_AC_ZSH_SETUP_PATH=$HOME/.cache/heroku/autocomplete/zsh_setup
+	load_source $HEROKU_AC_ZSH_SETUP_PATH
+fi
+
+################################################################################
+# Ruby Version Management
+################################################################################
+load_source "/etc/profile.d/rvm.sh" # RVM (Ruby Version Management)
+
+################################################################################
+# Powerline Fonts
+################################################################################
+# if [ $SHELL_NAME = "zsh" ]; then
+# 	load_source "/usr/share/zsh/site-contrib/powerline.zsh"
+# fi
+
+
+################################################################################
+# more options here...
+################################################################################
+## Dropbox
+# export PATH="$PATH:$HOME/.dropbox-bin"
+
+## Anaconda
+# export PATH="$PATH:$HOME/anaconda3/bin"
+
+## Golang
+# if [ -f "$(which go)" ]; then
+# 	export GOPATH="$(go env GOPATH)"
+# 	export PATH="$PATH:$(go env GOPATH)/bin"
+# fi
+
+
+## Java
+# export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+# export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
+# export JAVA_HOME="/usr/lib/jvm/java-14-openjdk"
+# export PATH_TO_FX="$JAVA_HOME/lib"
+# export PATH="$PATH:$JAVA_HOME/bin"
+
+#export PATH="$PATH:$JAVA_HOME/db/bin"
+#export PATH="$PATH:$JAVA_HOME/jre/bin"
+#export PATH="$PATH:$HOME/.local/apache-maven/apache-maven-3.3.9/bin" # maven
+
+
+## Android and stuff
+## The React Native command line interface requires the "ANDROID_HOME" environment variable to be set up.
+## https://facebook.github.io/react-native/docs/getting-started.html#3-configure-the-android-home-environment-variable
+# export ANDROID_HOME="$HOME/Android/Sdk"
+# export PATH="$PATH:$ANDROID_HOME/tools"
+# export PATH="$PATH:$ANDROID_HOME/tools/bin"
+# export PATH="$PATH:$ANDROID_HOME/platform-tools"
+# export PATH="$PATH:$ANDROID_HOME/emulator"
+
+
+## PHP composer
+# export PATH="$PATH:$HOME/.config/composer/vendor/bin" # global packagist
+
+
+## Dart SDK
+# export PATH="$PATH:/usr/lib/dart/bin"
+
+
+
+##
+## Handling duplicate PATH
+##
+
+##   This is how you do it with AWK
+##
+##   Oneliners for Removing the duplicates in your $PATH
+##   http://linuxg.net/oneliners-for-removing-the-duplicates-in-your-path/
+##   for me, I'm using options 'three'
+##
+# export PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
+# export NODE_PATH=`echo -n $NODE_PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`

@@ -15,10 +15,10 @@ PS1='[\u@\h \W]\$ '
 
 
 ################################################################################
-# Bootstrap Environment
+# Bootstrap Dotfiles Environment
 ################################################################################
-if [ -f "$HOME/.dotfiles/bootstrap" ]; then
-	source "$HOME/.dotfiles/bootstrap"
+if [ -f "$HOME/.dotfiles/dotfilesrc" ]; then
+	source "$HOME/.dotfiles/dotfilesrc"
 fi
 
 ##

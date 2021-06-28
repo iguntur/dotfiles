@@ -4,6 +4,7 @@
 # ~/.bash_profile
 #
 
-[[ -f $HOME/.bashrc ]] && source $HOME/.bashrc
+export CLICOLOR=1
 
-[[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -- vt1
+# Load ".bashrc" if exists
+[[ -f $HOME/.bashrc ]] && source $HOME/.bashrc

@@ -8,18 +8,17 @@ OS_PLATFORM="$(uname -s)"
 base_dir="$(cd `dirname $0` && pwd)"
 
 dotfiles_links=(
-	"autoload"
-	"bin"
-	"vim"
+	## Shell
 	"bashrc"
-	"bash_profile"
-	"bootstrap"
-	"gitattributes"
+	"zshrc"
+	## Git
 	"gitconfig"
 	"gitignore"
-	"vimrc"
-	"zshrc"
-	"tmux.conf"
+	"gitattributes"
+	## Terminal Editor
+	# "vim"
+	# "vimrc"
+	# "tmux.conf"
 )
 
 dotfiles_files=(

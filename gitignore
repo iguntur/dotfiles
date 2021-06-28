@@ -15,9 +15,9 @@ $RECYCLE.BIN/
 ##
 ## Text editor and IDE
 ##
-/.idea
-/.vscode
-/nbproject
+.idea
+.vscode
+nbproject
 
 ##
 ## SublimeText

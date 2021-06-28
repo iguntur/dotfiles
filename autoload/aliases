@@ -19,8 +19,24 @@ alias h="cd ~ && clear"
 
 ##
 ## Easier lists files: ls, ls -al, etc
+## "gls" install from brew coreutils
+## "gdircolors" install from brew coreutils
 ##
+
+## enable color support of ls and also add handy aliases
+if cmd_exists gdircolors; then
+    test -r ~/.dotfiles/dircolors && eval "$(gdircolors -b ~/.dotfiles/dircolors)" || eval "$(gdircolors -b)"
+    alias ls='gls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+else
+	alias ls="gls"
+fi
+
 # alias ls="ls --color=tty"
+
+
 alias l="ls -Alh --group-directories-first"
 alias ll="ls -lh --group-directories-first"
 alias la="ls -alh --group-directories-first"
@@ -80,5 +96,3 @@ alias art="php artisan"
 ##
 ## System
 ##
-alias SP="sudo pacman"
-alias SS="sudo systemctl"

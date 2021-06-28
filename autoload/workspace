@@ -1,101 +1,25 @@
 #!/bin/bash
 
 ## Locale
-export LANG="en_US.UTF-8"
-export LANGUAGE="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
-export LC_COLLATE="C"
-export LC_CTYPE="en_US.UTF-8"
-export LC_TIME="en_US.UTF-8"
-
+# export LANG="en_US.UTF-8"
+# export LANGUAGE="en_US.UTF-8"
+# export LC_ALL="en_US.UTF-8"
+# export LC_COLLATE="C"
+# export LC_CTYPE="en_US.UTF-8"
+# export LC_TIME="en_US.UTF-8"
 
 ## User Registry
 export AUTHOR_NAME="Guntur Poetra"
 export AUTHOR_EMAIL="poetra.guntur@gmail.com"
+export AUTHOR_WEBSITE="https://gunturpoetra.com"
 export AUTHOR_GITHUB_URL="https://github.com/iguntur"
 
 ## export vim as default editor
 # export EDITOR="vim"
-export EDITOR="nvim"
+# export EDITOR="nvim"
 
 ## User font directory
-export FONTS_DIR="$HOME/.local/share/fonts"
+# export FONTS_DIR="$HOME/.local/share/fonts"
 
 ################################################################################
-export PATH="$PATH:$HOME/.local/bin"
-
-## GPG
-export GPG_TTY="$(tty)"
-
-## Dropbox
-export PATH="$PATH:$HOME/.dropbox-bin"
-
-## Anaconda
-export PATH="$PATH:$HOME/anaconda3/bin"
-
-## Golang
-if [ -f "$(which go)" ]; then
-	export GOPATH="$(go env GOPATH)"
-	export PATH="$PATH:$(go env GOPATH)/bin"
-fi
-
-
-## Java
-# export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
-# export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
-# export JAVA_HOME="/usr/lib/jvm/java-14-openjdk"
-export PATH_TO_FX="$JAVA_HOME/lib"
-export PATH="$PATH:$JAVA_HOME/bin"
-
-#export PATH="$PATH:$JAVA_HOME/db/bin"
-#export PATH="$PATH:$JAVA_HOME/jre/bin"
-#export PATH="$PATH:$HOME/.local/apache-maven/apache-maven-3.3.9/bin" # maven
-
-
-## Android and stuff
-## The React Native command line interface requires the "ANDROID_HOME" environment variable to be set up.
-## https://facebook.github.io/react-native/docs/getting-started.html#3-configure-the-android-home-environment-variable
-export ANDROID_HOME="$HOME/Android/Sdk"
-export PATH="$PATH:$ANDROID_HOME/tools"
-export PATH="$PATH:$ANDROID_HOME/tools/bin"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
-export PATH="$PATH:$ANDROID_HOME/emulator"
-
-
-## NPM (NodeJS)
-# export NPM_PACKAGES="${HOME}/.npm-packages"
-# export PATH="$PATH:$NPM_PACKAGES/bin" # global npm package
-
-
-## Rust (cargo)
-export PATH="$PATH:$HOME/.cargo/bin"
-
-
-## Node Version Manager
-# export N_PREFIX="$HOME/.local/share/node-version-manager"
-# export PATH="$PATH:$N_PREFIX/bin"
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-## PHP composer
-export PATH="$PATH:$HOME/.config/composer/vendor/bin" # global packagist
-
-
-## Dart SDK
-# export PATH="$PATH:/usr/lib/dart/bin"
-
-## Node.js (npm)
-#export PATH="$PATH:./node_modules/.bin"
-
-## PHP (composer packagist)
-# export PATH="$PATH:./vendor/bin"
-
-
-## Dotfiles
-export PATH="$PATH:$HOME/.dotfiles/bin"
-
-
-## Snap
-# export PATH="$PATH:/var/lib/snapd/snap/bin"
+# export PATH="$PATH:$HOME/.local/bin"

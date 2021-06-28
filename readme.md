@@ -10,7 +10,7 @@
 - [Prerequisites](#prerequisites)
   - [GIT](#git)
   - [ZSH](#zsh)
-  - [.oh-my-zsh](#oh-my-zsh)
+  - [Zinit](#zinit)
 - [Setup Dotfiles](#setup-dotfiles)
   - [Install](#install)
   - [Uninstall](#uninstall)
@@ -18,7 +18,6 @@
   - [Z](#z)
   - [Vim](#vim)
   - [Fuzy Finder](#fuzy-finder)
-  - [Powerline Fonts](#powerline-fonts)
 - [Miscellaneous](#miscellaneous)
   - [PHP Composer](#php-composer)
   - [Hub](#hub)
@@ -32,7 +31,7 @@
 ### [GIT](https://git-scm.com)
 
 ```console
-$ sudo pacman -S git
+$ brew install git
 ```
 
 ### [ZSH](https://www.zsh.org)
@@ -40,21 +39,13 @@ $ sudo pacman -S git
 > Also see [Installing ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
 
 ```console
-$ sudo pacman -S zsh
+$ brew install zsh
 ```
 
-### [.oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-
-#### curl <!-- omit in toc -->
+### [Zinit](https://github.com/zdharma/zinit)
 
 ```console
-$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-
-#### wget <!-- omit in toc -->
-
-```console
-$ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 ```
 
 ## Setup Dotfiles
@@ -64,14 +55,7 @@ $ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/
 ```console
 $ git clone git@github.com:iguntur/dotfiles.git $HOME/.dotfiles
 $ cd $HOME/.dotfiles
-$ git submodule update --init --recursive
 $ ./dotfile.sh install
-```
-
-[Zinit]()
-
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 ```
 
 Restart terminal.
@@ -88,15 +72,13 @@ $ ./dotfile.sh uninstall
 ### [Z](https://github.com/rupa/z)
 
 ```console
-$ sudo pacman -S z
-# or
-$ yay -S z-git
+$ brew install z
 ```
 
 ### Vim
 
 ```console
-$ sudo pacman -S vim neovim
+$ brew install vim neovim
 $ vim +PluginInstall +qall
 ```
 
@@ -111,33 +93,35 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 ### [Fuzy Finder](https://github.com/junegunn/fzf)
 
 ```console
-$ sudo pacman -S fzf
+$ brew install fzf
 ```
 
-### [Powerline Fonts](https://github.com/powerline/fonts)
+<!-- ### [Powerline Fonts](https://github.com/powerline/fonts)
 
 ```console
-$ sudo pacman -S powerline-fonts powerline-vim vim-airline
-```
+$ brew install powerline-fonts powerline-vim vim-airline
+``` -->
 
 ### [Bat](https://github.com/sharkdp/bat) <!-- omit in toc -->
 
 ```console
-$ sudo pacman -S bat
+$ brew install bat
 ```
 
 ## Miscellaneous
 
 ```console
-$ sudo pacman -S highlight
-$ sudo pacman -S python-pipenv
-$ sudo pacman -S diff-so-fancy
+$ brew install tree
+$ brew install exa
+$ brew install highlight
+$ brew install diff-so-fancy
+$ brew install pipenv
 ```
 
 ### [PHP Composer](https://getcomposer.org/)
 
 ```console
-$ sudo pacman -S composer
+$ brew install composer
 ```
 
 ### [Hub](https://github.com/github/hub)
@@ -145,7 +129,7 @@ $ sudo pacman -S composer
 Github extended for `git` CLI.
 
 ```console
-$ sudo pacman -S hub
+$ brew install hub
 $ hub --version
 ```
 
@@ -165,18 +149,8 @@ $ python updateHostsFile.py
 
 ## TODO
 
--   [ ] How to setup Xmodmap (Custom Keyboard Layout Map)
--   [ ] Setup xorg keyboard detection code
--   [ ] How to configure QTile - Tiling window manager
--   [ ] How to configure mouse trackpad (single/double/triple touch), or possible with gesture (zoom pinch, slide)
--   [ ] How to configure `fn` key on keyboard.
-        This key for controlling volume audio, screen brightness, keyboard led brightness, etc.
--   [ ] How to configure `dmenu`
--   [ ] How to configure xorg-sessions
--   [ ] ...
--   [ ] ...
 -   [ ] ...
 
 ## License <!-- omit in toc -->
 
-[MIT](https://opensource.org/licenses/MIT) © [Guntur Poetra](https://github.com/iguntur)
+[MIT](https://opensource.org/licenses/MIT) © [Guntur Poetra](https://gunturpoetra.com)

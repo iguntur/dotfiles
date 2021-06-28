@@ -12,8 +12,8 @@ if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
 fi
 
 source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+# autoload -Uz _zinit
+# (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
@@ -61,7 +61,8 @@ zinit snippet OMZP::git; zinit cdclear -q # <- forget completions provided up to
 zinit snippet OMZP::npm
 zinit snippet OMZP::pip
 
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
 
 
 ################################################################################
@@ -107,10 +108,10 @@ export KEYTIMEOUT=1
 
 
 ################################################################################
-# Bootstrap Environment
+# Bootstrap Dotfiles Environment
 ################################################################################
-if [ -f "$HOME/.dotfiles/bootstrap" ]; then
-	source "$HOME/.dotfiles/bootstrap"
+if [ -f "$HOME/.dotfiles/dotfilesrc" ]; then
+	source "$HOME/.dotfiles/dotfilesrc"
 fi
 
 

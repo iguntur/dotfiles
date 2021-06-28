@@ -1,45 +1,24 @@
 #!/bin/bash
 
+DOT_FILES="$HOME/.dotfiles/autoload"
 DOT_EXTRA="$HOME/.dotfiles/extra"
-
-load_source() {
-	[ -f "$1" ] && source "$1"
-}
 
 
 ## secret key
 load_source "$DOT_EXTRA/secret"
 
 ## environment PATH
-load_source "$HOME/.autoload/workspace"
+load_source "$DOT_FILES/workspace"
 load_source "$DOT_EXTRA/workspace"
 
 ## function
-load_source "$HOME/.autoload/function"
+load_source "$DOT_FILES/function"
 load_source "$DOT_EXTRA/function"
 
 ## aliases
-load_source "$HOME/.autoload/aliases"
+load_source "$DOT_FILES/aliases"
 load_source "$DOT_EXTRA/aliases"
 
-## utils, etc...
-load_source "$HOME/.autoload/lscolor" # ls color
+## misc
 load_source "$DOT_EXTRA/utils"
-load_source "/etc/profile.d/rvm.sh" # RVM (Ruby Version Management)
-
 load_source "$DOT_EXTRA/misc"
-
-load_source "$HOME/.cargo/env"
-
-##
-## Handling duplicate PATH
-##
-
-##   This is how you do it with AWK
-##
-##   Oneliners for Removing the duplicates in your $PATH
-##   http://linuxg.net/oneliners-for-removing-the-duplicates-in-your-path/
-##   for me, I'm using options 'three'
-##
-# export PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
-# export NODE_PATH=`echo -n $NODE_PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
