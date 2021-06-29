@@ -51,6 +51,11 @@ alias cl="clear && la" # clear terminal and show list FILEs
 alias where="which" # :)
 
 ##
+## GIT
+##
+alias g="git"
+
+##
 ## Disable default keyboard
 ##
 # alias dk="xinput float $(xinput list | grep AT | grep id= | cut -f 2 | cut -f 2 -d =)"
