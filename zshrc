@@ -57,33 +57,32 @@ zinit snippet OMZL::key-bindings.zsh
 zinit snippet OMZL::git.zsh
 
 # (OMZP) Oh My Zsh Plugins
-zinit snippet OMZP::git; zinit cdclear -q # <- forget completions provided up to this moment
-zinit snippet OMZP::npm
-zinit snippet OMZP::pip
+# zinit snippet OMZP::git; zinit cdclear -q # <- forget completions provided up to this moment
+# zinit snippet OMZP::npm
+# zinit snippet OMZP::pip
 
-zinit ice depth=1
-zinit light romkatv/powerlevel10k
 
+zinit ice; zinit light romkatv/powerlevel10k
+
+# Docker compose
+# zinit ice from"gh-r" as"program" mv"docker* -> docker-compose"
+# zinit load docker/compose
 
 ################################################################################
 # Prepare
 ################################################################################
-
 [ -d "$HOME/.zfunc" ] && fpath+="$HOME/.zfunc"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
 ################################################################################
 # Load Plugin
 ################################################################################
 autoload -Uz compinit
-if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
-	compinit;
-else
-	compinit -C;
-fi;
+compinit -i
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ################################################################################
 
 ################################################################################
