@@ -11,11 +11,13 @@ cmd_exists () {
 	command -v "$1" > /dev/null 2>&1;
 }
 
-if cmd_exists neofetch; then
-	neofetch
-elif cmd_exists screenfetch; then
-	screenfetch
-fi
+export DF_PATH="${HOME}/.dotfiles"
+
+# if cmd_exists neofetch; then
+# 	neofetch
+# elif cmd_exists screenfetch; then
+# 	screenfetch
+# fi
 
 # Get Operating System Platform
 # Darwin : MacOS Operating System
