@@ -3,7 +3,6 @@
 DOT_FILES="$HOME/.dotfiles/autoload"
 DOT_EXTRA="$HOME/.dotfiles/extra"
 
-
 ## secret key
 load_source "$DOT_EXTRA/secret"
 

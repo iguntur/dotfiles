@@ -25,17 +25,16 @@ alias h="cd ~ && clear"
 
 ## enable color support of ls and also add handy aliases
 if cmd_exists gdircolors; then
-    test -r ~/.dotfiles/dircolors && eval "$(gdircolors -b ~/.dotfiles/dircolors)" || eval "$(gdircolors -b)"
-    alias ls='gls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+	test -r ~/.dotfiles/dircolors && eval "$(gdircolors -b ~/.dotfiles/dircolors)" || eval "$(gdircolors -b)"
+	alias ls='gls --color=auto'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
 else
 	alias ls="gls"
 fi
 
 # alias ls="ls --color=tty"
-
 
 alias l="ls -Alh --group-directories-first"
 alias ll="ls -lh --group-directories-first"
@@ -45,10 +44,10 @@ alias ld="ls -Alhd */" # only directories
 ##
 ## Easier common functions
 ##
-alias q="exit" # exit terminal
-alias c="clear" # clear terminal
+alias q="exit"         # exit terminal
+alias c="clear"        # clear terminal
 alias cl="clear && la" # clear terminal and show list FILEs
-alias where="which" # :)
+alias where="which"    # :)
 
 ##
 ## GIT
@@ -96,7 +95,6 @@ alias py-serve="python -m SimpleHTTPServer"
 ## PHP Laravel
 ##
 alias art="php artisan"
-
 
 ##
 ## System

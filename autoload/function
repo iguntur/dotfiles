@@ -30,7 +30,7 @@
 ##
 ## Sourcing file if it exists
 ##
-source_if_exists () {
+source_if_exists() {
 	source_file=$1
 
 	if [ -f "$source_file" ]; then
@@ -39,19 +39,17 @@ source_if_exists () {
 	fi
 }
 
-
 ##
 ## Trim Whitespace
 ##
-trim () {
+trim() {
 	sed -e 's/^[[:space:]]*//' "$@"
 }
-
 
 ##
 ## Download file using Curl
 ##
-download_file () {
+download_file() {
 	if cmd_exists curl; then
 		curl -L -O -C - "$@"
 	else
@@ -59,7 +57,6 @@ download_file () {
 		exit 1
 	fi
 }
-
 
 ## Open
 # open () {
@@ -73,29 +70,29 @@ download_file () {
 ##
 ## make directorie
 ##
-mkd () {
+mkd() {
 	mkdir -p "$@"
 }
 
 ##
 ## make directorie and enter it
 ##
-mkcd () {
+mkcd() {
 	mkdir -p "$@" && cd "$@"
 }
 
 ##
 ## find shorthand
 ##
-f () {
+f() {
 	find . -name "$1" 2>&1 | grep -v 'Permission denied'
 }
 
 ##
 ## List all files, long format, colorized, permissions in octal
 ##
-lla () {
-	ls -l  "$@" | awk '
+lla() {
+	ls -l "$@" | awk '
 	{
 	  k=0;
 	  for (i=0;i<=8;i++)
@@ -109,16 +106,16 @@ lla () {
 ##
 ## Copy w/ progress
 ##
-cp_p () {
-  rsync -WavP --human-readable --progress $1 $2
+cp_p() {
+	rsync -WavP --human-readable --progress $1 $2
 }
 
 ##
 ## whois a domain or a URL
 ##
-whois () {
+whois() {
 	local domain=$(echo "$1" | awk -F/ '{print $3}') # get domain from URL
-	if [ -z $domain ] ; then
+	if [ -z $domain ]; then
 		domain=$1
 	fi
 	echo "Getting whois record for: $domain …"
@@ -132,16 +129,15 @@ whois () {
 ##
 ## tree directorie
 ##
-tree () {
-	if [ -z "$1" ]; then
-		/usr/bin/tree --dirsfirst -L 1 "$@"
-	else
-		/usr/bin/tree --dirsfirst "$@"
-	fi
-}
+# tree () {
+# 	if [ -z "$1" ]; then
+# 		/usr/bin/tree --dirsfirst -L 1 "$@"
+# 	else
+# 		/usr/bin/tree --dirsfirst "$@"
+# 	fi
+# }
 
-
-lx () {
+lx() {
 	if cmd_exists exa; then
 		exa -Tgalh \
 			--git \
@@ -155,7 +151,7 @@ lx () {
 	fi
 }
 
-pip_install_save () {
+pip_install_save() {
 	package_name=$1
 	requirements_file=$2
 
@@ -163,38 +159,35 @@ pip_install_save () {
 		requirements_file='./requirements.txt'
 	fi
 
-	pip install $package_name && pip freeze | grep -i $package_name >> $requirements_file
+	pip install $package_name && pip freeze | grep -i $package_name >>$requirements_file
 }
 
 # Stop all docker container
 # Remove all docker container, volume, network
-ddd_docker () {
+ddd_docker() {
 	echo "Stop container $(docker ps -aq)"
 	echo "docker container stop $(docker ps -aq)"
-	docker container stop $(docker ps -aq) > /dev/null 2>&1 &&
-
-	echo
+	docker container stop $(docker ps -aq) >/dev/null 2>&1 &&
+		echo
 
 	echo "docker container prune --force"
 	docker container prune --force &&
-
-	echo "docker network prune --force"
+		echo "docker network prune --force"
 	docker network prune --force &&
-
-	echo "docker volume prune --force"
+		echo "docker volume prune --force"
 	docker volume prune --force
 
 	echo "Done"
 }
 
-mtmp () {
+mtmp() {
 	mkdir -p /tmp/$(openssl rand -hex 12) && cd $_
 }
 
 ##
 ## TMUX
 ##
-tns () {
+tns() {
 	if [ "$1" = "-s" ]; then
 		tmux new "$@"
 	else
@@ -203,12 +196,11 @@ tns () {
 	fi
 }
 
-
 ##
 ## Open file in current git status using Neovim
 ##
-vg () {
-	if git rev-parse --git-dir > /dev/null 2>&1; then
+vg() {
+	if git rev-parse --git-dir >/dev/null 2>&1; then
 		nvim $(git status --porcelain --untracked-files=all | sed /^.D/d | sed s/...// | fzf --height 100% --preview 'bat --style=numbers --color=always --line-range :500 {}')
 	else
 		git rev-parse --git-dir
@@ -218,19 +210,18 @@ vg () {
 ##
 ## Open file in the current directorie using Neovim
 ##
-vf () {
+vf() {
 	nvim $(fzf --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
 }
-
 
 ##
 ## Show Keyboard Keysym
 ##
-keys () {
+keys() {
 	## Docs: https://wiki.archlinux.org/index.php/Keyboard_input#Identifying_keycodes
 	xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 }
 
-fileperms () {
+fileperms() {
 	stat -c '%a - %n' "$@"
 }

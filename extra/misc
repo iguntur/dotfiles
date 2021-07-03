@@ -13,5 +13,4 @@ export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-ran
 # To apply the command to ALT-C as well
 # export FZF_ALT_C_OPTS="--exclude .git"
 
-
 GATSBY_TELEMETRY_DISABLED=1

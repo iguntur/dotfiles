@@ -8,4 +8,3 @@
 # Golang
 export GOPRIVATE=github.com/iguntur/*
 export GH_PRIVATE_TOKEN=b27678e900cf241a77661bd9e11feb416594462d
-
