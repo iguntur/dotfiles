@@ -5,10 +5,11 @@
 # Linux  : Linux Operating System
 OS_PLATFORM="$(uname -s)"
 
-base_dir="$(cd `dirname $0` && pwd)"
+base_dir="$(cd $(dirname $0) && pwd)"
 
 dotfiles_links=(
 	## Shell
+	"bash_profile"
 	"bashrc"
 	"zshrc"
 	## Git
@@ -84,35 +85,35 @@ setup_config_links() {
 }
 
 case $1 in
-	copy)
-		shift;
-		copy_files "$@"
-		;;
-	config)
-		shift;
-		setup_config_links "$@"
-		;;
-	install)
-		shift;
-		create_symlink "$@"
-		;;
-	uninstall)
-		shift;
-		remove_symlink "$@"
-		remove_files
-		;;
-	*)
-		echo "  ./dotfile.sh <command> [options]"
-		echo
-		echo "  Commands:"
-		echo "    copy                     Copy static files"
-		echo "    config                   Create config symlinks"
-		echo "    install                  Create all dotfiles symlinks"
-		echo "    uninstall                Remove all dotfiles symlinks"
-		echo
-		echo "  Options:"
-		echo "      -y                     Prevent prompt"
-		;;
+copy)
+	shift
+	copy_files "$@"
+	;;
+config)
+	shift
+	setup_config_links "$@"
+	;;
+install)
+	shift
+	create_symlink "$@"
+	;;
+uninstall)
+	shift
+	remove_symlink "$@"
+	remove_files
+	;;
+*)
+	echo "  ./dotfile.sh <command> [options]"
+	echo
+	echo "  Commands:"
+	echo "    copy                     Copy static files"
+	echo "    config                   Create config symlinks"
+	echo "    install                  Create all dotfiles symlinks"
+	echo "    uninstall                Remove all dotfiles symlinks"
+	echo
+	echo "  Options:"
+	echo "      -y                     Prevent prompt"
+	;;
 esac
 
 exit 0
