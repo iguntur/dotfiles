@@ -107,13 +107,17 @@ export KEYTIMEOUT=1
 
 
 ################################################################################
+# iTerm2 Shell Integration
+################################################################################
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+################################################################################
 # Bootstrap Dotfiles Environment
 ################################################################################
 if [ -f "$HOME/.dotfiles/dotfilesrc" ]; then
 	source "$HOME/.dotfiles/dotfilesrc"
 fi
-
-
 
 ##
 ## more options here...
