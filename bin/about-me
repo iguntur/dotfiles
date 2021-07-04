@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cat <<- EOF
+{
+	"nama":      "$AUTHOR_NAME",
+	"email":     "$AUTHOR_EMAIL",
+	"website":   "$AUTHOR_WEBSITE",
+	"github":    "$AUTHOR_GITHUB_URL",
+	"pekerjaan": "Software Engineer",
+	"bahasa": ["C#", "Go", "Python", "Javascript", "NodeJS", "Java", "PHP"],
+	"alamat": ["Leok II", "Dunia Maya. Ooopss 😂"]
+}
+EOF
