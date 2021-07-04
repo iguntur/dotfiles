@@ -35,6 +35,7 @@
 	reinit = !rm -rf .git && git init && git add --all && git commit --gpg-sign --message=':rocket: Initial Commit'
 	rehead = !git update-ref -d HEAD && git add --all && git commit --gpg-sign --message=':rocket: Initial Commit'
 	nah = !git reset --hard && git clean -df
+	rv = remote --verbose
 
 [color]
 	ui = true
