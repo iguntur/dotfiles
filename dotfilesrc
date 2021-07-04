@@ -13,9 +13,37 @@ load_source "$HOME/.dotfiles/autoload/main"
 ################################################################################
 
 ################################################################################
+# FZF
+################################################################################
+load_source "${HOME}/.fzf.$SHELL_NAME"
+
+################################################################################
+# Z
+################################################################################
+load_source "$(brew --prefix)/etc/profile.d/z.sh"
+
+################################################################################
+# Github CLI
+################################################################################
+if cmd_exists gh; then
+	case $SHELL_NAME in
+	bash) source <(gh completion --shell bash) ;;
+	zsh) source <(gh completion --shell zsh) ;;
+	esac
+fi
+
+################################################################################
 # Rust
 ################################################################################
 load_source "$HOME/.cargo/env"
+
+################################################################################
+# Golang
+################################################################################
+if cmd_exists go; then
+	export GOPATH="$(go env GOPATH)"
+	export PATH="$PATH:$(go env GOPATH)/bin"
+fi
 
 ################################################################################
 # OCaml - opam configuration
@@ -25,16 +53,6 @@ load_source "$HOME/.cargo/env"
 # elif [ $SHELL_NAME = "bash" ]; then
 # 	load_source ${HOME}/.opam/opam-init/init.bash > /dev/null 2> /dev/null || true
 # fi
-
-################################################################################
-# Z
-################################################################################
-load_source "$(brew --prefix)/etc/profile.d/z.sh"
-
-################################################################################
-# FZF
-################################################################################
-load_source "~/.fzf.$SHELL_NAME"
 
 ################################################################################
 # NodeJS Version Manager (NVM)
@@ -53,16 +71,6 @@ fi
 # Auto detect and use node version
 # https://github.com/nvm-sh/nvm#deeper-shell-integration
 load_source "$DF_PATH/lib/nvmrc_$SHELL_NAME"
-
-################################################################################
-# Github CLI
-################################################################################
-if cmd_exists gh; then
-	case $SHELL_NAME in
-	bash) source <(gh completion --shell bash) ;;
-	zsh) source <(gh completion --shell zsh) ;;
-	esac
-fi
 
 ################################################################################
 # Docker
@@ -115,12 +123,6 @@ fi
 ## Anaconda
 # export PATH="$PATH:$HOME/anaconda3/bin"
 
-## Golang
-# if [ -f "$(which go)" ]; then
-# 	export GOPATH="$(go env GOPATH)"
-# 	export PATH="$PATH:$(go env GOPATH)/bin"
-# fi
-
 ## Java
 # export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 # export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
@@ -146,6 +148,8 @@ fi
 
 ## Dart SDK
 # export PATH="$PATH:/usr/lib/dart/bin"
+
+export PATH="$PATH:$DF_PATH/bin"
 
 ##
 ## Handling duplicate PATH

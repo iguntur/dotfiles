@@ -162,26 +162,12 @@ pip_install_save() {
 	pip install $package_name && pip freeze | grep -i $package_name >>$requirements_file
 }
 
-# Stop all docker container
-# Remove all docker container, volume, network
-ddd_docker() {
-	echo "Stop container $(docker ps -aq)"
-	echo "docker container stop $(docker ps -aq)"
-	docker container stop $(docker ps -aq) >/dev/null 2>&1 &&
-		echo
-
-	echo "docker container prune --force"
-	docker container prune --force &&
-		echo "docker network prune --force"
-	docker network prune --force &&
-		echo "docker volume prune --force"
-	docker volume prune --force
-
-	echo "Done"
-}
-
 mtmp() {
-	mkdir -p /tmp/$(openssl rand -hex 12) && cd $_
+	if [ "$OS_PLATFORM" = "darwin" ]; then
+		mkdir -p "$TMPDIR/$(openssl rand -hex 12)" && cd $_
+	elif [ "$OS_PLATFORM" = "linux" ]; then
+		mkdir -p /tmp/$(openssl rand -hex 12) && cd $_
+	fi
 }
 
 ##
