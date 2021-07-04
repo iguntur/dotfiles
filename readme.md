@@ -8,27 +8,28 @@
 ## Contents <!-- omit in toc -->
 
 - [Prerequisites](#prerequisites)
-  - [GIT](#git)
+  - [Brew](#brew)
+  - [Git](#git)
   - [ZSH](#zsh)
-  - [Zinit](#zinit)
-- [Setup Dotfiles](#setup-dotfiles)
-  - [Install](#install)
-  - [Uninstall](#uninstall)
-- [Plugins](#plugins)
-  - [Z](#z)
-  - [Vim](#vim)
-  - [Fuzy Finder](#fuzy-finder)
-- [Miscellaneous](#miscellaneous)
-  - [PHP Composer](#php-composer)
-  - [Hub](#hub)
-  - [Hosts](#hosts)
-- [TODO](#todo)
+- [Installations](#installations)
+  - [Dependencies](#dependencies)
+  - [Dotfiles](#dotfiles)
 
 ---
 
 ## Prerequisites
 
-### [GIT](https://git-scm.com)
+```console
+$ xcode-select --install
+```
+
+### [Brew](https://brew.sh)
+
+```console
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### [Git](https://git-scm.com)
 
 ```console
 $ brew install git
@@ -42,114 +43,50 @@ $ brew install git
 $ brew install zsh
 ```
 
-### [Zinit](https://github.com/zdharma/zinit)
+## Installations
+
+```console
+$ git clone git@github.com:iguntur/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles
+```
+
+### Dependencies
+
+#### [Zinit](https://github.com/zdharma/zinit) <!-- omit in toc -->
 
 ```console
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 ```
 
-## Setup Dotfiles
-
-### Install
-
 ```console
-$ git clone git@github.com:iguntur/dotfiles.git $HOME/.dotfiles
-$ cd $HOME/.dotfiles
-$ ./dotfile.sh install
+$ ./scripts/setup-essentials.sh
+$ ./scripts/setup-fonts.sh
+$ ./scripts/configure.sh
 ```
 
-Restart terminal.
-
-### Uninstall
+### Dotfiles
 
 ```console
-$ cd $HOME/.dotfiles
-$ ./dotfile.sh uninstall
+$ ./setup install-symlinks
 ```
 
-## Plugins
-
-### [Z](https://github.com/rupa/z)
-
 ```console
-$ brew install z
+$ ./setup
+  ./setup <command> [options]
+
+  Commands:
+    install-files            Copy static files
+    install-config           Create config symlinks
+    install-symlinks         Create all dotfiles symlinks
+    clean-all                Remove all dotfiles symlinks
+
+  Options:
+      -y                     Prevent prompt
 ```
 
-### Vim
+☕️ **Restart Terminal**
 
-```console
-$ brew install vim neovim
-$ vim +PluginInstall +qall
-```
-
-#### Vim Plugin Manager <!-- omit in toc -->
-
-See: https://github.com/junegunn/vim-plug
-
-```console
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-### [Fuzy Finder](https://github.com/junegunn/fzf)
-
-```console
-$ brew install fzf
-```
-
-<!-- ### [Powerline Fonts](https://github.com/powerline/fonts)
-
-```console
-$ brew install powerline-fonts powerline-vim vim-airline
-``` -->
-
-### [Bat](https://github.com/sharkdp/bat) <!-- omit in toc -->
-
-```console
-$ brew install bat
-```
-
-## Miscellaneous
-
-```console
-$ brew install tree
-$ brew install exa
-$ brew install highlight
-$ brew install diff-so-fancy
-$ brew install pipenv
-```
-
-### [PHP Composer](https://getcomposer.org/)
-
-```console
-$ brew install composer
-```
-
-### [Hub](https://github.com/github/hub)
-
-Github extended for `git` CLI.
-
-```console
-$ brew install hub
-$ hub --version
-```
-
-### [Hosts](https://github.com/StevenBlack/hosts)
-
-Extending and consolidating hosts files from several well-curated sources like adaway.org, mvps.org, malwaredomainlist.com, someonewhocares.org, and potentially others. You can optionally invoke extensions to block additional sites by category.
-
-```console
-$ git clone https://github.com/StevenBlack/hosts.git /tmp/tweak-hosts
-$ cd /tmp/tweak-hosts
-$ python -m venv venv
-$ source venv/bin/activate
-$ pip install --upgrade pip
-$ pip install -r requirements.txt
-$ python updateHostsFile.py
-```
-
-## TODO
-
--   [ ] ...
+---
 
 ## License <!-- omit in toc -->
 
