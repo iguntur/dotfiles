@@ -84,31 +84,31 @@ setup_config_links() {
 }
 
 case $1 in
-copy)
+install-files)
 	shift
 	copy_files "$@"
 	;;
-config)
+install-config)
 	shift
 	setup_config_links "$@"
 	;;
-install)
+install-symlinks)
 	shift
 	create_symlink "$@"
 	;;
-uninstall)
+clean-all)
 	shift
 	remove_symlink "$@"
 	remove_files
 	;;
 *)
-	echo "  ./dotfile.sh <command> [options]"
+	echo "  ./setup <command> [options]"
 	echo
 	echo "  Commands:"
-	echo "    copy                     Copy static files"
-	echo "    config                   Create config symlinks"
-	echo "    install                  Create all dotfiles symlinks"
-	echo "    uninstall                Remove all dotfiles symlinks"
+	echo "    install-files            Copy static files"
+	echo "    install-config           Create config symlinks"
+	echo "    install-symlinks         Create all dotfiles symlinks"
+	echo "    clean-all                Remove all dotfiles symlinks"
 	echo
 	echo "  Options:"
 	echo "      -y                     Prevent prompt"
