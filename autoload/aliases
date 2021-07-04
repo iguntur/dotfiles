@@ -99,3 +99,6 @@ alias art="php artisan"
 ##
 ## System
 ##
+
+alias BU="brew update"
+alias BUBU="brew update && brew upgrade"
