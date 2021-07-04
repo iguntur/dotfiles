@@ -1,36 +1,6 @@
 #!/bin/bash
 
-load_source() {
-	[ -f "$1" ] && source "$1"
-}
-
-##
-## Check command exist
-##
-cmd_exists() {
-	command -v "$1" >/dev/null 2>&1
-}
-
-export DF_PATH="${HOME}/.dotfiles"
-
-# if cmd_exists neofetch; then
-# 	neofetch
-# elif cmd_exists screenfetch; then
-# 	screenfetch
-# fi
-
-# Get Operating System Platform
-# Darwin : MacOS Operating System
-# Linux  : Linux Operating System
-export OS_PLATFORM="$(uname -s)"
-
-# bash : Bash Shell
-# zsh  : ZSH Shell
-export SHELL_NAME="$(basename $SHELL)"
-
-## GPG
-# export GPG_TTY="$(tty)"
-export GPG_TTY="$TTY"
+source "$HOME/.dotfiles/global-def"
 
 ################################################################################
 ## Load our dotfiles

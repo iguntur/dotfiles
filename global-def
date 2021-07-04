@@ -1,0 +1,30 @@
+#!/bin/bash
+
+export DF_PATH="${HOME}/.dotfiles"
+
+# Get Operating System Platform
+# darwin : MacOS Operating System
+# linux  : Linux Operating System
+export OS_PLATFORM="$(uname -s | tr '[:upper:]' '[:lower:]')"
+
+# bash : Bash Shell
+# zsh  : ZSH Shell
+export SHELL_NAME="$(basename $SHELL | tr '[:upper:]' '[:lower:]')"
+
+## GPG
+# export GPG_TTY="$(tty)"
+export GPG_TTY="$TTY"
+
+##
+## Source file if exist
+##
+load_source() {
+	[ -f "$1" ] && source "$1"
+}
+
+##
+## Check command exist
+##
+cmd_exists() {
+	command -v "$1" >/dev/null 2>&1
+}

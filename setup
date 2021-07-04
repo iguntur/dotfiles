@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# Get Operating System Platform
-# Darwin : MacOS Operating System
-# Linux  : Linux Operating System
-OS_PLATFORM="$(uname -s)"
+source "$HOME/.dotfiles/global-def"
+
+###
 
 base_dir="$(cd $(dirname $0) && pwd)"
 
