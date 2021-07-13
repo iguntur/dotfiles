@@ -1,0 +1,36 @@
+#!/bin/bash
+
+source "$DF_PATH/lib/functions"
+
+_default_email="poetra.guntur@gmail.com"
+_default_comments="local"
+
+echo " > [info]: ssh key location ~/.ssh/<filename>"
+read -p " > [?]: set ssh private key filename: " _ssh_filename
+
+if [ -z "$_ssh_filename" ]; then
+	echo " > [canceled]: please input the filename"
+	exit 1
+fi
+
+read -p " > [?]: email address (default: $_default_email): " _email
+
+if [ -z "$_email" ]; then
+	_email="$_default_email"
+fi
+
+read -p " > [?]: comments (default: $_default_comments): " _comments
+
+if [ -z "$_comments" ]; then
+	_comments="$_default_comments"
+fi
+
+_comments="$_comments <$_email>"
+
+echo
+echo " > [exec]: ssh-keygen -o -a 128 -t ed25519 -C \"$_comments\" -f ~/.ssh/$_ssh_filename"
+
+_prompt_continue
+
+echo
+ssh-keygen -o -a 128 -t ed25519 -C "$_comments" -f ~/.ssh/$_ssh_filename
