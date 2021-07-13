@@ -7,6 +7,3 @@
 
 # Golang
 export GOPRIVATE=github.com/iguntur/*
-export GH_PRIVATE_TOKEN=
-
-export SECURE_ENV_SECRET=
