@@ -1,0 +1,97 @@
+#!/bin/bash
+
+##
+## Software Development KIT (SDK)
+##   SDK and environment for programming language
+##   CLI integration for programming language
+##
+
+################################################################################
+# Rust
+################################################################################
+load_source "$HOME/.cargo/env"
+
+################################################################################
+# Golang
+################################################################################
+if cmd_exists go; then
+	export GOPATH="$(go env GOPATH)"
+	export PATH="$PATH:$(go env GOPATH)/bin"
+fi
+
+################################################################################
+# Python and Stuff
+################################################################################
+## Anaconda
+# export PATH="$PATH:$HOME/anaconda3/bin"
+
+################################################################################
+# OCaml - opam configuration
+################################################################################
+# if [ $SHELL_NAME = "zsh" ]; then
+# 	load_source ${HOME}/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# elif [ $SHELL_NAME = "bash" ]; then
+# 	load_source ${HOME}/.opam/opam-init/init.bash > /dev/null 2> /dev/null || true
+# fi
+
+################################################################################
+# Ruby
+################################################################################
+## Ruby Version Manager (rvm)
+# load_source "/etc/profile.d/rvm.sh" # RVM (Ruby Version Management)
+
+################################################################################
+# NodeJS Version Manager (NVM)
+## Install nvm from "homebrew".
+## brew install nvm
+################################################################################
+export NVM_DIR="$HOME/.nvm"
+load_source "$(brew --prefix)/opt/nvm/nvm.sh"
+
+if [ $SHELL_NAME = "bash" ]; then
+	# This loads nvm bash_completion
+	load_source "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
+fi
+
+# Auto detect and use node version
+# https://github.com/nvm-sh/nvm#deeper-shell-integration
+load_source "$DF_PATH/lib/nvmrc_$SHELL_NAME"
+
+################################################################################
+# Java
+################################################################################
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home"
+# export JAVA_HOME="/Users/guntur/Env/java/jdk-16.jdk/Contents/Home"
+export PATH="$PATH:$JAVA_HOME/bin"
+# export PATH_TO_FX="$JAVA_HOME/lib"
+# export PATH="$PATH:$JAVA_HOME/db/bin"
+# export PATH="$PATH:$JAVA_HOME/jre/bin"
+
+# maven
+# export PATH="$PATH:$HOME/.local/apache-maven/apache-maven-3.3.9/bin"
+
+## Android and stuff
+## The React Native command line interface requires the "ANDROID_HOME" environment variable to be set up.
+## https://facebook.github.io/react-native/docs/getting-started.html#3-configure-the-android-home-environment-variable
+# export ANDROID_HOME="$HOME/Android/Sdk"
+# export PATH="$PATH:$ANDROID_HOME/tools"
+# export PATH="$PATH:$ANDROID_HOME/tools/bin"
+# export PATH="$PATH:$ANDROID_HOME/platform-tools"
+# export PATH="$PATH:$ANDROID_HOME/emulator"
+
+################################################################################
+# Dart SDK
+################################################################################
+# export PATH="$PATH:/usr/lib/dart/bin"
+
+################################################################################
+# Flutter
+################################################################################
+FLUTTER_SDK="/Users/guntur/Env/flutter/flutter-2.2.3"
+export PATH="$PATH:$FLUTTER_SDK/bin"
+
+################################################################################
+# PHP
+################################################################################
+## Composer
+# brew install composer

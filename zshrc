@@ -6,9 +6,9 @@
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
 	print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
 	command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-	command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-      print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-      print -P "%F{160}▓▒░ The clone has failed.%f%b"
+	command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" &&
+		print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" ||
+		print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 
 source "$HOME/.zinit/bin/zinit.zsh"
@@ -18,9 +18,9 @@ source "$HOME/.zinit/bin/zinit.zsh"
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-bin-gem-node
+	zinit-zsh/z-a-as-monitor \
+	zinit-zsh/z-a-patch-dl \
+	zinit-zsh/z-a-bin-gem-node
 
 ### End of Zinit's installer chunk
 ################################################################################
@@ -34,7 +34,6 @@ zinit light-mode for \
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 
 ################################################################################
 # Init Plugins
@@ -61,8 +60,8 @@ zinit snippet OMZL::git.zsh
 # zinit snippet OMZP::npm
 # zinit snippet OMZP::pip
 
-
-zinit ice; zinit light romkatv/powerlevel10k
+zinit ice
+zinit light romkatv/powerlevel10k
 
 # Docker compose
 # zinit ice from"gh-r" as"program" mv"docker* -> docker-compose"
@@ -75,7 +74,6 @@ zinit ice; zinit light romkatv/powerlevel10k
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 
 ################################################################################
 # Load Plugin
@@ -95,7 +93,6 @@ compinit -i
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 
-
 ################################################################################
 ## Enable Vi Mode Terminal Emulator
 ################################################################################
@@ -105,12 +102,10 @@ setopt HIST_IGNORE_ALL_DUPS
 # bindkey '^[[B' history-substring-search-down
 export KEYTIMEOUT=1
 
-
 ################################################################################
 # iTerm2 Shell Integration
 ################################################################################
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 
 ################################################################################
 # Bootstrap Dotfiles Environment
@@ -119,6 +114,6 @@ if [ -f "$HOME/.dotfiles/dotfilesrc" ]; then
 	source "$HOME/.dotfiles/dotfilesrc"
 fi
 
-##
-## more options here...
-##
+################################################################################
+# more options here...
+################################################################################
