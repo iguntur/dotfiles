@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+for _vn in $@; do
+	echo "docker volume create --name=$_vn"
+	docker volume create --name="$_vn"
+done
