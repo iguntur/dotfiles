@@ -64,13 +64,11 @@ fi
 ################################################################################
 # Google Cloud Platform
 ################################################################################
-if [ "$SHELL_NAME" = "zsh" ]; then
-	# The next line updates PATH for the Google Cloud SDK.
-	load_source '/Users/guntur/Env/google-cloud-sdk/path.zsh.inc'
+# The next line updates PATH for the Google Cloud SDK.
+load_source "/Users/guntur/Env/google-cloud-sdk/path.$SHELL_NAME.inc"
 
-	# The next line enables shell command completion for gcloud.
-	load_source '/Users/guntur/Env/google-cloud-sdk/completion.zsh.inc'
-fi
+# The next line enables shell command completion for gcloud.
+load_source "/Users/guntur/Env/google-cloud-sdk/completion.$SHELL_NAME.inc"
 
 ################################################################################
 # Heroku - autocomplete setup
