@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -e
+
+source "$DF_PATH/lib/safe_check_git_project"
+
+__safe_check_git_project
+
+function __git() {
+	echo "[Running]: git $@"
+	$(brew --prefix)/bin/git $@
+}
+
+ACTIVE_BRANCH="$(git branch --show-current)"
+TARGET_BRANCH="$1"
+
+echo "[Active branch]: "$ACTIVE_BRANCH""
+echo "[Target branch]: "$TARGET_BRANCH""
+echo
+
+__git checkout $TARGET_BRANCH
+echo
+
+echo "Merge branch '$ACTIVE_BRANCH' into '$TARGET_BRANCH'"
+__git merge $ACTIVE_BRANCH
+echo
+
+__git checkout $ACTIVE_BRANCH
+echo

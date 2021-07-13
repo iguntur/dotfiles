@@ -1,0 +1,39 @@
+#!/bin/bash
+
+set -e
+
+source "$DF_PATH/lib/safe_check_git_project"
+
+__safe_check_git_project
+
+function __git() {
+	echo " > [Running]: git $@"
+	$(brew --prefix)/bin/git $@
+}
+
+ACTIVE_BRANCH="$(git branch --show-current)"
+BACKUP_BRANCH="backup/$ACTIVE_BRANCH-$(openssl rand -hex 3)"
+
+echo " > [Active branch]: $ACTIVE_BRANCH"
+echo " > [Backup branch]: $BACKUP_BRANCH"
+
+# commit message template: "master(18:00): Monday, 05-Jul-2021"
+
+echo
+__git branch "$BACKUP_BRANCH"
+__git checkout "$BACKUP_BRANCH"
+
+# check if has uncommited and untracked files
+if [[ ! -z "$(git status --short)" ]]; then
+	echo
+	__git add --all
+
+	COMMIT_MSG="$ACTIVE_BRANCH$(date +"(v%m.%d)"): $(date +"%A, %d-%b-%Y (%H:%M:%S)")"
+
+	# __git commit --gpg-sign -m "$COMMIT_MSG" # >/dev/null 2>&1 &&
+	echo "$COMMIT_MSG" | __git commit -S -F-
+	echo " > [Commit Message]: '${COMMIT_MSG}'"
+fi
+
+echo
+__git checkout $ACTIVE_BRANCH

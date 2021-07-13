@@ -1,0 +1,38 @@
+#!/bin/bash
+
+set -e
+
+source "$DF_PATH/lib/safe_check_git_project"
+
+__safe_check_git_project
+
+function __git() {
+	echo " > [Running]: git $@"
+	$(brew --prefix)/bin/git $@
+}
+
+REMOTE="$(git remote)"
+CURRENT_BRANCH="$(git branch --show-current)"
+
+echo " > [info]: Pushing into $REMOTE"
+read -p " > [?]: Continue (Y/n)? " yn
+
+if [[ "$yn" =~ ^n.*|^N.* ]]; then
+	echo
+	echo " > [info]: Aborted!"
+	exit 0
+fi
+
+echo
+branches="$@"
+
+for branch in ${branches[@]}; do
+	__git checkout $branch
+	__git push $REMOTE $branch
+
+	sleep 2
+	echo
+done
+
+__git checkout $CURRENT_BRANCH
+echo

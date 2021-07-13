@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -e
+
+source "$DF_PATH/lib/safe_check_git_project"
+
+__safe_check_git_project
+
+branches="$@"
+
+function __git() {
+	echo "[Running]: git $@"
+	$(brew --prefix)/bin/git $@
+}
+
+CURRENT_BRANCH="$(git branch --show-current)"
+
+__git remote update --prune
+__git fetch --prune --all --progress
+echo
+
+for branch in ${branches[@]}; do
+	__git checkout $branch
+	__git reset --hard origin/$branch
+	sleep 2
+	echo
+done
+
+__git checkout $CURRENT_BRANCH
+echo
