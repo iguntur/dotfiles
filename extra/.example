@@ -1,0 +1,9 @@
+#!/bin/bash
+
+## Copy this file and rename to "<my-filename>" or "[dot]<filename-ignored-by-git>"
+
+# export KEY=VALUE
+
+export MY_SECRET_TOKEN=xxx
+export GH_PRIVATE_TOKEN=xxx
+export SECURE_ENV_SECRET=xxx

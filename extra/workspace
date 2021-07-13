@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Another workspaces
-
-# VirtualBox
-#export VBOX_USB=usbfs
-
-# Golang
-export GOPRIVATE=github.com/iguntur/*

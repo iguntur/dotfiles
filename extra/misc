@@ -1,3 +1,10 @@
 #!/bin/bash
 
+# VirtualBox
+#export VBOX_USB=usbfs
+
+# Golang
+export GOPRIVATE=github.com/iguntur/*
+
+# Gatsby JS
 export GATSBY_TELEMETRY_DISABLED=1
