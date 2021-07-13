@@ -1,0 +1,45 @@
+#!/bin/bash
+
+function _prompt_continue() {
+	_default_answer="$1"
+	_question="$2"
+
+	# set default question
+	if [ -z "$_question" ]; then
+		_question="Do you want to continue"
+	fi
+
+	# set default answer (y | yes)
+	if [ -z "$_default_answer" ]; then
+		_default_answer="yes"
+	fi
+
+	# set prompt question
+	if [[ "$_default_answer" =~ ^y.*|^Y.* ]]; then
+		_question="$_question (Y/n)?"
+	else
+		_question="$_question (y/N)?"
+	fi
+
+	# show prompt
+	read -p " > [?]: $_question " _yn
+
+	# set answer
+	# use default answer if empty answer
+	if [ -z "$_yn" ]; then
+		_yn="$_default_answer"
+	fi
+
+	# tranform answer to lowercase
+	_yn="$(printf "$_yn" | tr '[:upper:]' '[:lower:]')"
+
+	if [[ "$_yn" =~ ^n.*|^N.* ]]; then
+		echo
+		echo " > [info]: Aborted!"
+		exit 0
+	fi
+
+	unset _yn
+	unset _question
+	unset _default_answer
+}
