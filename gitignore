@@ -17,6 +17,7 @@ $RECYCLE.BIN/
 .idea
 .vscode
 nbproject
+vetur.config.js
 
 ##
 ## SublimeText
@@ -33,6 +34,7 @@ __pycache__
 node_modules
 bower_components
 .nvmrc
+report*.json
 
 ##
 ## User specifics
