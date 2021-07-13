@@ -16,6 +16,7 @@ alias cd3="cd ../../.."
 alias cd4="cd ../../../.."
 alias cd5="cd ../../../../.."
 alias h="cd ~ && clear"
+alias dev="cd ~/dev"
 
 ##
 ## Easier lists files: ls, ls -al, etc
