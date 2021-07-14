@@ -1,0 +1,30 @@
+# by operating system
+.DS_Store
+.directory
+.directory
+.fuse_hidden*
+.nfs*
+.Trash-*
+._.DS_Store
+*~
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# text editor
+.idea
+nbproject
+*.sublime-*
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# programming and stuff
+__pycache__
+node_modules
+bower_components
+dist
+coverage
+vendor
+.nyc_output
