@@ -1,0 +1,51 @@
+#!/bin/bash
+
+__print_usage() {
+	cat <<-HEREDOC
+		 Usage: $progName <target-directory> [...options]
+
+		 Options:
+		   -h, --help           Show this message and exit.
+		       --dry-run        Running command without permission changes.
+
+		 Examples:
+		   $progName $targetDir --dry-run
+		   $progName $targetDir
+
+	HEREDOC
+}
+
+progName="$(basename $0)"
+dryRun=0
+targetDir='.'
+
+while true; do
+	case "$1" in
+	-h | --help)
+		__print_usage
+		exit
+		;;
+	--dry-run)
+		dryRun=1
+		shift
+		;;
+	--)
+		shift
+		break
+		;;
+	*) break ;;
+	esac
+done
+
+targetDir="$1"
+
+if [ -z "$targetDir" ]; then
+	echo "required target directory"
+	exit 1
+fi
+
+if (($dryRun > 0)); then
+	/usr/bin/find . -type f \( -path "*/$targetDir/*" ! -path "*/.git/hooks/*" \) -perm 755 -ls $@
+else
+	/usr/bin/find . -type f \( -path "*/$targetDir/*" ! -path "*/.git/hooks/*" \) -perm 755 -exec chmod -x {} \;
+fi
