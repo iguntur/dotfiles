@@ -44,13 +44,22 @@ brew install htop          # Terminal activity manager
 brew install tree          # show directory with tree
 brew install exa           # "ls" like with color
 brew install highlight     # for fzf
+brew install sshfs         # mount filesystem over ssh
+brew install watch         # watch command
+brew install rsync         # rsync for backup
+brew install httpie        # http request on command line
+brew install qemu          # qemu emulator
+brew install jq            # awesome json output on command line
 brew install neofetch      # Terminal system info
-brew install composer      # PHP Composer
+brew install hugo          # static site generator
+# brew install composer      # PHP Composer
 # brew install screenfetch   # Terminal system info
 
 ## Cask
-brew install --cask audacity
+# brew install --cask audacity
 brew install --cask android-file-transfer
+# brew install --cask macfuse   # may could install from official site
+# brew install --cask multipass # fast creation of ubuntu vm manager
 
 ## Command-line completions
 brew install bash-completion
