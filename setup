@@ -4,6 +4,7 @@ source "$HOME/.dotfiles/global-def"
 
 ###
 
+progName="$(basename $0)"
 base_dir="$(cd $(dirname $0) && pwd)"
 
 dotfiles_links=(
@@ -16,13 +17,18 @@ dotfiles_links=(
 	"gitignore"
 	"gitattributes"
 	## Terminal Editor
-	# "vim"
-	# "vimrc"
+	"vim"
+	"vimrc"
 	# "tmux.conf"
 )
 
 dotfiles_files=(
 	".npmrc"
+)
+
+config_dirs=(
+	# "alacritty"
+	"nvim"
 )
 
 create_symlink() {
@@ -70,8 +76,8 @@ remove_files() {
 }
 
 setup_config_links() {
-	for __config_path in $base_dir/config/*; do
-		SOURCE="$__config_path"
+	for __config_path in ${config_dirs[@]}; do
+		SOURCE="$base_dir/config/$__config_path"
 		DEST="$HOME/.config/$(basename $__config_path)"
 
 		if [ "$1" == "-y" ]; then
@@ -81,6 +87,23 @@ setup_config_links() {
 		fi
 	done
 	unset __config_path
+}
+
+__print_usage() {
+	cat <<-HEREDOC
+		   Usage: $progName <command> [options]
+
+		   Command:
+		     install-files            Copy static files
+		     install-config           Create config symlinks
+		     install-symlinks         Create all dotfiles symlinks
+		     clean-all                Remove all dotfiles symlinks
+
+		   Options:
+		       -h, --help             Show this message and exit
+		       -y                     Prevent prompt
+
+	HEREDOC
 }
 
 case $1 in
@@ -101,17 +124,9 @@ clean-all)
 	remove_symlink "$@"
 	remove_files
 	;;
-*)
-	echo "  ./setup <command> [options]"
-	echo
-	echo "  Commands:"
-	echo "    install-files            Copy static files"
-	echo "    install-config           Create config symlinks"
-	echo "    install-symlinks         Create all dotfiles symlinks"
-	echo "    clean-all                Remove all dotfiles symlinks"
-	echo
-	echo "  Options:"
-	echo "      -y                     Prevent prompt"
+-h | --help | *)
+	__print_usage
+	exit 0
 	;;
 esac
 
