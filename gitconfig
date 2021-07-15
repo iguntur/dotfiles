@@ -34,8 +34,8 @@
 	rv = remote --verbose
 	nah = !git reset --hard && git clean -df
 	sync = !git remote update --prune && git fetch --prune --prune-tags --all --tags --progress
-	reinit = !rm -rf .git && git init && git add --all && git commit --gpg-sign --message=':rocket: Initial Commit'
-	rehead = !git update-ref -d HEAD && git add --all && git commit --gpg-sign --message=':rocket: Initial Commit'
+	reinit = !rm -rf .git && git init && git add --all && git commit --gpg-sign --message='🚀 Initial Commit'
+	rehead = !git update-ref -d HEAD && git add --all && git commit --gpg-sign --message='🚀 Initial Commit'
 	backup = !~/.dotfiles/bin/git-backup
 	bak = !~/.dotfiles/bin/git-backup
 	merge-into = !~/.dotfiles/bin/git-merge-into
