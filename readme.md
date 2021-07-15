@@ -14,6 +14,7 @@
 - [Installations](#installations)
   - [Dependencies](#dependencies)
   - [Dotfiles](#dotfiles)
+  - [Setup Nvim](#setup-nvim)
 
 ---
 
@@ -58,6 +59,8 @@ $ cd ~/.dotfiles
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 ```
 
+#### Application and Utilities <!-- omit in toc -->
+
 ```console
 $ ./scripts/setup-essentials.sh
 $ ./scripts/setup-fonts.sh
@@ -71,17 +74,29 @@ $ ./setup install-symlinks
 ```
 
 ```console
-$ ./setup
-  ./setup <command> [options]
+ $ setup --help
 
-  Commands:
-    install-files            Copy static files
-    install-config           Create config symlinks
-    install-symlinks         Create all dotfiles symlinks
-    clean-all                Remove all dotfiles symlinks
+ Usage: setup <command> [options]
 
-  Options:
-      -y                     Prevent prompt
+ Command:
+   install-files            Copy static files
+   install-config           Create config symlinks
+   install-symlinks         Create all dotfiles symlinks
+   clean-all                Remove all dotfiles symlinks
+
+ Options:
+     -h, --help             Show this message and exit
+     -y                     Prevent prompt
+```
+
+### Setup Nvim
+
+```console
+$ ./scripts/install-nvim.sh
+$ cd ~/.dotfiles/config/nvim
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
 ```
 
 ☕️ **Restart Terminal**
