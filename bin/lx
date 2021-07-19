@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if command -v exa >/dev/null 2>&1; then
+	# --git-ignore \
 	exa -Tgalh \
 		--git \
-		--git-ignore \
 		--ignore-glob .git \
 		--group-directories-first \
 		-L 1 \
