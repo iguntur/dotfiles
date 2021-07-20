@@ -32,6 +32,7 @@ brew install python
 brew install coreutils     # "gls" for ls like linux
 brew install nvm           # Node Version Manager
 brew install fzf           # Fuzzy finder
+brew install fd            # alternative search like `find`
 brew install ripgrep       # "rg" (for fzf)
 brew install pipenv        # Python Env
 brew install youtube-dl    # Youtube download from CLI
@@ -52,6 +53,9 @@ brew install qemu          # qemu emulator
 brew install jq            # awesome json output on command line
 brew install neofetch      # Terminal system info
 brew install hugo          # static site generator
+brew install as-tree       # render path as tree format
+brew install ffmpeg        # video utils
+brew install ripgrep       # "rg" ripgrep recursively searches directories for a regex pattern while respecting your gitignore
 # brew install composer      # PHP Composer
 # brew install screenfetch   # Terminal system info
 
