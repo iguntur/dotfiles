@@ -1,0 +1,18 @@
+{
+	"name": "@guntur/nvim",
+	"version": "0.0.0",
+	"description": "My Nvim Congiguration for COC",
+	"license": "MIT",
+	"author": {
+		"name": "Guntur Poetra",
+		"url": "https://gunturpoetra.com",
+		"email": "poetra.guntur@gmail.com"
+	},
+	"devDependencies": {
+		"neovim": "^4.10.0",
+		"npm": "^7.20.0",
+		"prettier": "^2.3.2",
+		"typescript": "^4.3.5",
+		"yarn": "^1.22.10"
+	}
+}
