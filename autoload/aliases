@@ -35,19 +35,22 @@ else
 	alias ls="gls"
 fi
 
-# alias ls="ls --color=tty"
+alias ls="ls --color=tty"
 
-alias l="ls -Alh --group-directories-first"
-alias ll="ls -lh --group-directories-first"
-alias la="ls -alh --group-directories-first"
-alias ld="ls -Alhd */" # only directories
+# alias l="ls -Alh --group-directories-first"
+# alias ll="ls -lh --group-directories-first"
+# alias la="ls -alh --group-directories-first"
+# alias ld="ls -Alhd */" # only directories
+alias l="lx"
+alias ll="lx"
+alias la="lx"
 
 ##
 ## Easier common functions
 ##
 alias q="exit"         # exit terminal
 alias c="clear"        # clear terminal
-alias cl="clear && la" # clear terminal and show list FILEs
+alias cl="clear && lx" # clear terminal and show list FILEs
 alias where="which"    # :)
 
 ##
