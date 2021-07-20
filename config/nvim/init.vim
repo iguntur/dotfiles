@@ -134,10 +134,10 @@ augroup autoCenter
 augroup END
 
 
-source ~/.vim/settings/base.vim
-source ~/.vim/settings/function.vim
-source ~/.vim/settings/keymap.vim
-source ~/.vim/settings/plugin.vim
+source ~/.dotfiles/config/nvim/settings/base.vim
+source ~/.dotfiles/config/nvim/settings/function.vim
+source ~/.dotfiles/config/nvim/settings/keymap.vim
+source ~/.dotfiles/config/nvim/settings/plugin.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Coc Extensions
