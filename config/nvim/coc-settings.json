@@ -38,6 +38,6 @@
 	"prettier.useTabs": true,
 
 	// Typescript Server Settings
-	"tsserver.npm": "/home/guntur/.nvm/versions/node/v14.16.0/bin/npm",
+	"tsserver.npm": "/Users/guntur/.nvm/versions/node/v14.17.3/bin/npm",
 	"typescript.format.enabled": false
 }
