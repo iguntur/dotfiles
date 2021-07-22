@@ -1,0 +1,35 @@
+#!/bin/bash
+
+function fzf-git-branch() {
+    git rev-parse HEAD > /dev/null 2>&1 || return
+
+    git branch --color=always --all --sort=-committerdate |
+        grep -v HEAD |
+        fzf --height 90% --ansi --no-multi --preview-window right:65% \
+            --preview 'git log -n 200 --color=always --date=short --pretty="%C(cyan bold)%h%C(reset) -%C(magenta bold)%d%C(reset) %s - %C(green bold)(%cr)%C(reset) %C(blue)<%an>%C(reset)" $(sed "s/.* //" <<< {})' |
+        sed "s/.* //"
+}
+
+function fzf-git-checkout() {
+    git rev-parse HEAD > /dev/null 2>&1 || return
+
+    local branch
+
+    branch=$(fzf-git-branch)
+    if [ -z "$branch" ]; then
+        echo "No branch selected."
+
+        return
+    fi
+
+    # If branch name starts with 'remotes/' then it is a remote branch. By
+    # using --track and a remote branch name, it is the same as:
+    # git checkout -b branchName --track origin/branchName
+    if [[ "$branch" = 'remotes/'* ]]; then
+        git checkout --track $branch
+    else
+        git checkout $branch;
+    fi
+}
+
+fzf-git-checkout
