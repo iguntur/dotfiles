@@ -57,8 +57,19 @@ brew install as-tree       # render path as tree format
 brew install ffmpeg        # video utils
 brew install ripgrep       # "rg" ripgrep recursively searches directories for a regex pattern while respecting your gitignore
 # brew install composer      # PHP Composer
-# brew install screenfetch   # Terminal system info
+brew install peco          # Simplistic interactive filtering tool
 
+## Awesome modern *nix command
+## see: https://github.com/ibraheemdev/modern-unix
+brew install lsd
+brew install git-delta
+# brew install dust
+brew install duf
+brew install broot
+# brew install tldr or npm install --global tldr
+
+
+# brew install screenfetch   # Terminal system info
 ## Cask
 # brew install --cask audacity
 brew install --cask android-file-transfer
