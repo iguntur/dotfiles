@@ -67,6 +67,10 @@ zinit light romkatv/powerlevel10k
 # zinit ice from"gh-r" as"program" mv"docker* -> docker-compose"
 # zinit load docker/compose
 
+# Git Fuzzy
+zinit ice as"program" pick"bin/git-fuzzy"
+zinit light bigH/git-fuzzy
+
 ################################################################################
 # Prepare
 ################################################################################
