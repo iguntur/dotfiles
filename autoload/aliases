@@ -35,28 +35,29 @@ else
 	alias ls="gls"
 fi
 
-alias ls="ls --color=tty"
+alias l="exa -1 -G --group-directories-first --classify --icons"
+alias ls="exa -1 -G --group-directories-first --classify --icons"
+alias la="exa -1 -G --group-directories-first --classify --icons --all" # show hidden files and directory
 
 # alias l="ls -Alh --group-directories-first"
 # alias ll="ls -lh --group-directories-first"
 # alias la="ls -alh --group-directories-first"
 # alias ld="ls -Alhd */" # only directories
-alias l="lx"
 alias ll="lx"
-alias la="lx"
 
 ##
 ## Easier common functions
 ##
 alias q="exit"         # exit terminal
 alias c="clear"        # clear terminal
-alias cl="clear && lx" # clear terminal and show list FILEs
+alias cl="clear && ls" # clear terminal and show list FILEs
 alias where="which"    # :)
 
 ##
 ## GIT
 ##
 alias g="git"
+alias gf="git fuzzy"
 
 ##
 ## Disable default keyboard
@@ -106,3 +107,4 @@ alias art="php artisan"
 
 alias BU="brew update"
 alias BUBU="brew update && brew upgrade"
+alias BI="brew install"
