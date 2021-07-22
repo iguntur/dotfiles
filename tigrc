@@ -1,0 +1,3 @@
+set tab-size = 4
+set status-show-untracked-files = true
+set main-view-date-display = relative

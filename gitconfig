@@ -9,7 +9,8 @@
 [core]
 	attributesfile = ~/.gitattributes
 	excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	; pager = diff-so-fancy | less --tabs=4 -RFX
+	; pager = delta
 	editor = nvim
 
 [commit]
@@ -27,11 +28,12 @@
 	co = checkout
 	cob = checkout -b
 	df = diff
-	lo = log
-	lol = log --oneline
+	lo = log --oneline
+	lol = log --oneline --pretty=format:'%C(cyan bold)%h%C(reset) -%C(magenta bold)%d%C(reset) %s - %C(green bold)(%cr)%C(reset) %C(blue)<%an>%C(reset)'
 	lola = log --graph --pretty=format:'%C(cyan bold)%h%C(reset) -%C(magenta bold)%d%C(reset) %s - %C(green bold)(%cr)%C(reset) %C(blue)<%an>%C(reset)' --decorate --abbrev-commit --all
 	st = status --untracked-files=all
 	rv = remote --verbose
+	coi = !git-checkout-interactive
 	nah = !git reset --hard && git clean -df
 	sync = !git remote update --prune && git fetch --prune --prune-tags --all --tags --progress
 	reinit = !rm -rf .git && git init && git add --all && git commit --gpg-sign --message='🚀 Initial Commit'
@@ -45,13 +47,13 @@
 [color]
 	ui = true
 
-[color "diff"]
-	commit = yellow bold
-	frag = magenta bold
-	meta = yellow
-	new = green bold
-	old = red bold
-	whitespace = red reverse
+; [color "diff"]
+; 	commit = yellow bold
+; 	frag = magenta bold
+; 	meta = yellow
+; 	new = green bold
+; 	old = red bold
+; 	whitespace = red reverse
 
 [color "diff-highlight"]
 	newHighlight = green bold 22
@@ -78,6 +80,20 @@
 	process = git-lfs filter-process
 	required = true
 
-[tig]
-	tab-size = 4
-	status-show-untracked-files = true
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
