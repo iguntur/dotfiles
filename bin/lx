@@ -6,6 +6,7 @@ if command -v exa >/dev/null 2>&1; then
 		--git \
 		--ignore-glob .git \
 		--group-directories-first \
+		--icons \
 		-L 1 \
 		"$@"
 else
