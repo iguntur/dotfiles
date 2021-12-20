@@ -8,6 +8,7 @@
 ""   n[*] = normal mode
 ""   v[*] = visual mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent>q: <Nop>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocompletion
@@ -44,6 +45,12 @@ nmap <silent> <Cmd>k <Nop>
 nmap <silent> <Cmd-k> <Nop>
 
 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Reset Keymap
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -72,10 +79,12 @@ nnoremap <silent> <leader>wq :wq<CR>
 nnoremap <silent> <leader>qq :q!<CR>
 nnoremap <silent> <leader>we :bw<CR>
 nnoremap <silent> <leader>wc :bw!<CR>
+nnoremap <silent> <leader>Q :qall!<CR>
 " map <leader>;; <Esc>A;<Esc>
 
 " Clear the highlight search
-nnoremap <silent> <Esc> :nohlsearch<Esc>
+nnoremap <silent> <leader><Space> :set scrolloff=20<CR><Esc>
+nnoremap <silent> <Esc> :nohlsearch<CR><Esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,6 +110,7 @@ imap <silent> <C-_> <Esc>gcc<Esc>
 
 
 "" (Alt-s) Write/Save File
+nnoremap <silent> <M-S-q> :qall!<CR><Esc>
 nnoremap <silent> <M-s> :w<CR><Esc>
 vnoremap <silent> <M-s> :w<CR><Esc>
 inoremap <silent> <M-s> <Esc>:w<Esc>
@@ -114,17 +124,24 @@ nnoremap <silent> <M-w> :bw<Esc>
 
 " ( Shift-h ) Move cursor to the first character
 nnoremap <silent> H ^<Esc>
+
 " ( Shift-l ) Move cursor to the last character
 nnoremap <silent> L $<Esc>
+
+" Move cursor when insert mode
+inoremap <silent> <C-h> <Left>
+inoremap <silent> <C-j> <Down>
+inoremap <silent> <C-k> <Up>
+inoremap <silent> <C-l> <Right>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Jumping empty line, like (Shift-{})
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Up
-nnoremap <silent> <C-N> }<Esc>
+nnoremap <silent> <C-k> {<Esc>
 " Down
-nnoremap <silent> <C-M> {<Esc>
+nnoremap <silent> <C-j> }<Esc>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
