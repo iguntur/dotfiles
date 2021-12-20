@@ -50,7 +50,7 @@ alias ll="lx"
 ##
 alias q="exit"         # exit terminal
 alias c="clear"        # clear terminal
-alias cl="clear && ls" # clear terminal and show list FILEs
+alias cl="clear && ll" # clear terminal and show list FILEs
 alias where="which"    # :)
 
 ##
