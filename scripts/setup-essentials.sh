@@ -56,8 +56,17 @@ brew install hugo          # static site generator
 brew install as-tree       # render path as tree format
 brew install ffmpeg        # video utils
 brew install ripgrep       # "rg" ripgrep recursively searches directories for a regex pattern while respecting your gitignore
-# brew install composer      # PHP Composer
 brew install peco          # Simplistic interactive filtering tool
+brew install libpq
+brew install libtool
+brew install graphviz
+# brew install scrcpy
+# brew install composer      # PHP Composer
+# brew install filebrowser   # File share using browser
+
+## SDK Tools
+brew install kotlin
+brew install maven
 
 ## Awesome modern *nix command
 ## see: https://github.com/ibraheemdev/modern-unix
@@ -67,7 +76,6 @@ brew install git-delta
 brew install duf
 brew install broot
 # brew install tldr or npm install --global tldr
-
 
 # brew install screenfetch   # Terminal system info
 ## Cask
