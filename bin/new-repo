@@ -1,0 +1,5 @@
+#!/bin/bash
+
+touch license readme.md
+touch .gitignore .gitattributes
+touch .editorconfig
