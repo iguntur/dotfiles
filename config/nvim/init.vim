@@ -47,7 +47,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Color Schema
 Plug 'flazz/vim-colorschemes'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'fenetikm/falcon'
 
 
@@ -104,6 +105,11 @@ Plug 'pangloss/vim-javascript'
 " Markdown
 Plug 'tpope/vim-markdown'          " Markdown runtime files
 
+
+" Vim Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 
