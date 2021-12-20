@@ -49,7 +49,7 @@ set numberwidth=5
 set relativenumber
 set ruler
 set colorcolumn=110
-set scrolloff=999
+set scrolloff=20
 set t_Co=256
 set title
 set wildmenu
