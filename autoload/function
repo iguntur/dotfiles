@@ -156,7 +156,6 @@ mtmp() {
 	fi
 }
 
-
 ltmp() {
 	mkdir -p "$HOME/.tmp/$(openssl rand -hex 12)" && cd $_
 }
