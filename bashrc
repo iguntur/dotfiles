@@ -18,11 +18,6 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 ################################################################################
-# iTerm2 Shell Integration
-################################################################################
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-################################################################################
 # Bootstrap Dotfiles Environment
 ################################################################################
 if [ -f "$HOME/.dotfiles/dotfilesrc" ]; then
