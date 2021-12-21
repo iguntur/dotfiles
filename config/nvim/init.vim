@@ -8,7 +8,15 @@ let &packpath = &runtimepath
 "" - For Neovim: stdpath('data') . '/plugged' => ~/.local/share/nvim/plugged
 "" - Avoid using standard Vim directory names like 'plugin'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin(stdpath('data') . '/plugged')
+let std_data_dir = has('nvim') ? stdpath('data') : '~/.local/share/vim'
+let autoload_dir = std_data_dir . '/site/autoload'
+
+if empty(glob(autoload_dir . '/plug.vim'))
+	silent execute '!curl -fLo ' . autoload_dir . '/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	autocmd VimEnter * PluginInstall --sync | source '~/.vimrc'
+endif
+
+call plug#begin(std_data_dir . '/plugged')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Common Plugins
