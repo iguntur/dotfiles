@@ -44,8 +44,8 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nnoremap <F1> :call <SNR>29_show_documentation()<CR>
 
-nmap <silent> <Cmd>k <Nop>
-nmap <silent> <Cmd-k> <Nop>
+" -- nmap <silent> <Cmd>k <Nop>
+" -- nmap <silent> <Cmd-k> <Nop>
 
 
 " Find files using Telescope command-line sugar.
@@ -68,10 +68,10 @@ endfor
 " nnoremap <silent> j jzz
 " nnoremap <silent> k kzz
 
-nnoremap <silent> <space> <Esc>
-nnoremap <silent> <C-space> <Esc>0
-nnoremap <silent> <Del> <Esc>
-nnoremap <silent> <BS> <Esc>
+" -- nnoremap <silent> <space> <Esc>
+" -- nnoremap <silent> <C-space> <Esc>0
+" -- nnoremap <silent> <Del> <Esc>
+" -- nnoremap <silent> <BS> <Esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -112,39 +112,39 @@ imap <silent> <C-_> <Esc>gcc<Esc>
 " imap <silent> <M-/> <Esc>gcc<Esc>
 
 
-"" (Alt-s) Write/Save File
-nnoremap <silent> <M-S-q> :qall!<CR><Esc>
-nnoremap <silent> <M-s> :w<CR><Esc>
-vnoremap <silent> <M-s> :w<CR><Esc>
-inoremap <silent> <M-s> <Esc>:w<Esc>
+" -- (Alt-s) Write/Save File
+" nnoremap <silent> <M-S-q> :qall!<CR><Esc>
+" nnoremap <silent> <M-s> :w<CR><Esc>
+" vnoremap <silent> <M-s> :w<CR><Esc>
+" inoremap <silent> <M-s> <Esc>:w<Esc>
 
 
-" (Alt-q) Quit - Also will be replace Ex Mode
-nnoremap <silent> <M-q> :q<Esc>
+" -- (Alt-q) Quit - Also will be replace Ex Mode
+" nnoremap <silent> <M-q> :q<Esc>
 
-"" (Alt-w) Close current buffer
-nnoremap <silent> <M-w> :bw<Esc>
+" -- (Alt-w) Close current buffer
+" nnoremap <silent> <M-w> :bw<Esc>
 
-" ( Shift-h ) Move cursor to the first character
-nnoremap <silent> H ^<Esc>
+" -- ( Shift-h ) Move cursor to the first character
+" nnoremap <silent> H ^<Esc>
 
-" ( Shift-l ) Move cursor to the last character
-nnoremap <silent> L $<Esc>
+" -- ( Shift-l ) Move cursor to the last character
+" nnoremap <silent> L $<Esc>
 
-" Move cursor when insert mode
-inoremap <silent> <C-h> <Left>
-inoremap <silent> <C-j> <Down>
-inoremap <silent> <C-k> <Up>
-inoremap <silent> <C-l> <Right>
+" -- Move cursor when insert mode
+" inoremap <silent> <C-h> <Left>
+" inoremap <silent> <C-j> <Down>
+" inoremap <silent> <C-k> <Up>
+" inoremap <silent> <C-l> <Right>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Jumping empty line, like (Shift-{})
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Up
-nnoremap <silent> <C-k> {<Esc>
-" Down
-nnoremap <silent> <C-j> }<Esc>
+" -- Up: ctrl+k
+" nnoremap <silent> <C-k> {<Esc>
+" -- Down: ctrl+j
+" nnoremap <silent> <C-j> }<Esc>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,22 +178,22 @@ vnoremap <silent> <C-S-Right> :vertical resize +1<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tab switching
+" -- Tab switching
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <TAB> :bnext<CR>
-nnoremap <silent> <S-TAB> :bprevious<CR>
+" nnoremap <silent> <TAB> :bnext<CR>
+" nnoremap <silent> <S-TAB> :bprevious<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Indentation
+" -- Indentation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ( Shift-> ) Tab Like (Right)
-vnoremap <silent> > >gv
-nnoremap > >>_
+" -- ( Shift-> ) Tab Like (Right)
+" vnoremap <silent> > >gv
+" nnoremap > >>_
 
-" ( Shift-< ) Shift-Tab (Left)
-vnoremap <silent> < <gv
-nnoremap < <<_
+" -- ( Shift-< ) Shift-Tab (Left)
+" vnoremap <silent> < <gv
+" nnoremap < <<_
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -213,33 +213,33 @@ nnoremap <silent> <M-.> <C-w>l
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Insert Empty Line(s)
+" -- Insert Empty Line(s)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" (Alt-Shift-k) Insert empty line on top cursor and up
-nnoremap <silent> <M-K> <S-o><Esc>"_cc<Esc>
+" -- (Alt-Shift-k) Insert empty line on top cursor and up
+" nnoremap <silent> <M-K> <S-o><Esc>"_cc<Esc>
 
-" (Alt-Shift-j) Insert empty line on bottom cursor and down
-nnoremap <silent> <M-J> o<Esc>"_cc<Esc>
+" -- (Alt-Shift-j) Insert empty line on bottom cursor and down
+" nnoremap <silent> <M-J> o<Esc>"_cc<Esc>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Duplicate Line(s)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" (Ctrl-Alt-k) Duplicate Line Up
-nnoremap <silent> <M-C-K> <Esc>^<Esc>"0yy "0P<Esc>
-vnoremap <silent> <M-C-K> <Nop>
+" -- (Ctrl-Alt-k) Duplicate Line Up
+" nnoremap <silent> <M-C-K> <Esc>^<Esc>"0yy "0P<Esc>
+" vnoremap <silent> <M-C-K> <Nop>
 
-" (Ctrl-Alt-j) Duplicate Line Down
-nnoremap <silent> <M-NL> <Esc>^<Esc>"0yy "0p<Esc>
-vnoremap <silent> <M-NL> <Nop>
+" -- (Ctrl-Alt-j) Duplicate Line Down
+" nnoremap <silent> <M-NL> <Esc>^<Esc>"0yy "0p<Esc>
+" vnoremap <silent> <M-NL> <Nop>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Delete Line(s)
+" -- Delete Line(s)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remove(Cut) active line
-nnoremap <silent> <M-d> "_dd<Esc>
-vnoremap <silent> <M-d> "_d<Esc>
+" -- Remove(Cut) active line
+" nnoremap <silent> <M-d> "_dd<Esc>
+" vnoremap <silent> <M-d> "_d<Esc>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -250,8 +250,7 @@ nnoremap <silent> <M-Space> <Esc>2a<space><Esc>i
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Utilities
+" -- Utilities
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" (Space-s) Sort Lines Natural (Asc)
-vnoremap <silent> <space>s :'<,'>!sort -f<CR><Esc>
-
+" -- (Space-s) Sort Lines Natural (Asc)
+" vnoremap <silent> <space>s :'<,'>!sort -f<CR><Esc>
