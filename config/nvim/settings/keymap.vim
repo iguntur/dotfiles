@@ -8,10 +8,10 @@
 ""   n[*] = normal mode
 ""   v[*] = visual mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent>q: <Nop>
+" -- nnoremap <silent>q: <Nop>
 
-" Allow gf to open non-existent files
-map gf :edit <cfile><cr>
+" -- Allow gf to open non-existent files
+" -- map gf :edit <cfile><cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocompletion
@@ -48,21 +48,21 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " -- nmap <silent> <Cmd-k> <Nop>
 
 
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+" -- Find files using Telescope command-line sugar.
+" -- nnoremap <leader>ff <cmd>Telescope find_files<cr>
+" -- nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+" -- nnoremap <leader>fb <cmd>Telescope buffers<cr>
+" -- nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Reset Keymap
+"" -- Reset Keymap
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-for key in ['<Up>', '<Down>', '<Left>', '<Right>']
-	" exec 'cnoremap <silent>' key '<Nop>'
-	" exec 'inoremap <silent>' key '<Nop>'
-	exec 'nnoremap <silent>' key '<Nop>'
-	exec 'vnoremap <silent>' key '<Nop>'
-endfor
+" for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+" 	" exec 'cnoremap <silent>' key '<Nop>'
+" 	" exec 'inoremap <silent>' key '<Nop>'
+" 	exec 'nnoremap <silent>' key '<Nop>'
+" 	exec 'vnoremap <silent>' key '<Nop>'
+" endfor
 
 " Movement
 " nnoremap <silent> j jzz
@@ -87,7 +87,7 @@ nnoremap <silent> <leader>Q :qall!<CR>
 
 " Clear the highlight search
 nnoremap <silent> <leader><Space> :set scrolloff=20<CR><Esc>
-nnoremap <silent> <Esc> :nohlsearch<CR><Esc>
+" -- nnoremap <silent> <Esc> :nohlsearch<CR><Esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,10 +101,10 @@ nmap <silent> <F5> :source ~/.config/nvim/init.vim<CR><Esc><Esc>
 " <leader>cs
 nnoremap <silent> <leader>cs :Colors<CR>
 
-" (Ctrl-/) Commenting
-nmap <silent> <C-_> gcc<Esc>
-vmap <silent> <C-_> gc<Esc>gv
-imap <silent> <C-_> <Esc>gcc<Esc>
+" -- (Ctrl-/) Commenting
+" -- nmap <silent> <C-_> gcc<Esc>
+" -- vmap <silent> <C-_> gc<Esc>gv
+" -- imap <silent> <C-_> <Esc>gcc<Esc>
 
 " (Alt-/) Commenting
 " nmap <silent> <M-/> gcc<Esc>

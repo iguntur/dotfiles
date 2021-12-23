@@ -26,15 +26,29 @@ end
 --- Super/Command (⌘ / window)
 --- Shift (⇧)
 
+-- Allow gf to open non-existent files
+vim.cmd([[ map gf :edit <cfile><cr> ]])
+
+-- Disable Arrow-keys
+for _, k in pairs({'<Up>', '<Down>', '<Left>', '<Right>'}) do
+	n_map(k, '<Nop>', default_opts)
+	v_map(k, '<Nop>', default_opts)
+end
+
 -- Disable terminal clear scren (Cmd+k)
 n_map('<Cmd>k', '<Nop>', { silent = true })
 n_map('<Cmd-k>', '<Nop>', { silent = true })
+
+n_map('q:', '<Nop>', default_opts) -- disable unexpected macro
 
 -- Set space/del/backspace to Esc
 n_map('<space>', '<Esc>', default_opts)
 n_map('<Del>', '<Esc>', default_opts)
 n_map('<BS>', '<Esc>', default_opts)
 -- n_map('<C-space>', '<Esc>0', default_opts) -- Control+space
+
+-- Clear the highlight search
+n_map('<Esc>', ':nohlsearch<CR><Esc>', default_opts)
 
 --------------------------------------------------------------------------------
 -- Cursor movement

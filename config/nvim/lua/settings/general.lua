@@ -1,5 +1,5 @@
-local g = vim.g
-local fn = vim.fn
+local g   = vim.g
+local fn  = vim.fn
 local cmd = vim.cmd
 local opt = vim.opt
 
@@ -19,10 +19,11 @@ vim.g.indent_blankline_show_trailing_blankline_indent = false
 -- Text encoding and editing
 --------------------------------------------------------------------------------
 opt.autoindent    = true
-opt.backspace     = 'indent,eol,start'
+opt.backspace     = {'indent', 'eol', 'start'}
 opt.cindent       = true
+opt.cino          = ':0'  -- (C Lang) No indent for case:/default:
 opt.encoding      = 'utf-8'
--- opt.expandtab     = true
+opt.expandtab     = false -- convert tabs to spaces
 opt.shiftwidth    = 4
 opt.smarttab      = true
 opt.softtabstop   = 4
@@ -30,27 +31,29 @@ opt.swapfile      = false
 opt.tabstop       = 4
 opt.textwidth     = 110
 opt.wrap          = false
-opt.termguicolors = true -- enable 24-bit RGB colors
+opt.termguicolors = true  -- enable 24-bit RGB colors
 opt.linebreak     = true
+opt.undofile      = true  -- enable persistent undo
+opt.splitbelow    = true  -- make all horizontal split to go below window
+opt.splitright    = true  -- make all vertical split to go to the right
+opt.backup        = false -- create backup file
 
-cmd([[
-	set clipboard+=unnamedplus " -- Copy (yank) and paste with clipboard integration
-	set shortmess+=I
-	set cino=:0   " -- No indent for case:/default:
-]])
+opt.clipboard:append('unnamedplus') -- Copy (yank) and paste with clipboard integration
+opt.shortmess:append('I')           -- Disable Neovim welcome page
 
 --------------------------------------------------------------------------------
 -- Interface
 --------------------------------------------------------------------------------
 cmd([[ syntax on ]])
--- cmd([[ colorscheme gruvbox ]])
+cmd([[ colorscheme gruvbox ]])
 
 opt.background     = 'dark'
 opt.colorcolumn    = '110'
 opt.cursorline     = true
 opt.laststatus     = 2
 opt.list           = true
-opt.listchars      = 'tab:┊ ,space: ,trail:·'
+-- opt.listchars      = 'tab:┊ ,space: ,trail:·'
+opt.listchars      = {tab = '▸ ', trail = '·'} -- eol = '↲'
 opt.mouse          = 'a'
 opt.number         = true
 opt.numberwidth    = 5
