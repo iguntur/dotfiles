@@ -1,5 +1,6 @@
 -- Set Leader to a comma - <leader>
 vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 
 --------------------------------------------------------------------------------
 -- Map Helper Function
