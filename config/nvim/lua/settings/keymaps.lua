@@ -61,6 +61,16 @@ n_map('<BS>', '<Esc>', default_opts)
 n_map('<Esc>', ':nohlsearch<CR><Esc>', default_opts)
 
 --------------------------------------------------------------------------------
+-- Text Editing
+--------------------------------------------------------------------------------
+-- Copy-Paste
+v_map('p', '"_dP', default_opts) -- keep the "yank" value
+
+-- Pair Space
+i_map('<M-Space>', '<Esc>2a<space><Esc>i', default_opts)
+n_map('<M-Space>', '<Esc>2a<space><Esc>i', default_opts)
+
+--------------------------------------------------------------------------------
 -- Cursor movement
 --------------------------------------------------------------------------------
 -- Move cursor to the first character: (shift + h)
@@ -87,19 +97,19 @@ i_map('<M-s>', '<ESC>:w<CR><ESC>a', default_opts) -- allow writing in insert mod
 n_map('<M-w>', ':bw<ESC>', default_opts)
 
 --------------------------------------------------------------------------------
--- Tab switching
+-- Navigate buffers
 --------------------------------------------------------------------------------
-n_map('<TAB>', ':bnext<CR>', default_opts)
-n_map('<S-TAB>', ':bprevious<CR>', default_opts)
+n_map('<TAB>', ':bnext<CR>', default_opts) -- tab
+n_map('<S-TAB>', ':bprevious<CR>', default_opts) -- shift+tab
 
 --------------------------------------------------------------------------------
 -- Indentation
 --------------------------------------------------------------------------------
--- Tab Like (Right): Shift + >
+-- indent to the right: Shift + >
 v_map('>', '>gv', default_opts)
 n_map('>', '>>_', default_opts)
 
--- Shift-Tab (Left): shift + <
+-- indent to the left: shift + <
 v_map('<', '<gv', default_opts)
 n_map('<', '<<_', default_opts)
 
@@ -138,12 +148,22 @@ v_map('<M-d>', '"_d<ESC>', default_opts)
 -- v_map('<space>s', ':\'<,\'>!sort -f<CR><ESC>', default_opts)
 
 --------------------------------------------------------------------------------
--- ...
+-- Window
 --------------------------------------------------------------------------------
+-- Window Navigation
+n_map('<C-h>', '<C-w>h', default_opts) -- move cursor to "left" window
+n_map('<C-j>', '<C-w>j', default_opts) -- move cursor to "bottom" window
+n_map('<C-k>', '<C-w>k', default_opts) -- move cursor to "top" window
+n_map('<C-l>', '<C-w>l', default_opts) -- move cursor to "right" window
 
 --------------------------------------------------------------------------------
--- ...
+-- Terminal
 --------------------------------------------------------------------------------
+-- Terminal navigation
+t_map('<C-h>', '<C-\\><C-N><C-w>h', default_opts)
+t_map('<C-j>', '<C-\\><C-N><C-w>j', default_opts)
+t_map('<C-k>', '<C-\\><C-N><C-w>k', default_opts)
+t_map('<C-l>', '<C-\\><C-N><C-w>l', default_opts)
 
 --------------------------------------------------------------------------------
 -- ...
