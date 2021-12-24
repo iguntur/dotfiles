@@ -5,17 +5,18 @@ vim.g.mapleader = ','
 -- Map Helper Function
 --------------------------------------------------------------------------------
 local default_opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
 
 function n_map(lhs, rhs, options)
-	vim.api.nvim_set_keymap('n', lhs, rhs, options)
+	keymap('n', lhs, rhs, options)
 end
 
 function i_map(lhs, rhs, options)
-	vim.api.nvim_set_keymap('i', lhs, rhs, options)
+	keymap('i', lhs, rhs, options)
 end
 
 function v_map(lhs, rhs, options)
-	vim.api.nvim_set_keymap('v', lhs, rhs, options)
+	keymap('v', lhs, rhs, options)
 end
 
 --------------------------------------------------------------------------------
@@ -27,7 +28,7 @@ end
 --- Shift (⇧)
 
 -- Allow gf to open non-existent files
-vim.cmd([[ map gf :edit <cfile><cr> ]])
+keymap('', 'gf', ':edit <cfile><CR>', { silent = true })
 
 -- Disable Arrow-keys
 for _, k in pairs({'<Up>', '<Down>', '<Left>', '<Right>'}) do
@@ -36,8 +37,8 @@ for _, k in pairs({'<Up>', '<Down>', '<Left>', '<Right>'}) do
 end
 
 -- Disable terminal clear scren (Cmd+k)
-n_map('<Cmd>k', '<Nop>', { silent = true })
-n_map('<Cmd-k>', '<Nop>', { silent = true })
+keymap('', '<Cmd>k', '<Nop>', { silent = true })
+keymap('', '<Cmd-k>', '<Nop>', { silent = true })
 
 n_map('q:', '<Nop>', default_opts) -- disable unexpected macro
 
