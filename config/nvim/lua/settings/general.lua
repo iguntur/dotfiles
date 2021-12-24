@@ -66,6 +66,7 @@ opt.wildmenu       = true
 opt.wildmode       = 'longest:full,full'
 -- opt.t_Co           = '256'
 -- opt.wildcharm      = 4
+opt.pumheight      = 10 -- pop up menu height
 
 --------------------------------------------------------------------------------
 -- Search

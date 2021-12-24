@@ -86,7 +86,7 @@ nnoremap <silent> <leader>Q :qall!<CR>
 " map <leader>;; <Esc>A;<Esc>
 
 " Clear the highlight search
-nnoremap <silent> <leader><Space> :set scrolloff=20<CR><Esc>
+" x -- nnoremap <silent> <leader><Space> :set scrolloff=20<CR><Esc>
 " -- nnoremap <silent> <Esc> :nohlsearch<CR><Esc>
 
 
@@ -197,19 +197,19 @@ vnoremap <silent> <C-S-Right> :vertical resize +1<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Move Cursor Into Window
+" -- Move Cursor Into Window
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" move cursor to "bottom" window
-nnoremap <silent> <M-n> <C-w>j
+" -- move cursor to "bottom" window
+" -- nnoremap <silent> <M-n> <C-w>j
 
-" move cursor to "top" window
-nnoremap <silent> <M-m> <C-w>k
+" -- move cursor to "top" window
+" -- nnoremap <silent> <M-m> <C-w>k
 
-" move cursor to "left" window
-nnoremap <silent> <M-,> <C-w>h
+" -- move cursor to "left" window
+" -- nnoremap <silent> <M-,> <C-w>h
 
-" move cursor to "right" window
-nnoremap <silent> <M-.> <C-w>l
+" -- move cursor to "right" window
+" -- nnoremap <silent> <M-.> <C-w>l
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -243,10 +243,10 @@ nnoremap <silent> <M-.> <C-w>l
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pair Space
+" -- Pair Space
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-inoremap <silent> <M-Space> <Esc>2a<space><Esc>i
-nnoremap <silent> <M-Space> <Esc>2a<space><Esc>i
+" -- inoremap <silent> <M-Space> <Esc>2a<space><Esc>i
+" -- nnoremap <silent> <M-Space> <Esc>2a<space><Esc>i
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
