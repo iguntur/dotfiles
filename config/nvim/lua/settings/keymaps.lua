@@ -20,6 +20,14 @@ function v_map(lhs, rhs, options)
 	keymap('v', lhs, rhs, options)
 end
 
+function t_map(lhs, rhs, options)
+	keymap('t', lhs, rhs, options)
+end
+
+function x_map(lhs, rhs, options)
+	keymap('x', lhs, rhs, options)
+end
+
 --------------------------------------------------------------------------------
 -- Common Shortcut
 --------------------------------------------------------------------------------
