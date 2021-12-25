@@ -1,6 +1,10 @@
-local use = require('packer').use
+local M = {}
 
-use 'mattn/emmet-vim'
+M.setup = function(use)
+	use 'mattn/emmet-vim'
 
--- Emmet
-vim.g.user_emmet_leader_key = '<C-Z>'
+	-- Emmet
+	vim.g.user_emmet_leader_key = '<C-Z>'
+end
+
+return M

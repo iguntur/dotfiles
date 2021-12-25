@@ -1,3 +1,7 @@
-local use = require('packer').use
+local M = {}
 
-use 'machakann/vim-highlightedyank' -- Make the yanked region apparent!
+M.setup = function(use)
+	use 'machakann/vim-highlightedyank' -- Make the yanked region apparent!
+end
+
+return M

@@ -1,4 +1,8 @@
-local use = require('packer').use
+local M = {}
 
--- use 'ryanoasis/vim-devicons'
-use 'kyazdani42/nvim-web-devicons'
+M.setup = function(use)
+	-- use 'ryanoasis/vim-devicons'
+	use 'kyazdani42/nvim-web-devicons'
+end
+
+return M

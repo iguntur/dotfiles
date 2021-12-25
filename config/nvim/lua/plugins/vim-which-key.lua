@@ -1,3 +1,7 @@
-local use = require('packer').use
+local M = {}
 
-use 'liuchengxu/vim-which-key' -- show vim keymap
+M.setup = function(use)
+	use 'liuchengxu/vim-which-key' -- show vim keymap
+end
+
+return M

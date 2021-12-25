@@ -1,3 +1,7 @@
-local use = require('packer').use
+local M = {}
 
-use 'scrooloose/syntastic' -- Syntax checking hacks
+M.setup = function(use)
+	use 'scrooloose/syntastic' -- Syntax checking hacks
+end
+
+return M

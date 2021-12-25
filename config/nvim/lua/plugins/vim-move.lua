@@ -1,6 +1,10 @@
-local use = require('packer').use
+local M = {}
 
-use 'matze/vim-move' -- Move line
+M.setup = function(use)
+	use 'matze/vim-move' -- Move line
 
--- Move line
--- vim.g.move_key_modifier = 'C' -- Default 'A' (Alt)
+	-- Move line
+	-- vim.g.move_key_modifier = 'C' -- Default 'A' (Alt)
+end
+
+return M

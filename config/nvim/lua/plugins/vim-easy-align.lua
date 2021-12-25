@@ -1,9 +1,12 @@
-local use = require('packer').use
+local M = {}
 local keymap = vim.api.nvim_set_keymap
 
-use 'junegunn/vim-easy-align' -- Text align
+M.setup = function(use)
+	use 'junegunn/vim-easy-align' -- Text align
 
+	-- Settings
+	keymap('x', 'ga', '<Plug>(EasyAlign)', { silent = true }) -- Start interactive EasyAlign in visual mode (e.g. vipga)
+	keymap('n', 'ga', '<Plug>(EasyAlign)', { silent = true }) -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
+end
 
--- Settings
-keymap('x', 'ga', '<Plug>(EasyAlign)', { silent = true }) -- Start interactive EasyAlign in visual mode (e.g. vipga)
-keymap('n', 'ga', '<Plug>(EasyAlign)', { silent = true }) -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
+return M

@@ -1,3 +1,7 @@
-local use = require('packer').use
+local M = {}
 
-use 'tpope/vim-markdown' -- Markdown runtime files
+M.setup = function(use)
+	use 'tpope/vim-markdown' -- Markdown runtime files
+end
+
+return M

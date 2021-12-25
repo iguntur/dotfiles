@@ -1,6 +1,10 @@
-local use = require('packer').use
+local M = {}
 
-use 'editorconfig/editorconfig-vim'
+M.setup = function(use)
+	use 'editorconfig/editorconfig-vim'
 
--- Editorconfig
-vim.g.EditorConfig_exclude_patterns = {'fugitive://.*', 'scp://.*'}
+	-- Editorconfig
+	vim.g.EditorConfig_exclude_patterns = {'fugitive://.*', 'scp://.*'}
+end
+
+return M

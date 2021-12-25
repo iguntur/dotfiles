@@ -1,8 +1,13 @@
-local use = require('packer').use
+local M = {}
+local keymap = vim.api.nvim_set_keymap
 
-use 'tpope/vim-commentary' -- Commenting
+M.setup = function(use)
+	use 'tpope/vim-commentary' -- Commenting
 
--- Keymaps: (Ctrl-/) commenting
-vim.api.nvim_set_keymap('n', '<C-_>', 'gcc<Esc>', { silent = true })
-vim.api.nvim_set_keymap('v', '<C-_>', 'gc<Esc>gv', { silent = true })
-vim.api.nvim_set_keymap('i', '<C-_>', '<Esc>gcc<Esc>', { silent = true })
+	-- Keymaps: (Ctrl-/) commenting
+	keymap('n', '<C-_>', 'gcc<Esc>', { silent = true })
+	keymap('v', '<C-_>', 'gc<Esc>gv', { silent = true })
+	keymap('i', '<C-_>', '<Esc>gcc<Esc>', { silent = true })
+end
+
+return M

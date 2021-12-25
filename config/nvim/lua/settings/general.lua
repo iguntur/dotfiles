@@ -55,7 +55,7 @@ opt.list           = true
 opt.listchars      = {tab = '▸ ', trail = '·'} -- eol = '↲'
 opt.mouse          = 'a'
 opt.number         = true
-opt.numberwidth    = 5
+opt.numberwidth    = 6
 opt.relativenumber = true
 opt.ruler          = true
 opt.scrolloff      = 17
