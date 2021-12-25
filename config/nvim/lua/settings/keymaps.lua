@@ -39,6 +39,9 @@ end
 -- Allow gf to open non-existent files
 keymap('', 'gf', ':edit <cfile><CR>', { silent = true })
 
+-- Reload (source nvim.config): F5
+n_map('<F5>', ':source $HOME/.config/nvim/init.lua<CR><Esc>', { silent = true })
+
 -- Disable Arrow-keys
 for _, k in pairs({'<Up>', '<Down>', '<Left>', '<Right>'}) do
 	n_map(k, '<Nop>', default_opts)
