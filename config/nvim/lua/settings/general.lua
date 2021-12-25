@@ -45,7 +45,6 @@ opt.shortmess:append('I')           -- Disable Neovim welcome page
 -- Interface
 --------------------------------------------------------------------------------
 cmd([[ syntax on ]])
-cmd([[ colorscheme gruvbox ]])
 
 opt.background     = 'dark'
 opt.colorcolumn    = '110'
