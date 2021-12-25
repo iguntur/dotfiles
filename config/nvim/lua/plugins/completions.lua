@@ -5,9 +5,10 @@ use 'hrsh7th/nvim-cmp'         -- the completion plugin
 use 'hrsh7th/cmp-buffer'       -- buffer completions
 use 'hrsh7th/cmp-path'         -- path completions
 use 'hrsh7th/cmp-cmdline'      -- command line completions
+use 'hrsh7th/cmp-nvim-lsp'
+use 'hrsh7th/cmp-nvim-lua'
 use "saadparwaiz1/cmp_luasnip" -- snippet completions
--- use 'neovim/nvim-lspconfig'
--- use 'hrsh7th/cmp-nvim-lsp'
+
 
 -- snippets
 -- use 'honza/vim-snippets'        -- viml script snippets
