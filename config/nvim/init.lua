@@ -5,7 +5,7 @@ require('settings.keymaps')
 vim.cmd([[
 	augroup packer_user_config
 		autocmd!
-		autocmd BufWritePost init.lua source <afile> | PackerSync
+		autocmd BufWritePost init.lua source <afile> | PackerCompile
 	augroup end
 ]])
 
