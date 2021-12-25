@@ -10,13 +10,13 @@ vim.cmd([[
 ]])
 
 -- Use a protected call so we don't error out on first use
-local ok = pcall(require, 'packer')
+local ok, packer = pcall(require, 'packer')
 if not ok then
 	return
 end
 
 -- Have packer use a popup window
-require('packer').init({
+packer.init({
 	display = {
 		open_fn = function()
 			return require('packer.util').float({ border = 'rounded' })
@@ -25,7 +25,7 @@ require('packer').init({
 })
 
 -- Plugins
-return require('packer').startup(function()
+return packer.startup(function(use)
 	use 'wbthomason/packer.nvim'    -- Packer can manage itself
 
 	require('plugins.ack')                   -- text searching
@@ -60,4 +60,6 @@ return require('packer').startup(function()
 	-- require('plugins.vim-thematic')          -- ...
 	-- require('plugins.vim-which-key')         -- ...
 	-- require('plugins.vimproc')               -- ...
+	-- require('plugins.lsp')                   -- Language Server Protocol (LSP)
+
 end)
