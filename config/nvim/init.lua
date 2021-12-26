@@ -27,7 +27,8 @@ packer.init({
 -- Plugins
 return packer.startup(function(use)
 	use 'wbthomason/packer.nvim'             -- Packer can manage itself
-	-- use 'nvim-lua/plenary.nvim'              -- Useful lua functions used ny lots of plugins
+	use 'nvim-lua/popup.nvim'                -- An implementation of the Popup API from vim in Neovim
+	use 'nvim-lua/plenary.nvim'              -- Useful lua functions used ny lots of plugins
 
 	require('plugins.ack').setup(use)                   -- text searching
 	require('plugins.autopairs').setup(use)             -- autopairs quotes, parens, brackets, etc
