@@ -31,12 +31,8 @@ opt.swapfile      = false
 opt.tabstop       = 4
 opt.textwidth     = 110
 opt.wrap          = false
-opt.termguicolors = true  -- enable 24-bit RGB colors
 opt.linebreak     = true
 opt.undofile      = true  -- enable persistent undo
-opt.splitbelow    = true  -- make all horizontal split to go below window
-opt.splitright    = true  -- make all vertical split to go to the right
-opt.backup        = false -- create backup file
 
 opt.clipboard:append('unnamedplus') -- Copy (yank) and paste with clipboard integration
 opt.shortmess:append('I')           -- Disable Neovim welcome page
@@ -66,6 +62,11 @@ opt.wildmode       = 'longest:full,full'
 -- opt.t_Co           = '256'
 -- opt.wildcharm      = 4
 opt.pumheight      = 10 -- pop up menu height
+opt.completeopt    = {'menuone', 'noselect'}
+opt.termguicolors  = true  -- enable 24-bit RGB colors
+opt.splitbelow     = true  -- make all horizontal split to go below window
+opt.splitright     = true  -- make all vertical split to go to the right
+opt.backup         = false -- create backup file
 
 --------------------------------------------------------------------------------
 -- Search
