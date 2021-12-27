@@ -63,5 +63,6 @@ return packer.startup(function(use)
 	require('plugins.vim-sneak').setup(use)             -- jump to any location specified by two characters.
 	require('plugins.vim-surround').setup(use)          -- ...
 	require('plugins.vim-which-key').setup(use)         -- show vim keymap
+	require('plugins.treesitter').setup(use)            -- Treesitter
 
 end)
