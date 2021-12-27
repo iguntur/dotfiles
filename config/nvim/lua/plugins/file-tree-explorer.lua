@@ -19,9 +19,9 @@ M.setup = function(use)
     }
 
     -- keymap('n', '<C-b>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-    keymap('n', '<C-b>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+    keymap('n', '<C-b>', ':NvimTreeToggle<CR>', { noremap = true, silent = true }) -- Ctrl+b
+    keymap('n', '<C-Space>', ':NvimTreeFindFile<CR>', { noremap = true, silent = true }) -- Ctrl+space
     -- keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', { noremap = true, silent = true })
-    -- keymap('n', '<leader>n', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
 end
 
 return M

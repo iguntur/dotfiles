@@ -92,7 +92,7 @@ i_map('<C-l>', '<Right>', default_opts)
 -- Buffer and File
 --------------------------------------------------------------------------------
 -- Write or saving file: (⌥ or alt) + s
-v_map('<M-s>', ':w<CR><ESC>', default_opts)
+v_map('<M-s>', '<ESC>:w<CR><ESC>', default_opts)
 n_map('<M-s>', ':w<CR><ESC>', default_opts)
 i_map('<M-s>', '<ESC>:w<CR><ESC>a', default_opts) -- allow writing in insert mode
 
