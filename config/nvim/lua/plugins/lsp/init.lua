@@ -2,7 +2,7 @@ local M = {}
 
 local lsp_config_file = {
 	'jsonls',
-	'pyright',
+	-- 'pyright',
 	'sumneko_lua',
 }
 
