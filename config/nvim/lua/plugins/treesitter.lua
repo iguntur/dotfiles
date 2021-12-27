@@ -1,7 +1,7 @@
 local M = {}
 
 local function setup_treesitter()
-	local ok, config = pcall(require, 'nvim-treesitter.config')
+	local ok, config = pcall(require, 'nvim-treesitter.configs')
 
 	if not ok then
 		return
@@ -25,6 +25,14 @@ local function setup_treesitter()
 			enable = true,
 			disable = { 'yaml' },
 		},
+		rainbow = {
+			enable = true,
+			-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+			extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+			max_file_lines = nil, -- Do not enable for files with more than n lines, int
+			-- colors = {}, -- table of hex strings
+			-- termcolors = {} -- table of colour name strings
+		},
 	})
 end
 
@@ -32,6 +40,9 @@ M.setup = function(use)
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate',
+		requires = {
+			'p00f/nvim-ts-rainbow'
+		}
 	}
 
 	setup_treesitter()
