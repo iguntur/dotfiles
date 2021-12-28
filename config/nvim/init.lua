@@ -60,6 +60,7 @@ return packer.startup(function(use)
 	require('plugins.vim-surround').setup(use)          -- ...
 	require('plugins.vim-which-key').setup(use)         -- show vim keymap
 	require('plugins.treesitter').setup(use)            -- Treesitter
+	require('plugins.nvim-null-ls').setup(use)          -- null-ls
 
 	-- require('plugins.coc').setup(use)                     -- ...
 	-- require('plugins.fzf').setup(use)                     -- fzf
