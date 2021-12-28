@@ -161,6 +161,34 @@ n_map('<C-k>', '<C-w>k', default_opts) -- move cursor to "top" window
 n_map('<C-l>', '<C-w>l', default_opts) -- move cursor to "right" window
 
 --------------------------------------------------------------------------------
+-- Resize window (Ctrl-Shift-<Arrow_Keys>)
+--------------------------------------------------------------------------------
+-- " Up
+n_map('<C-S-Up>', ':resize +1<CR>', default_opts)
+-- i_map('<C-S-Up>', ':resize +1<CR>', default_opts)
+-- v_map('<C-S-Up>', ':resize +1<CR>', default_opts)
+-- c_map('<C-S-Up>', ':resize +1<CR>', default_opts)
+
+-- " Down
+n_map('<C-S-Down>', ':resize -1<CR>', default_opts)
+-- i_map('<C-S-Down>', ':resize -1<CR>', default_opts)
+-- v_map('<C-S-Down>', ':resize -1<CR>', default_opts)
+-- c_map('<C-S-Down>', ':resize -1<CR>', default_opts)
+
+-- " Left
+n_map('<C-S-Left>', ':vertical resize -1<CR>', default_opts)
+-- i_map('<C-S-Left>', ':vertical resize -1<CR>', default_opts)
+-- v_map('<C-S-Left>', ':vertical resize -1<CR>', default_opts)
+-- c_map('<C-S-Left>', ':vertical resize -1<CR>', default_opts)
+
+-- " Right
+n_map('<C-S-Right>', ':vertical resize +1<CR>', default_opts)
+-- i_map('<C-S-Right>', ':vertical resize +1<CR>', default_opts)
+-- v_map('<C-S-Right>', ':vertical resize +1<CR>', default_opts)
+-- c_map('<C-S-Right>', ':vertical resize +1<CR>', default_opts)
+
+
+--------------------------------------------------------------------------------
 -- Terminal
 --------------------------------------------------------------------------------
 -- Terminal navigation

@@ -16,27 +16,27 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocompletion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Handle <Enter> key press on insert mode
-inoremap <expr> <CR> (pumvisible() ?  "\<C-y>\<C-r>" : "\<CR>")
+" " Handle <Enter> key press on insert mode
+" inoremap <expr> <CR> (pumvisible() ?  "\<C-y>\<C-r>" : "\<CR>")
 
-" (TAB) For Autocompletion
-inoremap <expr> <C-j> pumvisible() ?  "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ?  "\<C-p>" : "\<C-k>"
+" " (TAB) For Autocompletion
+" inoremap <expr> <C-j> pumvisible() ?  "\<C-n>" : "\<C-j>"
+" inoremap <expr> <C-k> pumvisible() ?  "\<C-p>" : "\<C-k>"
 
-cnoremap <expr> <C-j> pumvisible() ?  "\<C-n>" : "\<C-j>"
-cnoremap <expr> <C-k> pumvisible() ?  "\<C-p>" : "\<C-k>"
+" cnoremap <expr> <C-j> pumvisible() ?  "\<C-n>" : "\<C-j>"
+" cnoremap <expr> <C-k> pumvisible() ?  "\<C-p>" : "\<C-k>"
 
 
-" Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-imap <leader><tab> <plug>(fzf-maps-i)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
+" " Mapping selecting mappings
+" nmap <leader><tab> <plug>(fzf-maps-n)
+" imap <leader><tab> <plug>(fzf-maps-i)
+" xmap <leader><tab> <plug>(fzf-maps-x)
+" omap <leader><tab> <plug>(fzf-maps-o)
 
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+" " Insert mode completion
+" imap <c-x><c-k> <plug>(fzf-complete-word)
+" imap <c-x><c-f> <plug>(fzf-complete-path)
+" imap <c-x><c-l> <plug>(fzf-complete-line)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -77,12 +77,12 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Leader Keymap
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <leader>ww :w<CR>
-nnoremap <silent> <leader>wq :wq<CR>
-nnoremap <silent> <leader>qq :q!<CR>
-nnoremap <silent> <leader>we :bw<CR>
-nnoremap <silent> <leader>wc :bw!<CR>
-nnoremap <silent> <leader>Q :qall!<CR>
+" nnoremap <silent> <leader>ww :w<CR>
+" nnoremap <silent> <leader>wq :wq<CR>
+" nnoremap <silent> <leader>qq :q!<CR>
+" nnoremap <silent> <leader>we :bw<CR>
+" nnoremap <silent> <leader>wc :bw!<CR>
+" nnoremap <silent> <leader>Q :qall!<CR>
 " map <leader>;; <Esc>A;<Esc>
 
 " Clear the highlight search
@@ -94,12 +94,12 @@ nnoremap <silent> <leader>Q :qall!<CR>
 " Common Shortcut
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " (Alt-o) Reload VIM config
-nmap <silent> <F5> :source ~/.config/nvim/init.vim<CR><Esc><Esc>
+" nmap <silent> <F5> :source ~/.config/nvim/init.vim<CR><Esc><Esc>
 " nnoremap <silent> <M-o> :source ~/.config/nvim/init.vim<CR><Esc><Esc>
 
 " Change color schemes
 " <leader>cs
-nnoremap <silent> <leader>cs :Colors<CR>
+" nnoremap <silent> <leader>cs :Colors<CR>
 
 " -- (Ctrl-/) Commenting
 " -- nmap <silent> <C-_> gcc<Esc>
@@ -152,29 +152,29 @@ nnoremap <silent> <leader>cs :Colors<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Up
 " cnoremap <silent> <expr> <C-S-Up> :resize +1<CR>
-xnoremap <silent> <expr> <C-S-Up> :resize +1<CR>
-inoremap <silent> <C-S-Up> :resize +1<CR>
-nnoremap <silent> <C-S-Up> :resize +1<CR>
-vnoremap <silent> <C-S-Up> :resize +1<CR>
+" xnoremap <silent> <expr> <C-S-Up> :resize +1<CR>
+" inoremap <silent> <C-S-Up> :resize +1<CR>
+" nnoremap <silent> <C-S-Up> :resize +1<CR>
+" vnoremap <silent> <C-S-Up> :resize +1<CR>
 
-" Down
-" cnoremap <silent> <expr> <C-S-Down> :resize -1<CR>
-xnoremap <silent> <expr> <C-S-Down> :resize -1<CR>
-inoremap <silent> <C-S-Down> :resize -1<CR>
-nnoremap <silent> <C-S-Down> :resize -1<CR>
-vnoremap <silent> <C-S-Down> :resize -1<CR>
+" " Down
+" " cnoremap <silent> <expr> <C-S-Down> :resize -1<CR>
+" xnoremap <silent> <expr> <C-S-Down> :resize -1<CR>
+" inoremap <silent> <C-S-Down> :resize -1<CR>
+" nnoremap <silent> <C-S-Down> :resize -1<CR>
+" vnoremap <silent> <C-S-Down> :resize -1<CR>
 
-" Left
-" cnoremap <silent> <C-S-Left> :vertical resize -1<CR>
-inoremap <silent> <C-S-Left> :vertical resize -1<CR>
-nnoremap <silent> <C-S-Left> :vertical resize -1<CR>
-vnoremap <silent> <C-S-Left> :vertical resize -1<CR>
+" " Left
+" " cnoremap <silent> <C-S-Left> :vertical resize -1<CR>
+" inoremap <silent> <C-S-Left> :vertical resize -1<CR>
+" nnoremap <silent> <C-S-Left> :vertical resize -1<CR>
+" vnoremap <silent> <C-S-Left> :vertical resize -1<CR>
 
-" Right
-" cnoremap <silent> <C-S-Right> :vertical resize +1<CR>
-inoremap <silent> <C-S-Right> :vertical resize +1<CR>
-nnoremap <silent> <C-S-Right> :vertical resize +1<CR>
-vnoremap <silent> <C-S-Right> :vertical resize +1<CR>
+" " Right
+" " cnoremap <silent> <C-S-Right> :vertical resize +1<CR>
+" inoremap <silent> <C-S-Right> :vertical resize +1<CR>
+" nnoremap <silent> <C-S-Right> :vertical resize +1<CR>
+" vnoremap <silent> <C-S-Right> :vertical resize +1<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
