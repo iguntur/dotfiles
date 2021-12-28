@@ -61,6 +61,8 @@ return packer.startup(function(use)
 	require('plugins.vim-which-key').setup(use)         -- show vim keymap
 	require('plugins.treesitter').setup(use)            -- Treesitter
 	require('plugins.nvim-null-ls').setup(use)          -- null-ls
+	require('plugins.trouble').setup(use)               -- diagnostic with folke trouble
+	require('plugins.terminal').setup(use)              -- open terminal
 
 	-- require('plugins.coc').setup(use)                     -- ...
 	-- require('plugins.fzf').setup(use)                     -- fzf
