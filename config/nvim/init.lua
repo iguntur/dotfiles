@@ -31,6 +31,7 @@ return packer.startup(function(use)
 	use 'nvim-lua/plenary.nvim'                         -- Useful lua functions used ny lots of plugins
 
 	-- Plugins and Settings
+	require('plugins.fix-cursor-hold').setup(use)       -- fix `CursorHold` performance and to fix lsp doc highlight
 	require('plugins.welcome').setup(use)               -- Vim welcome screen
 	require('plugins.file-tree-explorer').setup(use)    -- File explorer
 	require('plugins.ack').setup(use)                   -- text searching
@@ -63,6 +64,7 @@ return packer.startup(function(use)
 	require('plugins.nvim-null-ls').setup(use)          -- null-ls
 	require('plugins.trouble').setup(use)               -- diagnostic with folke trouble
 	require('plugins.terminal').setup(use)              -- open terminal
+	require('plugins.indent-blankline').setup(use)      -- indent blankline
 
 	-- require('plugins.coc').setup(use)                     -- ...
 	-- require('plugins.fzf').setup(use)                     -- fzf
