@@ -10,6 +10,7 @@ local function setup_keymap()
 	n_map('<Leader>fg', '<cmd>Telescope live_grep<CR>')
 	n_map('<Leader>fb', '<cmd>Telescope buffers<CR>')
 	n_map('<Leader>fh', '<cmd>Telescope help_tags<CR>')
+	n_map('<Leader>fe', '<cmd>Telescope file_browser<CR>')
 end
 
 local function telescope_setup()
