@@ -32,12 +32,12 @@ local function telescope_setup()
 		},
 		extensions = {
 			-- ...
-		}
+		},
 	})
 end
 
 M.setup = function(use)
-	use 'nvim-telescope/telescope.nvim'
+	use('nvim-telescope/telescope.nvim')
 
 	telescope_setup()
 	setup_keymap()

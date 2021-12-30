@@ -3,10 +3,10 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 M.setup = function(use)
-	use {
+	use({
 		'romgrk/barbar.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons' }
-	}
+		requires = { 'kyazdani42/nvim-web-devicons' },
+	})
 
 	-- Move to previous/next
 	map('n', '<A-,>', ':BufferPrevious<CR>', opts)

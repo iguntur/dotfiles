@@ -2,7 +2,7 @@ local M = {}
 local keymap = vim.api.nvim_set_keymap
 
 M.setup = function(use)
-	use 'mileszs/ack.vim'
+	use('mileszs/ack.vim')
 
 	-- ACK - Text searching
 	vim.cmd([[ cnoreabbrev Ack Ack! ]])

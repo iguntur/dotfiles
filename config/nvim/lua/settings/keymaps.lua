@@ -43,7 +43,7 @@ keymap('', 'gf', ':edit <cfile><CR>', { silent = true })
 n_map('<F5>', ':source $HOME/.config/nvim/init.lua<CR><Esc>', { silent = true })
 
 -- Disable Arrow-keys
-for _, k in pairs({'<Up>', '<Down>', '<Left>', '<Right>'}) do
+for _, k in pairs({ '<Up>', '<Down>', '<Left>', '<Right>' }) do
 	n_map(k, '<Nop>', default_opts)
 	v_map(k, '<Nop>', default_opts)
 end
@@ -137,7 +137,6 @@ v_map('<M-K>', '<NOP>', default_opts)
 n_map('<M-J>', '<ESC>^<ESC>"0yy "0p<ESC>', default_opts)
 v_map('<M-J>', '<NOP>', default_opts)
 
-
 --------------------------------------------------------------------------------
 -- Delete Line(s)
 --------------------------------------------------------------------------------
@@ -186,7 +185,6 @@ n_map('<C-S-Right>', ':vertical resize +1<CR>', default_opts)
 -- i_map('<C-S-Right>', ':vertical resize +1<CR>', default_opts)
 -- v_map('<C-S-Right>', ':vertical resize +1<CR>', default_opts)
 -- c_map('<C-S-Right>', ':vertical resize +1<CR>', default_opts)
-
 
 --------------------------------------------------------------------------------
 -- Terminal

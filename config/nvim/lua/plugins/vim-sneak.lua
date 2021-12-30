@@ -2,7 +2,7 @@ local M = {}
 local keymap = vim.api.nvim_set_keymap
 
 M.setup = function(use)
-	use 'justinmk/vim-sneak' -- Jump to any location specified by two characters.
+	use('justinmk/vim-sneak') -- Jump to any location specified by two characters.
 
 	-- Settings
 	vim.g['sneak#label'] = 1

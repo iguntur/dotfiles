@@ -1,10 +1,10 @@
 local M = {}
 
 M.setup = function(use)
-	use {
+	use({
 		'folke/trouble.nvim',
 		requires = {
-			'kyazdani42/nvim-web-devicons'
+			'kyazdani42/nvim-web-devicons',
 		},
 		config = function()
 			local ok, trouble = pcall(require, 'trouble')
@@ -19,8 +19,8 @@ M.setup = function(use)
 			trouble.setup({
 				-- ...
 			})
-		end
-	}
+		end,
+	})
 end
 
 return M

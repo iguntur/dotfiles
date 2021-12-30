@@ -2,12 +2,12 @@ local M = {}
 
 M.setup = function(use)
 	-- use 'mhinz/vim-signify'   -- Git Gutter
-	use 'tpope/vim-fugitive'  -- A Git wrapper so awesome
+	use('tpope/vim-fugitive') -- A Git wrapper so awesome
 
-	use {
+	use({
 		'lewis6991/gitsigns.nvim',
 		requires = {
-			'nvim-lua/plenary.nvim'
+			'nvim-lua/plenary.nvim',
 		},
 		config = function()
 			local ok, gitsigns = pcall(require, 'gitsigns')
@@ -17,8 +17,8 @@ M.setup = function(use)
 			end
 
 			gitsigns.setup()
-		end
-	}
+		end,
+	})
 end
 
 return M

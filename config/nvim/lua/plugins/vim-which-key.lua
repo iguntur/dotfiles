@@ -3,7 +3,7 @@ local M = {}
 M.setup = function(use)
 	-- use 'liuchengxu/vim-which-key' -- show vim keymap
 
-	use {
+	use({
 		'folke/which-key.nvim',
 		config = function()
 			local ok, which_key = pcall(require, 'which-key')
@@ -17,8 +17,8 @@ M.setup = function(use)
 				-- or leave it empty to use the default settings
 				-- refer to the configuration section below
 			})
-		end
-	}
+		end,
+	})
 end
 
 return M

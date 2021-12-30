@@ -2,12 +2,12 @@ local M = {}
 local keymap = vim.api.nvim_set_keymap
 
 M.setup = function(use)
-	use {
+	use({
 		'goolord/alpha-nvim',
 		requires = {
-			'kyazdani42/nvim-web-devicons'
+			'kyazdani42/nvim-web-devicons',
 		},
-		config = function ()
+		config = function()
 			local ok, startify = pcall(require, 'alpha.themes.startify')
 
 			if not ok then
@@ -24,8 +24,8 @@ M.setup = function(use)
 			}
 
 			-- keymap('n', '<C-n>', ':Alpha<CR>', { noremap = true, silent = true })
-		end
-	}
+		end,
+	})
 end
 
 return M

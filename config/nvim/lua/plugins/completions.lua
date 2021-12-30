@@ -2,20 +2,19 @@ local M = {}
 
 M.setup = function(use)
 	-- completion plugins
-	use 'hrsh7th/nvim-cmp'         -- the completion plugin
-	use 'hrsh7th/cmp-buffer'       -- buffer completions
-	use 'hrsh7th/cmp-path'         -- path completions
-	use 'hrsh7th/cmp-cmdline'      -- command line completions
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-nvim-lua'
-	use "saadparwaiz1/cmp_luasnip" -- snippet completions
-
+	use('hrsh7th/nvim-cmp') -- the completion plugin
+	use('hrsh7th/cmp-buffer') -- buffer completions
+	use('hrsh7th/cmp-path') -- path completions
+	use('hrsh7th/cmp-cmdline') -- command line completions
+	use('hrsh7th/cmp-nvim-lsp')
+	use('hrsh7th/cmp-nvim-lua')
+	use('saadparwaiz1/cmp_luasnip') -- snippet completions
 
 	-- snippets
 	-- use 'honza/vim-snippets'        -- viml script snippets
-	use 'L3MON4D3/LuaSnip'             -- snippet engine
-	use 'SirVer/ultisnips'             -- python snippets
-	use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
+	use('L3MON4D3/LuaSnip') -- snippet engine
+	use('SirVer/ultisnips') -- python snippets
+	use('rafamadriz/friendly-snippets') -- a bunch of snippets to use
 
 	--------------------------------------------------------------------------------
 	-- Settings
@@ -33,8 +32,8 @@ M.setup = function(use)
 	require('luasnip/loaders/from_vscode').lazy_load()
 
 	local check_backspace = function()
-		local col = vim.fn.col '.' - 1
-		return col == 0 or vim.fn.getline('.'):sub(col, col):match '%s'
+		local col = vim.fn.col('.') - 1
+		return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
 	end
 
 	--   פּ ﯟ   some other good icons
@@ -67,7 +66,7 @@ M.setup = function(use)
 	}
 	-- find more here: https://www.nerdfonts.com/cheat-sheet
 
-	cmp.setup {
+	cmp.setup({
 		snippet = {
 			expand = function(args)
 				luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -80,10 +79,10 @@ M.setup = function(use)
 			['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(1), { 'i', 'c' }),
 			['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 			['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-			['<C-e>'] = cmp.mapping {
+			['<C-e>'] = cmp.mapping({
 				i = cmp.mapping.abort(),
 				c = cmp.mapping.close(),
-			},
+			}),
 			-- Accept currently selected item. If none selected, `select` first item.
 			-- Set `select` to `false` to only confirm explicitly selected items.
 			['<CR>'] = cmp.mapping.confirm({ select = true }),
@@ -113,17 +112,17 @@ M.setup = function(use)
 		formatting = {
 			fields = { 'kind', 'abbr', 'menu' },
 			format = function(entry, vim_item)
-			-- Kind icons
-			vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
-			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-			vim_item.menu = ({
-				nvim_lsp = '[LSP]',
-				nvim_lua = '[LUA]',
-				luasnip = '[Snippet]',
-				buffer = '[Buffer]',
-				path = '[Path]',
-			})[entry.source.name]
-			return vim_item
+				-- Kind icons
+				vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
+				-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+				vim_item.menu = ({
+					nvim_lsp = '[LSP]',
+					nvim_lua = '[LUA]',
+					luasnip = '[Snippet]',
+					buffer = '[Buffer]',
+					path = '[Path]',
+				})[entry.source.name]
+				return vim_item
 			end,
 		},
 		sources = {
@@ -144,7 +143,7 @@ M.setup = function(use)
 			ghost_text = false,
 			native_menu = false,
 		},
-	}
+	})
 end
 
 return M

@@ -1,7 +1,7 @@
 local M = {}
 
-M.setup = function (use)
-	use 'lukas-reineke/indent-blankline.nvim'
+M.setup = function(use)
+	use('lukas-reineke/indent-blankline.nvim')
 
 	local ok, indent_blankline = pcall(require, 'indent_blankline')
 
