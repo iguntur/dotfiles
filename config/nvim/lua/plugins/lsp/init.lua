@@ -1,9 +1,22 @@
 local M = {}
 
-local lsp_config_file = {
-	'jsonls',
-	-- 'pyright',
-	'sumneko_lua',
+local servers = {
+	'bashls', -- shell script - sh
+	'clangd', -- c
+	'html', -- html
+	'intelephense', -- php
+	'jsonls', -- json
+	'pyright', -- python
+	'rust_analyzer', -- rust
+	'sumneko_lua', -- lua
+	'tsserver', -- javascript, typescript
+}
+
+local lsp_handler = require('plugins.lsp.handler')
+
+local lsp_opts = {
+	on_attach = lsp_handler.on_attach,
+	capabilities = lsp_handler.capabilities,
 }
 
 local function setup_lsp_installer()
@@ -16,16 +29,14 @@ local function setup_lsp_installer()
 	-- Register a handler that will be called for all installed servers.
 	-- Alternatively, you may also register handlers on specific server instances instead (see example below).
 	lsp_installer.on_server_ready(function(server)
-		local opts = {
-			on_attach    = require('plugins.lsp.handler').on_attach,
-			capabilities = require('plugins.lsp.handler').capabilities,
-		}
+		-- do something ...
+		local opts = lsp_opts
 
-		for _, fp in pairs(lsp_config_file) do
-			if server.name == fp then
-				local ok, extend_opts = pcall(require, 'plugins.lsp.settings.' .. fp)
+		for _, lsp in ipairs(servers) do
+			if server.name == lsp then
+				local has_explicit_config, extend_opts = pcall(require, 'plugins.lsp.settings.' .. lsp)
 
-				if ok then
+				if has_explicit_config then
 					opts = vim.tbl_deep_extend('force', extend_opts, opts)
 				end
 			end
@@ -37,12 +48,34 @@ local function setup_lsp_installer()
 	end)
 end
 
-M.setup = function(use)
-	use 'neovim/nvim-lspconfig'           -- enable LSP
-	use 'williamboman/nvim-lsp-installer' -- simple to use language server installer
-	use 'tamago324/nlsp-settings.nvim'    -- language server settings defined in json for
+-- local function setup_language_server()
+-- 	local ok, lsp_config = pcall(require, 'lspconfig')
 
+-- 	if not ok then
+-- 		return
+-- 	end
+
+-- 	for _, lsp in ipairs(servers) do
+-- 		local has_explicit_config, extend_opts = pcall(require, 'plugins.lsp.settings.' .. lsp)
+
+-- 		local opts = lsp_opts
+
+-- 		if has_explicit_config then
+-- 			opts = vim.tbl_deep_extend('force', extend_opts, opts)
+-- 		end
+
+-- 		lsp_config[lsp].setup(opts)
+-- 	end
+-- end
+
+M.setup = function(use)
+	use('neovim/nvim-lspconfig') -- enable LSP
+	use('williamboman/nvim-lsp-installer') -- simple to use language server installer
+	use('tamago324/nlsp-settings.nvim') -- language server settings defined in json for
+
+	-- setup_language_server()
 	setup_lsp_installer()
+
 	require('plugins.lsp.handler').setup()
 end
 
