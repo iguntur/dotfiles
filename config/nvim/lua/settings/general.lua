@@ -73,6 +73,11 @@ opt.backup         = false -- create backup file
 --------------------------------------------------------------------------------
 opt.hlsearch   = true -- highlight search result
 opt.ignorecase = true
-opt.smartcase  = true
-opt.incsearch  = true -- move cursor to search as you type
-opt.showmatch  = true
+opt.smartcase = true
+opt.incsearch = true -- move cursor to search as you type
+opt.showmatch = true
+
+--------------------------------------------------------------------------------
+-- LSP Stuff
+--------------------------------------------------------------------------------
+cmd([[  set tagfunc=v:lua.vim.lsp.tagfunc ]])
