@@ -32,6 +32,7 @@ return packer.startup(function(use)
 
 	-- Plugins and Settings
 	require('plugins.fix-cursor-hold').setup(use) -- fix `CursorHold` performance and to fix lsp doc highlight
+	require('plugins.vim-notify').setup(use) -- fix `CursorHold` performance and to fix lsp doc highlight
 	require('plugins.welcome').setup(use) -- Vim welcome screen
 	require('plugins.file-tree-explorer').setup(use) -- File explorer
 	require('plugins.ack').setup(use) -- text searching
