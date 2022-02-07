@@ -4,7 +4,7 @@
 ### VIM
 ###
 alias v="nvim"
-# alias vim="nvim"
+alias vim="nvim"
 
 ##
 ## Easier navigation
