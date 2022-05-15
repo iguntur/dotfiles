@@ -48,6 +48,7 @@ npmrc
 /.temp
 /.cache
 /.caches
+tmp
 
 *junk*
 *-skip
