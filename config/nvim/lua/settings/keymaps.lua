@@ -8,23 +8,23 @@ vim.g.maplocalleader = ','
 local default_opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
-function n_map(lhs, rhs, options)
+local function n_map(lhs, rhs, options)
 	keymap('n', lhs, rhs, options)
 end
 
-function i_map(lhs, rhs, options)
+local function i_map(lhs, rhs, options)
 	keymap('i', lhs, rhs, options)
 end
 
-function v_map(lhs, rhs, options)
+local function v_map(lhs, rhs, options)
 	keymap('v', lhs, rhs, options)
 end
 
-function t_map(lhs, rhs, options)
+local function t_map(lhs, rhs, options)
 	keymap('t', lhs, rhs, options)
 end
 
-function x_map(lhs, rhs, options)
+local function x_map(lhs, rhs, options)
 	keymap('x', lhs, rhs, options)
 end
 

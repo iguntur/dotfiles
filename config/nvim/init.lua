@@ -32,44 +32,60 @@ return packer.startup(function(use)
 
 	-- Plugins and Settings
 	require('plugins.fix-cursor-hold').setup(use) -- fix `CursorHold` performance and to fix lsp doc highlight
+
+	-- Appereances
+	require('plugins.icons').setup(use) -- ...
+	require('plugins.dashboard').setup(use) -- dashboard screen
 	require('plugins.vim-notify').setup(use) -- fix `CursorHold` performance and to fix lsp doc highlight
-	require('plugins.welcome').setup(use) -- Vim welcome screen
-	require('plugins.file-tree-explorer').setup(use) -- File explorer
-	require('plugins.ack').setup(use) -- text searching
-	require('plugins.autopairs').setup(use) -- autopairs quotes, parens, brackets, etc
 	require('plugins.colorschemes').setup(use) -- color schema
+	require('plugins.hyper-focus').setup(use) -- hyper focus-writing (ZenMode)
+	require('plugins.lualine-nvim').setup(use) -- status bar
+	require('plugins.tab-bar').setup(use) -- buffer/file opened tab bar
+	require('plugins.vim-highlighted-yank').setup(use) -- highlight yank text object
+
+	-- Text Edit and Format
+	require('plugins.vim-commentary').setup(use) -- text comment
+	require('plugins.autopairs').setup(use) -- autopairs quotes, parens, brackets, etc
+	require('plugins.vim-surround').setup(use) -- quoting or parenthesizing made simple
 	require('plugins.completions').setup(use) -- the completion plugins
 	require('plugins.editorconfig').setup(use) -- editorconfig
 	require('plugins.emmet').setup(use) -- emmet for html, xml, etc
+	require('plugins.vim-better-whitespace').setup(use) -- highlight and remove trailing whitespace
+	require('plugins.vim-caser').setup(use) -- easily change word casing (PascalCase, camelCase, etc)
+	require('plugins.vim-easy-align').setup(use) -- text align
+	require('plugins.nvim-null-ls').setup(use) -- text formatter
+	require('plugins.indent-blankline').setup(use) -- indent guides
+	require('plugins.vim-move').setup(use) -- move line up/botom or object to left/right
+
+	-- Git Integration
 	require('plugins.git-integration').setup(use) -- git integration
-	require('plugins.icons').setup(use) -- ...
-	require('plugins.hyper-focus').setup(use) -- Hyperfocus-writing in Vim.
-	require('plugins.lsp').setup(use) -- Language Server Protocol (LSP)
-	require('plugins.markdown').setup(use) -- ...
-	require('plugins.quick-scope').setup(use) -- ...
-	require('plugins.syntastic').setup(use) -- ...
-	require('plugins.syntax').setup(use) -- ...
-	require('plugins.telescope').setup(use) -- ...
-	require('plugins.lualine-nvim').setup(use) -- status bar
-	require('plugins.tab-bar').setup(use) -- buffer/file opened tab bar
-	require('plugins.vim-better-whitespace').setup(use) -- ...
-	require('plugins.vim-caser').setup(use) -- ...
-	require('plugins.vim-commentary').setup(use) -- ...
-	require('plugins.vim-easy-align').setup(use) -- ...
-	require('plugins.vim-highlighted-yank').setup(use) -- ...
-	require('plugins.vim-move').setup(use) -- ...
+
+	-- File and Text Explorer
+	require('plugins.file-tree-explorer').setup(use) -- file explorer
+	require('plugins.telescope').setup(use) -- text, file, buffer or anything to search
+	require('plugins.quick-scope').setup(use) -- jump to Text Object
 	require('plugins.vim-sneak').setup(use) -- jump to any location specified by two characters.
 	require('plugins.hop').setup(use) -- easy motion like - jump to any line word
-	require('plugins.vim-surround').setup(use) -- ...
-	require('plugins.vim-which-key').setup(use) -- show vim keymap
-	require('plugins.treesitter').setup(use) -- Treesitter
-	require('plugins.nvim-null-ls').setup(use) -- null-ls
-	require('plugins.trouble').setup(use) -- diagnostic with folke trouble
-	require('plugins.terminal').setup(use) -- open terminal
-	require('plugins.indent-blankline').setup(use) -- indent blankline
 
+	-- LSP
+	require('plugins.lsp').setup(use) -- Language Server Protocol (LSP)
+	require('plugins.treesitter').setup(use) -- treesitter
+
+	-- Debugging and Diagnostic
+	require('plugins.trouble').setup(use) -- diagnostic with folke trouble
+
+	-- Utilities
+	require('plugins.vim-which-key').setup(use) -- show vim keymap
+
+	-- Terminal
+	require('plugins.terminal').setup(use) -- open terminal
+
+	-- require('plugins.ack').setup(use) -- text searching
+	-- require('plugins.syntax').setup(use) -- ...
+	-- require('plugins.syntastic').setup(use) -- ...
 	-- require('plugins.coc').setup(use)                     -- ...
 	-- require('plugins.fzf').setup(use)                     -- fzf
 	-- require('plugins.javascript-typescript')              -- ...
 	-- require('plugins.vim-airline').setup(use)             -- status bar
+	-- require('plugins.markdown').setup(use) -- markdown
 end)
