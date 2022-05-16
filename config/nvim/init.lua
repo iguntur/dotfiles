@@ -66,6 +66,7 @@ return packer.startup(function(use)
 	require('plugins.quick-scope').setup(use) -- jump to Text Object
 	require('plugins.vim-sneak').setup(use) -- jump to any location specified by two characters.
 	require('plugins.hop').setup(use) -- easy motion like - jump to any line word
+	require('plugins.fzf').setup(use) -- fzf
 
 	-- LSP
 	require('plugins.lsp').setup(use) -- Language Server Protocol (LSP)
@@ -84,7 +85,6 @@ return packer.startup(function(use)
 	-- require('plugins.syntax').setup(use) -- ...
 	-- require('plugins.syntastic').setup(use) -- ...
 	-- require('plugins.coc').setup(use)                     -- ...
-	-- require('plugins.fzf').setup(use)                     -- fzf
 	-- require('plugins.javascript-typescript')              -- ...
 	-- require('plugins.vim-airline').setup(use)             -- status bar
 	-- require('plugins.markdown').setup(use) -- markdown

@@ -27,6 +27,16 @@ local function telescope_setup()
 
 	telescope.setup({
 		defaults = {
+			vimgrep_arguments = {
+				'rg',
+				'--color=never',
+				'--no-heading',
+				'--with-filename',
+				'--line-number',
+				'--column',
+				'--smart-case',
+				-- "--trim" -- add this value
+			},
 			layout_config = {
 				prompt_position = 'top',
 			},
