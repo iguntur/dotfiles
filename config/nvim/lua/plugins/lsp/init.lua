@@ -72,6 +72,7 @@ M.setup = function(use)
 	use('neovim/nvim-lspconfig') -- enable LSP
 	use('williamboman/nvim-lsp-installer') -- simple to use language server installer
 	use('tamago324/nlsp-settings.nvim') -- language server settings defined in json for
+	use('tami5/lspsaga.nvim') -- nightly
 
 	-- setup_language_server()
 	setup_lsp_installer()
