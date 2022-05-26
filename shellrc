@@ -27,7 +27,17 @@ load_source "${HOME}/.fzf.$SHELL_NAME"
 ################################################################################
 # Z (easy jump into directory)
 ################################################################################
-load_source "$(brew --prefix)/etc/profile.d/z.sh"
+# load_source "$(brew --prefix)/etc/profile.d/z.sh"
+
+################################################################################
+# zoxide - A smarter cd command (https://github.com/ajeetdsouza/zoxide)
+################################################################################
+if cmd_exists zoxide; then
+	case $SHELL_NAME in
+	bash) eval "$(zoxide init bash)" ;;
+	zsh) eval "$(zoxide init zsh)" ;;
+	esac
+fi
 
 ################################################################################
 # Github CLI
@@ -77,12 +87,12 @@ if cmd_exists cobra; then
 	case $SHELL_NAME in
 	bash)
 		if [ ! -f "/usr/local/etc/bash_completion.d/cobra" ]; then
-			cobra completion bash > /usr/local/etc/bash_completion.d/cobra
+			cobra completion bash >/usr/local/etc/bash_completion.d/cobra
 		fi
 		;;
 	zsh)
 		if [ ! -f "/usr/local/share/zsh/site-functions/_cobra" ]; then
-			cobra completion zsh > /usr/local/share/zsh/site-functions/_cobra
+			cobra completion zsh >/usr/local/share/zsh/site-functions/_cobra
 			exec $(which zsh) -l
 		fi
 		;;

@@ -36,7 +36,7 @@ brew install fd            # alternative search like `find`
 brew install ripgrep       # "rg" (for fzf)
 brew install pipenv        # Python Env
 brew install youtube-dl    # Youtube download from CLI
-brew install z             # z (easy jump to directory)
+brew install zoxide        # A smarter cd command - z like
 brew install gh            # Github CLI
 brew install tig           # Terminal Interface Git
 brew install diff-so-fancy # Git diff with color
@@ -57,12 +57,16 @@ brew install as-tree       # render path as tree format
 brew install ffmpeg        # video utils
 brew install ripgrep       # "rg" ripgrep recursively searches directories for a regex pattern while respecting your gitignore
 brew install peco          # Simplistic interactive filtering tool
-brew install libpq
-brew install libtool
-brew install graphviz
-# brew install scrcpy
-# brew install composer      # PHP Composer
+brew install composer      # PHP Composer
+brew install cocoapods     #
+brew install watchman      #
+brew install libpq         #
+brew install libtool       #
+brew install graphviz      #
+# brew install scrcpy        #
+# brew install stylua        #
 # brew install filebrowser   # File share using browser
+# brew install z             # z (easy jump to directory)
 
 ## SDK Tools
 brew install kotlin
