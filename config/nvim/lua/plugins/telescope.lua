@@ -6,11 +6,14 @@ end
 
 local function setup_keymap()
 	-- Find files using Telescope command-line sugar.
-	n_map('<Leader>ff', '<cmd>Telescope find_files<CR>') -- search file by filename
+	-- n_map('<Leader>ff', '<cmd>Telescope find_files<CR>') -- search file by filename
+	n_map('<Leader>p', '<cmd>Telescope find_files<CR>') -- search file by filename
 	n_map('<Leader>fg', '<cmd>Telescope live_grep<CR>') -- search file by text/keyword inside of the file
 	n_map('<Leader>fb', '<cmd>Telescope buffers<CR>') -- list the opened file buffers
-	-- n_map('<Leader>fh', '<cmd>Telescope help_tags<CR>')
-	-- n_map('<Leader>fe', '<cmd>Telescope file_browser<CR>')
+	n_map('<Leader>f?', '<cmd>Telescope help_tags<CR>')
+
+	-- Telescope file browser
+	n_map('<Leader>fe', '<cmd>Telescope file_browser<CR>')
 
 	-- LSP
 	n_map('<Leader>fd', '<cmd>Telescope lsp_definitions<CR>')
@@ -49,10 +52,13 @@ local function telescope_setup()
 			-- ...
 		},
 	})
+
+	telescope.load_extension('file_browser')
 end
 
 M.setup = function(use)
 	use('nvim-telescope/telescope.nvim')
+	use('nvim-telescope/telescope-file-browser.nvim')
 
 	telescope_setup()
 	setup_keymap()

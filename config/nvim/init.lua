@@ -74,6 +74,7 @@ return packer.startup(function(use)
 
 	-- Debugging and Diagnostic
 	require('plugins.trouble').setup(use) -- diagnostic with folke trouble
+	require('plugins.dap').setup(use) -- debugger adapter protocola a.k.a nvim-dap
 
 	-- Utilities
 	require('plugins.vim-which-key').setup(use) -- show vim keymap
