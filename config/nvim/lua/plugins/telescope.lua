@@ -33,8 +33,15 @@ local function telescope_setup()
 		return
 	end
 
+	local action = require('telescope.actions')
+
 	telescope.setup({
 		defaults = {
+			mappings = {
+				i = {
+					['<Esc>'] = action.close,
+				},
+			},
 			vimgrep_arguments = {
 				'rg',
 				'--color=never',
@@ -50,12 +57,12 @@ local function telescope_setup()
 			},
 			sorting_strategy = 'ascending',
 		},
-		pickers = {
-			-- ...
-		},
-		extensions = {
-			-- ...
-		},
+		-- pickers = {
+		-- 	-- ...
+		-- },
+		-- extensions = {
+		-- 	-- ...
+		-- },
 	})
 
 	telescope.load_extension('file_browser')
