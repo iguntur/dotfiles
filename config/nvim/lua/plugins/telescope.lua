@@ -64,15 +64,32 @@ local function telescope_setup()
 		-- 	-- ...
 		-- },
 	})
+end
 
-	telescope.load_extension('file_browser')
+local function load_extension()
+	local ok, telescope = pcall(require, 'telescope')
+
+	if not ok then
+		return
+	end
+
+	local extensions = {
+		'file_browser',
+		'fzf',
+	}
+
+	for _, ext in ipairs(extensions) do
+		_ = telescope.load_extension(ext)
+	end
 end
 
 M.setup = function(use)
 	use('nvim-telescope/telescope.nvim')
 	use('nvim-telescope/telescope-file-browser.nvim')
+	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 
 	telescope_setup()
+	load_extension()
 	setup_keymap()
 end
 
