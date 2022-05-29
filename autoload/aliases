@@ -4,7 +4,7 @@
 ### VIM
 ###
 alias v="nvim"
-# alias vim="nvim"
+alias vim="nvim"
 
 ##
 ## Easier navigation
@@ -52,6 +52,7 @@ alias q="exit"         # exit terminal
 alias c="clear"        # clear terminal
 alias cl="clear && ll" # clear terminal and show list FILEs
 alias where="which"    # :)
+alias cat="$(brew --prefix)/bin/bat"
 
 ##
 ## GIT
