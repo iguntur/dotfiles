@@ -12,6 +12,7 @@ local function setup_keymap()
 	n_map('<Leader>fb', '<cmd>Telescope buffers<CR>') -- list the opened file buffers
 	n_map('<Leader>f?', '<cmd>Telescope help_tags<CR>')
 
+	-- Extensions
 	-- Telescope file browser
 	n_map('<Leader>fe', '<cmd>Telescope file_browser<CR>')
 
