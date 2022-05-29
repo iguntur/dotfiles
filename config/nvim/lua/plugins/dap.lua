@@ -5,7 +5,7 @@ local keymap = vim.api.nvim_set_keymap
 
 local function kmap(mode, lhs, rhs, options)
 	options = options or default_opts
-	keymap('n', lhs, rhs, options)
+	keymap(mode, lhs, rhs, options)
 end
 
 local function setup_keymaps()
