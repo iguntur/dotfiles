@@ -20,6 +20,7 @@ local function setup_keymap()
 	n_map('<Leader>fd', '<cmd>Telescope lsp_definitions<CR>')
 	n_map('<Leader>fi', '<cmd>Telescope lsp_implementations<CR>')
 	n_map('<Leader>fr', '<cmd>Telescope lsp_references<CR>')
+	n_map('<Leader>fs', '<cmd>Telescope lsp_workspace_symbols<CR>')
 end
 
 local function telescope_setup()
