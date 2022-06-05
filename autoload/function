@@ -202,7 +202,7 @@ vd() {
 	filepath=$(fd . --type f ~/.dotfiles | fzf --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
 
 	if [ ! -z "$filepath" ]; then
-		nvim $filepath
+		nvim --cmd 'cd $HOME/.dotfiles' $filepath
 	fi
 }
 
@@ -213,7 +213,7 @@ vn() {
 	filepath=$(fd . --type f ~/.config/nvim | fzf --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
 
 	if [ ! -z "$filepath" ]; then
-		nvim $filepath
+		nvim --cmd 'cd $HOME/.config/nvim' $filepath
 	fi
 }
 
