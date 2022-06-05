@@ -196,6 +196,17 @@ vf() {
 }
 
 ##
+## Open dotfiles configurations
+##
+vd() {
+	filepath=$(fd . --type f ~/.dotfiles | fzf --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
+
+	if [ ! -z "$filepath" ]; then
+		nvim $filepath
+	fi
+}
+
+##
 ## Show Keyboard Keysym
 ##
 keys() {
