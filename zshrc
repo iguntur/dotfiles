@@ -73,6 +73,8 @@ zinit light romkatv/powerlevel10k
 zinit ice as"program" pick"bin/git-fuzzy"
 zinit light bigH/git-fuzzy
 
+zinit light esc/conda-zsh-completion
+
 ################################################################################
 # Prepare
 ################################################################################
