@@ -185,10 +185,10 @@ vg() {
 }
 
 ##
-## Open file in the current directorie using Neovim
+## Open the file from the given directory or fallback from the current directorie
 ##
 vf() {
-	filepath=$(fzf --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
+	filepath=$(fd . --type f "$@" | fzf --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
 
 	if [ ! -z "$filepath" ]; then
 		nvim $filepath
