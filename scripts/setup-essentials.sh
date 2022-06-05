@@ -72,6 +72,12 @@ brew install graphviz      #
 brew install kotlin
 brew install maven
 
+### Golang SDK tools
+brew install delve         # debugger adapter
+brew install mockery       # mocking tools
+brew install golangci-lint # style linter
+brew install staticcheck   # staticcheck
+
 ## Awesome modern *nix command
 ## see: https://github.com/ibraheemdev/modern-unix
 brew install lsd
