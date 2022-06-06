@@ -1,29 +1,22 @@
 #!/bin/bash
-
-################################################################################
-# Added by Zinit's installer
-################################################################################
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-	print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-	command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-	command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" &&
-		print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" ||
-		print -P "%F{160}▓▒░ The clone has failed.%f%b"
+if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
+  print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
+  command mkdir -p "$HOME/.zi" && command chmod g-rwX "$HOME/.zi"
+  command git clone -q --depth=1 --branch "main" https://github.com/z-shell/zi "$HOME/.zi/bin" && \
+    print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+    print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 
-source "$HOME/.zinit/bin/zinit.zsh"
-# autoload -Uz _zinit
-# (( ${+_comps} )) && _comps[zinit]=_zinit
+source "$HOME/.zi/bin/zi.zsh"
 
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-	zinit-zsh/z-a-as-monitor \
-	zinit-zsh/z-a-patch-dl \
-	zinit-zsh/z-a-bin-gem-node
+autoload -Uz _zi
+(( ${+_comps} )) && _comps[zi]=_zi
+# examples here -> https://z.digitalclouds.dev/ecosystem/annexes
+zicompinit # <- https://z.digitalclouds.dev/docs/guides/commands
 
-### End of Zinit's installer chunk
-################################################################################
+zi light-mode for \
+  z-shell/z-a-meta-plugins \
+  @annexes @zunit
 
 ################################################################################
 # Powerlevel10k
@@ -38,42 +31,41 @@ fi
 ################################################################################
 # Init Plugins
 ################################################################################
-zplugin ice blockf
+zi light zsh-users/zsh-autosuggestions
+zi light zsh-users/zsh-syntax-highlighting
+zi light zdharma/fast-syntax-highlighting
 
-zinit light Aloxaf/fzf-tab
-
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zdharma/fast-syntax-highlighting
+zi ice blockf
+zi light zsh-users/zsh-completions
+zi light Aloxaf/fzf-tab
 
 # Plugin history-search-multi-word loaded with investigating.
-zinit load zdharma/history-search-multi-word
+zi ice wait lucid
+zi load z-shell/H-S-MW
 
 # (OMZL) Oh My Zsh Libraries
-zinit snippet OMZL::clipboard.zsh
-zinit snippet OMZL::completion.zsh
-zinit snippet OMZL::history.zsh
-zinit snippet OMZL::key-bindings.zsh
-zinit snippet OMZL::git.zsh
+zi snippet OMZL::clipboard.zsh
+zi snippet OMZL::completion.zsh
+zi snippet OMZL::history.zsh
+zi snippet OMZL::key-bindings.zsh
+zi snippet OMZL::git.zsh
 
 # (OMZP) Oh My Zsh Plugins
-# zinit snippet OMZP::git; zinit cdclear -q # <- forget completions provided up to this moment
-# zinit snippet OMZP::npm
-# zinit snippet OMZP::pip
+# zi snippet OMZP::git; zi cdclear -q # <- forget completions provided up to this moment
+# zi snippet OMZP::npm
+# zi snippet OMZP::pip
 
-zinit ice
-zinit light romkatv/powerlevel10k
+zi light romkatv/powerlevel10k
 
 # Docker compose
-# zinit ice from"gh-r" as"program" mv"docker* -> docker-compose"
-# zinit load docker/compose
+# zi ice from"gh-r" as"program" mv"docker* -> docker-compose"
+# zi load docker/compose
 
 # Git Fuzzy
-zinit ice as"program" pick"bin/git-fuzzy"
-zinit light bigH/git-fuzzy
+zi ice as"program" pick"bin/git-fuzzy"
+zi light bigH/git-fuzzy
 
-zinit light esc/conda-zsh-completion
+zi light esc/conda-zsh-completion
 
 ################################################################################
 # Prepare
@@ -84,11 +76,28 @@ zinit light esc/conda-zsh-completion
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ################################################################################
-# Load Plugin
+# Bootstrap dotfiles
 ################################################################################
-autoload -Uz compinit
-compinit -i
 
+##
+## No duplicate history command
+##
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+
+################################################################################
+## Enable Vi Mode Terminal Emulator
+################################################################################
+# bindkey -v
+# bindkey "^?" backward-delete-char
+# bindkey '^[[A' history-substring-search-up
+# bindkey '^[[B' history-substring-search-down
+export KEYTIMEOUT=1
+
+################################################################################
+# iTerm2 Shell Integration
+################################################################################
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 ################################################################################
 
 ################################################################################
@@ -143,3 +152,87 @@ unset __conda_setup
 ################################################################################
 # more options here...
 ################################################################################
+
+################################################################################
+# Bootstrap Dotfiles Environment
+################################################################################
+if [ -f "$HOME/.dotfiles/dotfilesrc" ]; then
+	source "$HOME/.dotfiles/dotfilesrc"
+fi
+
+################################################################################
+# Python and Conda
+################################################################################
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/guntur/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/guntur/.miniconda/etc/profile.d/conda.sh" ]; then
+        . "/Users/guntur/.miniconda/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/guntur/.miniconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+################################################################################
+
+################################################################################
+# Bootstrap dotfiles
+################################################################################
+
+##
+## No duplicate history command
+##
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+
+################################################################################
+## Enable Vi Mode Terminal Emulator
+################################################################################
+# bindkey -v
+# bindkey "^?" backward-delete-char
+# bindkey '^[[A' history-substring-search-up
+# bindkey '^[[B' history-substring-search-down
+export KEYTIMEOUT=1
+
+################################################################################
+# iTerm2 Shell Integration
+################################################################################
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+################################################################################
+# Bootstrap Dotfiles Environment
+################################################################################
+if [ -f "$HOME/.dotfiles/dotfilesrc" ]; then
+	source "$HOME/.dotfiles/dotfilesrc"
+fi
+
+################################################################################
+# Python and Conda
+################################################################################
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/guntur/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/guntur/.miniconda/etc/profile.d/conda.sh" ]; then
+        . "/Users/guntur/.miniconda/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/guntur/.miniconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+################################################################################
+# more options here...
+################################################################################
+# <<< conda initialize <<<
+
+################################################################################
+# more options here...
+################################################################################
+
