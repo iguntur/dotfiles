@@ -17,9 +17,11 @@ dotfiles_links=(
 	"gitignore"
 	"gitattributes"
 	## Terminal Editor
-	"vim"
-	"vimrc"
+	# "vim"
+	# "vimrc"
 	# "tmux.conf"
+	"condarc"
+	"tigrc"
 )
 
 dotfiles_files=(
@@ -28,7 +30,7 @@ dotfiles_files=(
 
 config_dirs=(
 	# "alacritty"
-	"nvim"
+	# "nvim"
 )
 
 create_symlink() {
