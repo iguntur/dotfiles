@@ -2,7 +2,7 @@
 
 set -e
 
-xcode-select --install
+# xcode-select --install
 
 brew update
 brew upgrade
@@ -33,7 +33,6 @@ brew install coreutils     # "gls" for ls like linux
 brew install nvm           # Node Version Manager
 brew install fzf           # Fuzzy finder
 brew install fd            # alternative search like `find`
-brew install ripgrep       # "rg" (for fzf)
 brew install pipenv        # Python Env
 brew install youtube-dl    # Youtube download from CLI
 brew install zoxide        # A smarter cd command - z like
@@ -45,7 +44,7 @@ brew install htop          # Terminal activity manager
 brew install tree          # show directory with tree
 brew install exa           # "ls" like with color
 brew install highlight     # for fzf
-brew install sshfs         # mount filesystem over ssh
+# brew install sshfs         # mount filesystem over ssh
 brew install watch         # watch command
 brew install rsync         # rsync for backup
 brew install httpie        # http request on command line
