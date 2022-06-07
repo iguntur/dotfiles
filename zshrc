@@ -1,4 +1,8 @@
 #!/bin/bash
+
+################################################################################
+# Added by Zinit's installer
+################################################################################
 if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
   print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
   command mkdir -p "$HOME/.zi" && command chmod g-rwX "$HOME/.zi"
@@ -98,31 +102,6 @@ export KEYTIMEOUT=1
 # iTerm2 Shell Integration
 ################################################################################
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-################################################################################
-
-################################################################################
-# Bootstrap dotfiles
-################################################################################
-
-##
-## No duplicate history command
-##
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-
-################################################################################
-## Enable Vi Mode Terminal Emulator
-################################################################################
-# bindkey -v
-# bindkey "^?" backward-delete-char
-# bindkey '^[[A' history-substring-search-up
-# bindkey '^[[B' history-substring-search-down
-export KEYTIMEOUT=1
-
-################################################################################
-# iTerm2 Shell Integration
-################################################################################
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 ################################################################################
 # Bootstrap Dotfiles Environment
@@ -152,87 +131,3 @@ unset __conda_setup
 ################################################################################
 # more options here...
 ################################################################################
-
-################################################################################
-# Bootstrap Dotfiles Environment
-################################################################################
-if [ -f "$HOME/.dotfiles/dotfilesrc" ]; then
-	source "$HOME/.dotfiles/dotfilesrc"
-fi
-
-################################################################################
-# Python and Conda
-################################################################################
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/guntur/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/guntur/.miniconda/etc/profile.d/conda.sh" ]; then
-        . "/Users/guntur/.miniconda/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/guntur/.miniconda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-################################################################################
-
-################################################################################
-# Bootstrap dotfiles
-################################################################################
-
-##
-## No duplicate history command
-##
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-
-################################################################################
-## Enable Vi Mode Terminal Emulator
-################################################################################
-# bindkey -v
-# bindkey "^?" backward-delete-char
-# bindkey '^[[A' history-substring-search-up
-# bindkey '^[[B' history-substring-search-down
-export KEYTIMEOUT=1
-
-################################################################################
-# iTerm2 Shell Integration
-################################################################################
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-################################################################################
-# Bootstrap Dotfiles Environment
-################################################################################
-if [ -f "$HOME/.dotfiles/dotfilesrc" ]; then
-	source "$HOME/.dotfiles/dotfilesrc"
-fi
-
-################################################################################
-# Python and Conda
-################################################################################
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/guntur/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/guntur/.miniconda/etc/profile.d/conda.sh" ]; then
-        . "/Users/guntur/.miniconda/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/guntur/.miniconda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-################################################################################
-# more options here...
-################################################################################
-# <<< conda initialize <<<
-
-################################################################################
-# more options here...
-################################################################################
-
