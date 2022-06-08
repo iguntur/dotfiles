@@ -62,6 +62,7 @@ brew install watchman      #
 brew install libpq         #
 brew install libtool       #
 brew install graphviz      #
+brew install lazygit       # git TUI
 # brew install scrcpy        #
 # brew install stylua        #
 # brew install filebrowser   # File share using browser
