@@ -109,3 +109,8 @@ alias art="php artisan"
 alias BU="brew update"
 alias BUBU="brew update && brew upgrade"
 alias BI="brew install"
+
+##
+## Lazygit
+##
+alias lg="lazygit"
