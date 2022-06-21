@@ -29,8 +29,8 @@ dotfiles_files=(
 )
 
 config_dirs=(
+	git
 	# "alacritty"
-	# "nvim"
 )
 
 create_symlink() {
