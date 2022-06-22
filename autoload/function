@@ -228,3 +228,14 @@ keys() {
 fileperms() {
 	stat -c '%a - %n' "$@"
 }
+
+##
+## Quick cd into directory
+##
+fcd() {
+	fp="$(fd . --type d "$HOME" | fzf)"
+
+	if [ ! -z "$fp" ]; then
+		cd $fp
+	fi
+}
