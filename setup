@@ -12,14 +12,8 @@ dotfiles_links=(
 	"bash_profile"
 	"bashrc"
 	"zshrc"
-	## Git
-	"gitconfig"
-	"gitignore"
-	"gitattributes"
 	## Terminal Editor
-	# "vim"
-	# "vimrc"
-	# "tmux.conf"
+	"tmux.conf"
 	"condarc"
 	"tigrc"
 )
