@@ -1,5 +1,9 @@
-.git
+# Files
+.DS_Store
 
+# Directories
+.git
+.idea
 node_modules
 bower_components
 vendor
