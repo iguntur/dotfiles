@@ -233,7 +233,11 @@ fileperms() {
 ## Quick cd into directory
 ##
 fcd() {
-	fp="$(fd . --type d "$HOME" | fzf)"
+	if [ -z "$1" ]; then
+		fp="$(fd . --type d "$HOME" | fzf)"
+	else
+		fp="$(fd . --type d "$@" | fzf)"
+	fi
 
 	if [ ! -z "$fp" ]; then
 		cd $fp
