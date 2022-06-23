@@ -23,7 +23,7 @@ dotfiles_files=(
 )
 
 config_dirs=(
-	git
+	"git"
 	# "alacritty"
 )
 
