@@ -16,6 +16,7 @@ dotfiles_links=(
 	"tmux.conf"
 	"condarc"
 	"tigrc"
+	"rgignore"
 )
 
 dotfiles_files=(
