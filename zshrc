@@ -35,9 +35,9 @@ fi
 ################################################################################
 # Init Plugins
 ################################################################################
+# zi light zsh-users/zsh-syntax-highlighting
 zi light zsh-users/zsh-autosuggestions
-zi light zsh-users/zsh-syntax-highlighting
-zi light zdharma/fast-syntax-highlighting
+zi light z-shell/F-Sy-H
 
 zi ice blockf
 zi light zsh-users/zsh-completions
@@ -69,7 +69,7 @@ zi light romkatv/powerlevel10k
 zi ice as"program" pick"bin/git-fuzzy"
 zi light bigH/git-fuzzy
 
-zi light esc/conda-zsh-completion
+zi light conda-incubator/conda-zsh-completion
 
 ################################################################################
 # Prepare
