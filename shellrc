@@ -37,8 +37,8 @@ load_source "${HOME}/.fzf.$SHELL_NAME"
 ################################################################################
 if cmd_exists zoxide; then
 	case $SHELL_NAME in
-	bash) eval "$(zoxide init bash)" ;;
-	zsh) eval "$(zoxide init zsh)" ;;
+	bash) eval "$(zoxide init --cmd j bash)" ;;
+	zsh) eval "$(zoxide init --cmd j zsh)" ;;
 	esac
 fi
 
