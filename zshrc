@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 ################################################################################
 # Added by Zinit's installer
@@ -35,9 +35,17 @@ fi
 ################################################################################
 # Init Plugins
 ################################################################################
+## Completions
+# Utilize Turbo and initialize the completion with fast compinit
+# zi pack for brew-completions
+
 # zi light zsh-users/zsh-syntax-highlighting
 zi light zsh-users/zsh-autosuggestions
 zi light z-shell/F-Sy-H
+
+zi ice blockf
+zi light zsh-users/zsh-completions
+zi light Aloxaf/fzf-tab
 
 # Plugin history-search-multi-word loaded with investigating.
 zi ice wait lucid
@@ -64,14 +72,6 @@ zi light romkatv/powerlevel10k
 # Git Fuzzy
 zi ice as"program" pick"bin/git-fuzzy"
 zi light bigH/git-fuzzy
-
-## Completions
-# Utilize Turbo and initialize the completion with fast compinit
-zi pack for brew-completions
-
-zi ice blockf
-zi light zsh-users/zsh-completions
-zi light Aloxaf/fzf-tab
 
 zi light conda-incubator/conda-zsh-completion
 
