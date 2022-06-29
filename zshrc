@@ -13,6 +13,9 @@ fi
 
 source "$HOME/.zi/bin/zi.zsh"
 
+[ -d "/opt/homebrew/share/zsh/site-functions" ] && fpath+="/opt/homebrew/share/zsh/site-functions"
+[ -d "$HOME/.zfunc" ] && fpath+="$HOME/.zfunc"
+
 autoload -Uz _zi
 (( ${+_comps} )) && _comps[zi]=_zi
 # examples here -> https://z.digitalclouds.dev/ecosystem/annexes
@@ -78,8 +81,6 @@ zi light conda-incubator/conda-zsh-completion
 ################################################################################
 # Prepare
 ################################################################################
-[ -d "$HOME/.zfunc" ] && fpath+="$HOME/.zfunc"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
