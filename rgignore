@@ -1,10 +1,14 @@
 # Files
 .DS_Store
 
-# Directories
+# Common Directories
 .git
 .idea
 node_modules
 bower_components
 vendor
 venv
+
+# Lib
+.next
+.pnpm-store
