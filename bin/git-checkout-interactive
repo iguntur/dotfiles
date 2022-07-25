@@ -5,7 +5,7 @@ function fzf-git-branch() {
 
     git branch --color=always --all --sort=-committerdate |
         grep -v HEAD |
-        fzf --height 90% --ansi --no-multi --preview-window right:65% \
+        fzf --cycle --height 90% --ansi --no-multi --preview-window right:65% \
             --preview 'git log -n 200 --color=always --date=short --pretty="%C(cyan bold)%h%C(reset) -%C(magenta bold)%d%C(reset) %s - %C(green bold)(%cr)%C(reset) %C(blue)<%an>%C(reset)" $(sed "s/.* //" <<< {})' |
         sed "s/.* //"
 }
