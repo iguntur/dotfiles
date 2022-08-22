@@ -8,7 +8,9 @@ node_modules
 bower_components
 vendor
 venv
+dist
 
 # Lib
 .next
 .pnpm-store
+.parcel-cache
