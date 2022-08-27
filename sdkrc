@@ -97,3 +97,10 @@ export PATH="$PATH:$FLUTTER_SDK/bin"
 ################################################################################
 ## Composer
 # brew install composer
+
+################################################################################
+# Database Client
+################################################################################
+## MySQL Client
+# brew install mysql-client
+export PATH="$PATH:$(brew --prefix)/opt/mysql-client/bin"
