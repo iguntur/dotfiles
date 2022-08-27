@@ -101,6 +101,9 @@ brew install bash-completion
 brew install docker-completion
 brew install docker-compose-completion
 
+## Databases
+brew install mysql-client
+
 ## Windows stuff
 # brew install ntfs-3g
 
