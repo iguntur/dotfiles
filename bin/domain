@@ -1,0 +1,58 @@
+#!/bin/bash
+
+
+##
+## Terminal color
+##
+
+if test -t 1; then # if terminal
+	ncolors=$(which tput > /dev/null && tput colors) # supports color
+	if test -n "$ncolors" && test $ncolors -ge 8; then
+		termcols=$(tput cols)
+		bold="$(tput bold)"
+		underline="$(tput smul)"
+		standout="$(tput smso)"
+		normal="$(tput sgr0)"
+		black="$(tput setaf 0)"
+		red="$(tput setaf 1)"
+		green="$(tput setaf 2)"
+		yellow="$(tput setaf 3)"
+		blue="$(tput setaf 4)"
+		magenta="$(tput setaf 5)"
+		cyan="$(tput setaf 6)"
+		white="$(tput setaf 7)"
+	fi
+fi
+
+if [ "$#" == "0" ]; then
+    echo "You need tu supply at least one argument!"
+    exit 1
+fi
+
+DOMAINS=(
+	'.com'
+	'.net'
+	'.org'
+	'.co.id'
+	'.or.id'
+	'.id'
+	'.io'
+)
+
+ELEMENTS=${#DOMAINS[@]}
+
+while (( "$#" )); do
+	for (( i=0; i < $ELEMENTS; i++)); do
+		domainName="$1${DOMAINS[${i}]}"
+
+		/usr/bin/whois $domainName | egrep -q "^No match|^Domain not found|^DOMAIN NOT FOUND|^NOT FOUND|^Not fo|AVAILABLE|^No Data Fou|has not been regi|No entri"
+
+		if [ $? -eq 0 ]; then
+			echo "${green}$domainName: 🟢 ${normal}"
+		else
+			echo "${red}$domainName: 🔴 ${normal}"
+		fi
+	done
+
+	shift
+done
