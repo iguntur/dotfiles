@@ -15,7 +15,7 @@ load_source "$HOME/.cargo/env"
 # Golang
 ################################################################################
 if cmd_exists go; then
-	export GOROOT="$(go env GOROOT)"
+	# export GOROOT="$(go env GOROOT)"
 	export GOPATH="$(go env GOPATH)"
 	export GOBIN="$GOPATH/bin"
 	export PATH="$PATH:$GOBIN"
