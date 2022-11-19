@@ -61,6 +61,17 @@ alias r="ranger"
 alias g="git"
 alias gf="git fuzzy"
 
+
+##
+## Go
+##
+alias gr="go run"
+
+##
+## Rust/Cargo
+##
+alias cr="cargo run --quiet"
+
 ##
 ## Disable default keyboard
 ##
