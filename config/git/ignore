@@ -12,6 +12,11 @@ Desktop.ini
 $RECYCLE.BIN/
 
 ##
+## Git Worktree
+##
+.worktree
+
+##
 ## Text editor and IDE
 ##
 .idea

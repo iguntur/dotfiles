@@ -21,3 +21,6 @@ docker/.tmp
 
 # Misc
 .cache
+.share
+.tmp
+.worktree

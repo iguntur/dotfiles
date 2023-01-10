@@ -60,6 +60,7 @@ alias r="ranger"
 ##
 alias g="git"
 alias gf="git fuzzy"
+alias gw="git worktree"
 
 
 ##
