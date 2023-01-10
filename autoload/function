@@ -190,7 +190,7 @@ vg() {
 ## Open the file from the given directory or fallback from the current directorie
 ##
 vf() {
-	filepath=$(fd . --type f --full-path -HI --ignore-file $HOME/.rgignore "$@" | fzf --cycle --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
+	filepath=$(fd . --type f --follow --full-path -HI --ignore-file $HOME/.rgignore "$@" | fzf --cycle --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
 
 	if [ ! -z "$filepath" ]; then
 		nvim $filepath
@@ -201,7 +201,7 @@ vf() {
 ## Open dotfiles configurations
 ##
 vd() {
-	filepath=$(fd . --type f --full-path -HI --ignore-file $HOME/.rgignore ~/.dotfiles | fzf --cycle --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
+	filepath=$(fd . --type f --follow --full-path -HI --ignore-file $HOME/.rgignore ~/.dotfiles | fzf --cycle --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
 
 	if [ ! -z "$filepath" ]; then
 		nvim --cmd 'cd $HOME/.dotfiles' $filepath
@@ -212,7 +212,7 @@ vd() {
 ## Open neovim configurations
 ##
 vn() {
-	filepath=$(fd . --type f --full-path -HI --ignore-file $HOME/.rgignore ~/.config/nvim | fzf --cycle --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
+	filepath=$(fd . --type f --follow --full-path -HI --ignore-file $HOME/.rgignore ~/.config/nvim | fzf --cycle --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
 
 	if [ ! -z "$filepath" ]; then
 		nvim --cmd 'cd $HOME/.config/nvim' $filepath
