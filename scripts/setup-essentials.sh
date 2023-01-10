@@ -65,6 +65,10 @@ brew install graphviz      #
 brew install lazygit       # git TUI
 brew install gitui         # git TUI
 brew install glow          # markdown reader
+brew install ranger        # filemanager
+brew install opam          # ocaml package manager
+brew install comby         #
+# brew install showkey       #
 # brew install scrcpy        #
 # brew install stylua        #
 # brew install filebrowser   # File share using browser
