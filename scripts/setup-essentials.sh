@@ -17,6 +17,7 @@ brew install git
 
 ## Bash and ZSH
 brew install bash zsh
+brew install starship
 
 ## Terminal text editor
 brew install nano vim neovim

@@ -24,6 +24,12 @@ if [ -f "$HOME/.dotfiles/dotfilesrc" ]; then
 	source "$HOME/.dotfiles/dotfilesrc"
 fi
 
+################################################################################
+# shell prompt
+################################################################################
+eval "$(starship init bash)"
+
+
 ##
 ## more options here...
 ##
