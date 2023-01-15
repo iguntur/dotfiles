@@ -54,6 +54,7 @@ alias cl="clear && ll" # clear terminal and show list FILEs
 alias where="which"    # :)
 alias cat="$(brew --prefix)/bin/bat"
 alias r="ranger"
+alias btop="btm -b"
 
 ##
 ## GIT
