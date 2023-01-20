@@ -1,0 +1,8 @@
+#!/bin/bash
+
+__size=$1
+
+# shuf -er -n $__size {a..z} {A..Z} {0..9} | tr -d '\n' ; echo
+LC_CTYPE=C tr -dc 'a-zA-Z0-9' < /dev/urandom | head -c $1 ; echo
+
+unset __size
