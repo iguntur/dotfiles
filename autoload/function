@@ -220,6 +220,17 @@ vn() {
 }
 
 ##
+## Open journals
+##
+vj() {
+	filepath=$(fd . --type f --follow --full-path -HI --ignore-file $HOME/.rgignore ~/journals | fzf --cycle --height 100% --info inline --preview 'bat --style=numbers --color=always --line-range :900 {}')
+
+	if [ ! -z "$filepath" ]; then
+		nvim --cmd 'cd $HOME/journals' $filepath
+	fi
+}
+
+##
 ## Show Keyboard Keysym
 ##
 keys() {
