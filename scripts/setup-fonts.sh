@@ -10,23 +10,29 @@ function install_nerd_font() {
 	brew install --cask font-$font_name-nerd-font
 }
 
-brew install --cask font-fira-code
-brew install --cask font-mononoki
-brew install --cask font-jetbrains-mono
+brew tap homebrew/cask-fonts
+brew update
 
 nerd_fonts=(
+	"blex-mono"
+	"caskaydia-cove"
+	"dejavu-sans-mono"
 	"fira-code"
 	"fira-mono"
 	"go-mono"
 	"hack"
 	"inconsolata"
+	"iosevka"
 	"jetbrains-mono"
 	"liberation"
 	"meslo-lg"
 	"monofur"
+	"monoid"
 	"mononoki"
 	"noto"
 	"roboto-mono"
+	"sauce-code-pro"
+	"space-mono"
 	"ubuntu"
 	"ubuntu-mono"
 )
