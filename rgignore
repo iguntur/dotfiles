@@ -2,7 +2,8 @@
 .DS_Store
 
 # Common Directories
-.git
+.git/
+.bare/
 .idea
 __pycache__
 node_modules
