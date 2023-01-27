@@ -35,10 +35,15 @@ nbproject
 ## Programming Language Spec
 ##
 __pycache__
-node_modules
-bower_components
 .nvmrc
 report*.json
+
+##
+## Build and Development
+##
+node_modules/
+bower_components/
+.pnpm-store/
 
 ##
 ## User specifics
