@@ -13,12 +13,19 @@ venv
 dist
 
 # Lib
-.next
-.pnpm-store
-.parcel-cache
+.next/
+.pnpm-store/
+.parcel-cache/
 
 # Docker
 docker/.tmp
+
+# Build and Development
+dist/
+out/
+
+# Rust
+target/
 
 # Misc
 .cache
