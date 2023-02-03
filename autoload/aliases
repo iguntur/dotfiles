@@ -72,7 +72,8 @@ alias gr="go run"
 ##
 ## Rust/Cargo
 ##
-alias cr="cargo run --quiet"
+alias cr="cargo run"
+alias crq="cargo run --quiet"
 
 ##
 ## Disable default keyboard
