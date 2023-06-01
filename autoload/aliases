@@ -43,6 +43,7 @@ alias la="exa -1 -G --group-directories-first --classify --icons --all" # show h
 # alias ll="ls -lh --group-directories-first"
 # alias la="ls -alh --group-directories-first"
 # alias ld="ls -Alhd */" # only directories
+alias l="lx"
 alias ll="lx"
 
 ##
