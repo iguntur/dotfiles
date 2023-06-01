@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "git sync"
+git sync
+
+if [ -z "$1" ]; then
+	echo "git merge --ff-only origin/master"
+	git merge --ff-only origin/master
+else
+	echo "git merge --ff-only origin/$1"
+	git merge --ff-only origin/$1
+fi

@@ -42,6 +42,7 @@
 	tl = !git tag --color=always --list --sort=-v:refname --format='%(refname:strip=2)%09%(creatordate:short)' | fzf --ansi
 	bl = !git branch --color=always --sort=-committerdate --all | fzf --ansi
 	cobi = !git checkout $(git branch --color=always --sort=-committerdate --all | grep -v HEAD | fzf --ansi --no-multi)
+	sf = !~/.dotfiles/bin/git-sync-ff
 
 [color]
 	ui = true
