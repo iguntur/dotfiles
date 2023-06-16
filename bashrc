@@ -33,3 +33,5 @@ eval "$(starship init bash)"
 ##
 ## more options here...
 ##
+
+source /Users/guntur/.config/broot/launcher/bash/br

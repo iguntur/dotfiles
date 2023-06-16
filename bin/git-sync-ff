@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "git sync"
-git sync
+git remote update --prune && git fetch --prune --prune-tags --all --tags --progress
 
 if [ -z "$1" ]; then
 	echo "git merge --ff-only origin/master"
