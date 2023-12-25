@@ -107,7 +107,7 @@ lla() {
 ## Copy w/ progress
 ##
 cp_p() {
-	rsync -WavP --human-readable --progress $1 $2
+	rsync -WavPh $@
 }
 
 ##
@@ -177,8 +177,8 @@ tns() {
 ##
 vg() {
 	if git rev-parse --git-dir >/dev/null 2>&1; then
-		selectedFile=$(git status --porcelain --untracked-files=all | cut -d " " -f3- | \
-			awk -v git_root="$(git rev-parse --show-toplevel)" '{{print git_root "/" $0}}' | \
+		selectedFile=$(git status --porcelain --untracked-files=all | cut -d " " -f3- |
+			awk -v git_root="$(git rev-parse --show-toplevel)" '{{print git_root "/" $0}}' |
 			fzf --cycle --height 100% --preview 'bat --style=numbers --color=always --line-range :500 {}')
 		([ ! -z "$selectedFile" ] && nvim $selectedFile) || return 0
 	else

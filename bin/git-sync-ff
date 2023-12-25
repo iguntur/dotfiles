@@ -3,9 +3,16 @@
 echo "git sync"
 git remote update --prune && git fetch --prune --prune-tags --all --tags --progress
 
-if [ -z "$1" ]; then
-	echo "git merge --ff-only origin/master"
-	git merge --ff-only origin/master
+if [[ -z "$1" ]]; then
+	if git merge --ff-only origin/master 2>/dev/null; then
+		echo "git merge --ff-only origin/master"
+		exit 0
+	fi
+
+	if git merge --ff-only origin/main 2>/dev/null; then
+		echo "git merge --ff-only origin/main"
+		exit 0
+	fi
 else
 	echo "git merge --ff-only origin/$1"
 	git merge --ff-only origin/$1

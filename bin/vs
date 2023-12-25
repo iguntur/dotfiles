@@ -1,0 +1,20 @@
+#!/bin/bash
+
+items=(
+	"default"
+	"lazy"
+	"legacy"
+)
+
+selected=$(printf "%s\n" "${items[@]}" | fzf --prompt="Config: " --height=~50% --layout=reverse --border --exit-0)
+
+if [[ -z selected ]]; then
+	exit 0
+elif [[ $selected = "default" ]]; then
+	selected=""
+else
+	selected="nvim-$selected"
+fi
+
+# echo "NVIM_APPNAME=$selected nvim $@"
+NVIM_APPNAME=$selected nvim $@

@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+selected=$(
+	fd . --type directory --full-path -HI \
+		--ignore-file $HOME/.rgignore \
+		--max-depth=2 --min-depth=1 \
+		$HOME/dev/bitbucket.org $HOME/dev/github.com |
+		fzf --prompt 'Find Project > ' \
+			--cycle --info inline \
+			--preview 'lx {}'
+)
+
+if [[ -z $selected ]]; then
+	exit 0
+fi
+
+basename_selected=$(basename $selected | tr . _)
+tmux_pid=$(pgrep tmux)
+
+if [[ -z $TMUX ]] && [[ -z $tmux_pid ]]; then
+	tmux new-session -s $basename_selected -c $selected
+	exit 0
+fi
+
+if ! tmux has-session -t=$basename_selected 2>/dev/null; then
+	tmux new-session -d -s $basename_selected -c $selected
+fi
+
+tmux switch-client -t $basename_selected
