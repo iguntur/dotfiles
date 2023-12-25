@@ -1,29 +1,33 @@
 #!/usr/bin/env bash
 
-selected=$(
-	fd . --type directory --full-path -HI \
-		--ignore-file $HOME/.rgignore \
-		--max-depth=2 --min-depth=1 \
-		$HOME/dev/bitbucket.org $HOME/dev/github.com |
-		fzf --prompt 'Find Project > ' \
-			--cycle --info inline \
-			--preview 'lx {}'
-)
+if [[ -z $1 ]]; then
+	selected=$(
+		fd . --type directory --full-path -HI \
+			--ignore-file $HOME/.rgignore \
+			--max-depth=2 --min-depth=1 \
+			$HOME/dev/bitbucket.org $HOME/dev/github.com |
+			fzf --prompt 'Find Project > ' \
+				--cycle --info inline \
+				--preview 'lx {}'
+	)
+else
+	selected=$1
+fi
 
 if [[ -z $selected ]]; then
 	exit 0
 fi
 
-basename_selected=$(basename $selected | tr . _)
+session_name=$(basename $selected | awk '{gsub(/\./, ""); print}' | awk '{gsub(/ /, "-"); print tolower($0)}')
 tmux_pid=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_pid ]]; then
-	tmux new-session -s $basename_selected -c $selected
+	tmux new-session -s $session_name -c $selected
 	exit 0
 fi
 
-if ! tmux has-session -t=$basename_selected 2>/dev/null; then
-	tmux new-session -d -s $basename_selected -c $selected
+if ! tmux has-session -t=$session_name 2>/dev/null; then
+	tmux new-session -d -s $session_name -c $selected
 fi
 
-tmux switch-client -t $basename_selected
+tmux switch-client -t $session_name
