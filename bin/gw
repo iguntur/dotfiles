@@ -1,0 +1,23 @@
+#!/bin/bash
+
+function __gw() {
+	echo "exec: git worktree $@"
+	echo
+	git worktree $@
+}
+
+case $1 in
+chore | feat | fix | patch)
+	branch="$1/$2"
+	path="$1--$2"
+
+	 __gw "add -B $branch $path"
+	 exit 0
+	;;
+*)
+	__gw "$@"
+	exit 0
+	;;
+esac
+
+exit 0

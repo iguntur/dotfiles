@@ -62,8 +62,6 @@ alias btop="btm -b --group --mem_as_value"
 ##
 alias g="git"
 alias gf="git fuzzy"
-alias gw="git worktree"
-
 
 ##
 ## Go
