@@ -5,7 +5,9 @@ if ! git rev-parse --git-dir >/dev/null 2>&1 && ! git worktree list >/dev/null 2
 	exit 0
 fi
 
-selected=$(git worktree list | awk '!/bare/' | fzf --cycle)
+selected=$(
+	git worktree list | awk '!/bare/' | fzf --prompt '󰛔 Switch Git Worktree: ' --cycle
+)
 
 if [[ -z $selected ]]; then
 	exit 0

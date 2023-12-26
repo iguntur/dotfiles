@@ -4,9 +4,9 @@ if [[ -z $1 ]]; then
 	selected=$(
 		fd . --type directory --full-path -HI \
 			--ignore-file $HOME/.rgignore \
-			--max-depth=2 --min-depth=1 \
-			$HOME/dev/bitbucket.org $HOME/dev/github.com |
-			fzf --prompt 'Find Project > ' \
+			--max-depth=1 --min-depth=1 \
+			$HOME/dev/bitbucket.org/*/ $HOME/dev/github.com/*/ |
+			fzf --prompt '󰛔 Find Project: ' \
 				--cycle --info inline \
 				--preview 'lx {}'
 	)
