@@ -33,8 +33,15 @@ if [[ -z $TMUX ]] && [[ -z $tmux_pid ]]; then
 	exit 0
 fi
 
-if ! tmux has-session -t "$session_name:$branch_name" 2>/dev/null; then
+if ! tmux has-session -t "$session_name" 2>/dev/null; then
 	tmux new-session -d -s $session_name -n $branch_name -c $basepath_dir
+fi
+
+window_name=$(tmux list-windows -t "$session_name" -F "#W" | grep "$branch_name")
+
+if [[ -z $window_name ]]; then
+	# window doesn't exists. create a new window
+	tmux new-window -d -n $branch_name -c $basepath_dir
 fi
 
 tmux switch-client -t "$session_name:$branch_name"
