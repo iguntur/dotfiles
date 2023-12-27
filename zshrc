@@ -141,7 +141,22 @@ eval "$(starship init zsh)"
 ################################################################################
 # bindkey
 ################################################################################
-bindkey -s '^v' 'nvim^M^l'
+_widget_nvim() {
+	command nvim
+}
+zle -N _widget_nvim
+
+_widget_tmux_select_project() {
+	command $HOME/.dotfiles/bin/tmux-select-project
+}
+zle -N _widget_tmux_select_project
+
+
+# ctrl-v
+bindkey '^V' _widget_nvim
+
+# ctrl-f
+bindkey '^F' _widget_tmux_select_project
 
 ################################################################################
 # more options here...
