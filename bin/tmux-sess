@@ -1,11 +1,24 @@
 #!/usr/bin/env bash
 
+# grep -Ev ".cache|.npm|.yarn|.zi|.opam" |
 if [[ -z $1 ]]; then
-	selected=$(
+	projects=$(
 		fd . --type directory --full-path -HI \
 			--ignore-file $HOME/.rgignore \
 			--max-depth=1 --min-depth=1 \
-			$HOME/dev/bitbucket.org/*/ $HOME/dev/github.com/*/ |
+			$HOME/dev/bitbucket.org/*/ $HOME/dev/github.com/*/ $HOME/.config/ $HOME/.local/
+	)
+
+	personals=(
+		"$HOME/journals"
+		"$HOME/.dotfiles"
+	)
+
+	items=("${projects[@]}" "${personals[@]}")
+
+	selected=$(
+		printf "%s\n" "${items[@]}" |
+			sort |
 			fzf --prompt '󰛔 Find Project: ' \
 				--cycle --info inline \
 				--preview 'lx {}'
