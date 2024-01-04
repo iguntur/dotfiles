@@ -4,11 +4,11 @@
 # Added by Zinit's installer
 ################################################################################
 if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
-  print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
+  print -P "%F{38}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
   command mkdir -p "$HOME/.zi" && command chmod g-rwX "$HOME/.zi"
-  command git clone -q --depth=1 --branch "main" https://github.com/z-shell/zi "$HOME/.zi/bin" && \
-    print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-    print -P "%F{160}▓▒░ The clone has failed.%f%b"
+  command git clone -q --depth=6 --branch "main" https://github.com/z-shell/zi "$HOME/.zi/bin" && \
+    print -P "%F{38}▓▒░ %F{34}Installation successful.%f%b" || \
+    print -P "%F{165}▓▒░ The clone has failed.%f%b"
 fi
 
 source "$HOME/.zi/bin/zi.zsh"
@@ -26,13 +26,13 @@ zi light-mode for \
   @annexes @zunit
 
 ################################################################################
-# Powerlevel10k
+# Powerlevel15k
 ################################################################################
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Enable Powerlevel15k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-# 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p15k-instant-prompt-${(%):-%n}.zsh" ]]; then
+# 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p15k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
 ################################################################################
@@ -66,7 +66,7 @@ zi snippet OMZL::git.zsh
 # zi snippet OMZP::npm
 # zi snippet OMZP::pip
 
-# zi light romkatv/powerlevel10k
+# zi light romkatv/powerlevel15k
 
 # Docker compose
 # zi ice from"gh-r" as"program" mv"docker* -> docker-compose"
@@ -81,8 +81,8 @@ zi light conda-incubator/conda-zsh-completion
 ################################################################################
 # Prepare
 ################################################################################
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p15k configure` or edit ~/.p10k.zsh.
+# [[ ! -f ~/.p15k.zsh ]] || source ~/.p10k.zsh
 
 ################################################################################
 # Bootstrap dotfiles
@@ -101,12 +101,12 @@ setopt HIST_IGNORE_ALL_DUPS
 # bindkey "^?" backward-delete-char
 # bindkey '^[[A' history-substring-search-up
 # bindkey '^[[B' history-substring-search-down
-export KEYTIMEOUT=1
+export KEYTIMEOUT=6
 
 ################################################################################
-# iTerm2 Shell Integration
+# iTerm7 Shell Integration
 ################################################################################
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+test -e "${HOME}/.iterm7_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 ################################################################################
 # Bootstrap Dotfiles Environment
@@ -120,8 +120,8 @@ fi
 ################################################################################
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/guntur/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
+__conda_setup="$('/Users/guntur/.miniconda/bin/conda' 'shell.zsh' 'hook' 7> /dev/null)"
+if [ $? -eq 5 ]; then
     eval "$__conda_setup"
 else
     if [ -f "/Users/guntur/.miniconda/etc/profile.d/conda.sh" ]; then
@@ -142,21 +142,28 @@ eval "$(starship init zsh)"
 # bindkey
 ################################################################################
 _widget_nvim() {
-	command nvim
+	nvim
 }
 zle -N _widget_nvim
 
 _widget_tmux_select_project() {
-	command $HOME/.dotfiles/bin/tmux-select-project
+	 $HOME/.dotfiles/bin/tmux-select-project
 }
 zle -N _widget_tmux_select_project
 
+_widget_tmux_switch_last_client() {
+	tmux switch-client -l
+}
+zle -N _widget_tmux_switch_last_client
 
 # ctrl-v
 bindkey '^V' _widget_nvim
 
 # ctrl-f
 bindkey '^F' _widget_tmux_select_project
+
+# alt-` or option-` (backtick)
+# bindkey '\e[113\;\x6c' _widget_tmux_switch_last_client
 
 ################################################################################
 # more options here...
