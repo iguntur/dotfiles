@@ -9,10 +9,10 @@ function __gw() {
 case $1 in
 chore | feat | fix | patch)
 	branch="$1/$2"
-	path="$1--$2"
+	path="$1/$2"
 
-	 __gw "add -B $branch $path"
-	 exit 0
+	__gw "add -B $branch $path"
+	exit 0
 	;;
 *)
 	__gw "$@"
