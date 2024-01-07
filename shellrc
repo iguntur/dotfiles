@@ -53,6 +53,16 @@ if cmd_exists gh; then
 fi
 
 ################################################################################
+# WezTerm
+################################################################################
+if cmd_exists wezterm; then
+	case $SHELL_NAME in
+	bash) source <(wezterm shell-completion --shell bash) ;;
+	zsh) source <(wezterm shell-completion --shell zsh) ;;
+	esac
+fi
+
+################################################################################
 # Docker
 ## brew install docker-completion docker-compose-completion
 ################################################################################
@@ -102,12 +112,10 @@ if cmd_exists cobra; then
 	esac
 fi
 
-
 ################################################################################
 # Broot - tree directory visualization
 ################################################################################
 load_source "$HOME/.config/broot/launcher/bash/br"
-
 
 ################################################################################
 # Heroku - autocomplete setup
