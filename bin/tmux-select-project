@@ -6,7 +6,9 @@ if [[ -z $1 ]]; then
 		fd . --type directory --full-path -HI \
 			--ignore-file $HOME/.rgignore \
 			--max-depth=1 --min-depth=1 \
-			$HOME/dev/bitbucket.org/*/ $HOME/dev/github.com/*/ $HOME/.config/ $HOME/.local/
+			$HOME/dev/bitbucket.org/*/ $HOME/dev/github.com/*/ \
+			$HOME/.config/ $HOME/.local/ \
+			$HOME/dev/var/ $HOME/dev/sandbox/
 	)
 
 	personals=(
