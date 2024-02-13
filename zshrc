@@ -42,22 +42,22 @@ zi light-mode for \
 # Utilize Turbo and initialize the completion with fast compinit
 # zi pack for brew-completions
 
-# zi light zsh-users/zsh-syntax-highlighting
+# zi light zsh-users/zsh-syntax-highlighting # old
 zi light zsh-users/zsh-autosuggestions
-zi light z-shell/F-Sy-H
+zi light z-shell/F-Sy-H # syntax highlight
 
 zi ice blockf
-zi light zsh-users/zsh-completions
-zi light Aloxaf/fzf-tab
+zi light Aloxaf/fzf-tab # select items tab-lifecycle
+# zi light zsh-users/zsh-completions
 
 # Plugin history-search-multi-word loaded with investigating.
-zi ice wait lucid
-zi load z-shell/H-S-MW
+# zi ice wait lucid
+# zi load z-shell/H-S-MW
 
 # (OMZL) Oh My Zsh Libraries
-zi snippet OMZL::clipboard.zsh
-zi snippet OMZL::completion.zsh
-zi snippet OMZL::history.zsh
+# zi snippet OMZL::clipboard.zsh
+# zi snippet OMZL::completion.zsh
+# zi snippet OMZL::history.zsh
 zi snippet OMZL::key-bindings.zsh
 zi snippet OMZL::git.zsh
 
@@ -87,12 +87,17 @@ zi light conda-incubator/conda-zsh-completion
 ################################################################################
 # Bootstrap dotfiles
 ################################################################################
+# export HISTFILE=~/.histfile
+export HISTSIZE=1000000 # the number of items for the internal history list
+export SAVEHIST=1000000 # maximum number of items for the history file
 
-##
-## No duplicate history command
-##
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_ALL_DUPS
+# The meaning of these options can be found in man page of `zshoptions`.
+setopt HIST_IGNORE_ALL_DUPS  # do not put duplicated command into history list
+setopt HIST_FIND_NO_DUPS # No duplicate history command
+setopt HIST_SAVE_NO_DUPS  # do not save duplicated command
+setopt HIST_REDUCE_BLANKS  # remove unnecessary blanks
+setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately after execution
+# setopt EXTENDED_HISTORY  # record command start time
 
 ################################################################################
 ## Enable Vi Mode Terminal Emulator
@@ -155,6 +160,14 @@ _widget_tmux_switch_last_client() {
 	tmux switch-client -l
 }
 zle -N _widget_tmux_switch_last_client
+
+_widget_lazygit() {
+	tmux neww -n '󰇘' -t 0 lazygit
+}
+zle -N _widget_lazygit
+
+# ctrl-g
+bindkey '^G' _widget_lazygit
 
 # ctrl-v
 bindkey '^V' _widget_nvim

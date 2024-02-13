@@ -7,6 +7,13 @@
 ##
 
 ################################################################################
+# curl
+################################################################################
+if cmd_exists brew; then
+	export PATH="$(brew --prefix)/opt/curl/bin:$PATH"
+fi
+
+################################################################################
 # FZF
 ################################################################################
 # Setting fd as the default source for fzf
@@ -59,6 +66,16 @@ if cmd_exists wezterm; then
 	case $SHELL_NAME in
 	bash) source <(wezterm shell-completion --shell bash) ;;
 	zsh) source <(wezterm shell-completion --shell zsh) ;;
+	esac
+fi
+
+################################################################################
+# Golang Delve
+################################################################################
+if cmd_exists dlv; then
+	case $SHELL_NAME in
+	bash) source <(dlv completion bash) ;;
+	zsh) source <(dlv completion zsh) ;;
 	esac
 fi
 
