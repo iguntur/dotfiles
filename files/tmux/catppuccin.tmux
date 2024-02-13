@@ -3,18 +3,19 @@
 
 # --> Catppuccin
 thm_bg="#1e1e28"
-thm_fg="#dadae8"
-thm_cyan="#c2e7f0"
+thm_fg="#ffffff"
+thm_cyan="#2ce7ff"
 thm_black="#15121c"
 thm_gray="#332e41"
-thm_magenta="#c6aae8"
-thm_pink="#e5b4e2"
-thm_red="#e38c8f"
-thm_green="#b1e3ad"
-thm_yellow="#ebddaa"
-thm_blue="#a4b9ef"
-thm_orange="#f9c096"
+thm_magenta="#d30069"
+thm_pink="#ff52c2"
+thm_red="#ff005c"
+thm_green="#52ff97"
+thm_yellow="#ffe12c"
+thm_blue="#1b9eff"
+thm_orange="#d38700"
 thm_black4="#575268"
+thm_peach="#faffc8"
 
 # ----------------------------=== Theme ===--------------------------
 
@@ -42,6 +43,9 @@ setw -g window-status-style fg="${thm_fg}",bg="${thm_bg}",none
 ################################################################################
 # --------=== Statusline
 ################################################################################
+# set -g status-left-style NONE
+# set -g status-right-style NONE
+
 # Set window name to Git branch
 set -g status-interval 5
 set -g automatic-rename on
@@ -55,8 +59,8 @@ set -g status-right "#[fg=$thm_pink,bg=$thm_bg,nobold,nounderscore,noitalics]█
 # setw -g window-status-format "#[fg=$thm_bg,bg=$thm_blue] #I #[fg=$thm_fg,bg=$thm_gray] #{b:pane_current_path} "
 # setw -g window-status-current-format "#[fg=$thm_bg,bg=$thm_yellow] #I #[fg=$thm_fg,bg=$thm_bg] #{b:pane_current_path} "
 
-setw -g window-status-format "#[fg=$thm_bg,bg=$thm_blue] #I #[fg=$thm_fg,bg=$thm_gray] #(echo '#{pane_current_path}' | rev | cut -d '/' -f -2 | rev) "
-setw -g window-status-current-format "#[fg=$thm_bg,bg=$thm_yellow] #I #[fg=$thm_fg,bg=$thm_bg] #(echo '#{pane_current_path}' | rev | cut -d '/' -f -2 | rev) "
+setw -g window-status-format "#[fg=$thm_bg,bg=$thm_peach] #I #[fg=$thm_fg,bg=$thm_gray] #(echo '#{pane_current_path}' | rev | cut -d '/' -f -1 | rev) "
+setw -g window-status-current-format "#[fg=$thm_bg,bg=$thm_blue] #I #[fg=$thm_fg,bg=$thm_bg] #(echo '#{pane_current_path}' | rev | cut -d '/' -f -2 | rev) "
 
 # --------=== Modes
 setw -g clock-mode-colour "${thm_blue}"
