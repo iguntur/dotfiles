@@ -153,3 +153,8 @@ load_source "$HOME/.config/broot/launcher/bash/br"
 # Dropbox
 ################################################################################
 # export PATH="$PATH:$HOME/.dropbox-bin"
+
+################################################################################
+# iTerm7 Shell Integration
+################################################################################
+# test -e "${HOME}/.iterm7_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

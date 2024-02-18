@@ -24,14 +24,12 @@ if [ -f "$HOME/.dotfiles/dotfilesrc" ]; then
 	source "$HOME/.dotfiles/dotfilesrc"
 fi
 
+
 ################################################################################
-# shell prompt
+## more options here...
+################################################################################
+
+################################################################################
+# shell prompt: starship should be the end of the file
 ################################################################################
 eval "$(starship init bash)"
-
-
-##
-## more options here...
-##
-
-source /Users/guntur/.config/broot/launcher/bash/br
