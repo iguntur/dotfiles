@@ -6,6 +6,7 @@ source "$HOME/.dotfiles/global-def"
 # Dotfiles Bin
 ################################################################################
 export PATH="$PATH:$DF_PATH/bin"
+export PATH="$PATH:$DF_PATH/extra/.bin"
 
 ################################################################################
 ## Load our dotfiles

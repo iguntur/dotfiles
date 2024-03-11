@@ -133,7 +133,7 @@ _widget_nvim() {
 zle -N _widget_nvim
 
 _widget_tmux_select_project() {
-	$HOME/.dotfiles/bin/tmux-select-project
+	tmux neww -n '󰇘' -t 0 $HOME/.dotfiles/bin/tmux-select-project
 }
 zle -N _widget_tmux_select_project
 
