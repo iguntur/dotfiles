@@ -39,8 +39,7 @@
 	merge-into = !~/.dotfiles/bin/git-merge-into
 	sync-branch = !~/.dotfiles/bin/git-sync-branch
 	push-branches = !~/.dotfiles/bin/git-push-branches
-	tl = !git tag --color=always --list --sort=-v:refname --format='%(refname:strip=2)%09%(creatordate:short)' | fzf --ansi
-	bl = !git branch --color=always --sort=-committerdate --all | fzf --ansi
+	tl = !git tag --color=always --list --sort=-taggerdate --format='[%(taggerdate)]: %(refname:short) - %(taggername) (%(taggeremail))' | fzf --ansi --no-sort --cycle
 	cobi = !git checkout $(git branch --color=always --sort=-committerdate --all | grep -v HEAD | fzf --ansi --no-multi)
 	sf = !~/.dotfiles/bin/git-sync-ff
 
