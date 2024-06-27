@@ -169,3 +169,23 @@ if cmd_exists ngrok; then
 		;;
 	esac
 fi
+
+################################################################################
+# mockery
+################################################################################
+if cmd_exists mockery; then
+	case $SHELL_NAME in
+	bash) source <(mockery completion bash) ;;
+	zsh) source <(mockery completion zsh) ;;
+	esac
+fi
+
+################################################################################
+# sqlc
+################################################################################
+if cmd_exists sqlc; then
+	case $SHELL_NAME in
+	bash) source <(sqlc completion bash) ;;
+	zsh) source <(sqlc completion zsh) ;;
+	esac
+fi
