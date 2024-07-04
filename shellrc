@@ -130,6 +130,19 @@ if cmd_exists cobra; then
 fi
 
 ################################################################################
+## atuin
+################################################################################
+case "$SHELL_NAME" in
+bash)
+	[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+	eval "$(atuin init bash --disable-up-arrow)"
+	;;
+zsh)
+	eval "$(atuin init zsh --disable-up-arrow)"
+	;;
+esac
+
+################################################################################
 # Broot - tree directory visualization
 ################################################################################
 # load_source "$HOME/.config/broot/launcher/bash/br"
