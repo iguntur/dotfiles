@@ -132,7 +132,7 @@ fi
 ################################################################################
 # Broot - tree directory visualization
 ################################################################################
-load_source "$HOME/.config/broot/launcher/bash/br"
+# load_source "$HOME/.config/broot/launcher/bash/br"
 
 ################################################################################
 # Heroku - autocomplete setup
