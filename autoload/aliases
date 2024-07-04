@@ -37,6 +37,7 @@ fi
 
 alias l="exa -1 -G --group-directories-first --classify --icons"
 alias ls="exa -1 -G --group-directories-first --classify --icons"
+alias lt="exa -T --group-directories-first --classify --icons"
 alias la="exa -1 -G --group-directories-first --classify --icons --all" # show hidden files and directory
 
 # alias l="ls -Alh --group-directories-first"
