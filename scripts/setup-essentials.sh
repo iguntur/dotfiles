@@ -46,29 +46,29 @@ brew install tree          # show directory with tree
 brew install exa           # "ls" like with color
 brew install highlight     # for fzf
 # brew install sshfs         # mount filesystem over ssh
-brew install watch         # watch command
-brew install rsync         # rsync for backup
-brew install httpie        # http request on command line
-brew install qemu          # qemu emulator
-brew install jq            # awesome json output on command line
-brew install neofetch      # Terminal system info
-brew install hugo          # static site generator
-brew install as-tree       # render path as tree format
-brew install ffmpeg        # video utils
-brew install ripgrep       # "rg" ripgrep recursively searches directories for a regex pattern while respecting your gitignore
-brew install peco          # Simplistic interactive filtering tool
-brew install composer      # PHP Composer
-brew install cocoapods     #
-brew install watchman      #
-brew install libpq         #
-brew install libtool       #
-brew install graphviz      #
-brew install lazygit       # git TUI
-brew install gitui         # git TUI
-brew install glow          # markdown reader
-brew install ranger        # filemanager
-brew install opam          # ocaml package manager
-brew install comby         #
+brew install watch     # watch command
+brew install rsync     # rsync for backup
+brew install httpie    # http request on command line
+brew install qemu      # qemu emulator
+brew install jq        # awesome json output on command line
+brew install neofetch  # Terminal system info
+brew install hugo      # static site generator
+brew install as-tree   # render path as tree format
+brew install ffmpeg    # video utils
+brew install ripgrep   # "rg" ripgrep recursively searches directories for a regex pattern while respecting your gitignore
+brew install peco      # Simplistic interactive filtering tool
+brew install composer  # PHP Composer
+brew install cocoapods #
+brew install watchman  #
+brew install libpq     #
+brew install libtool   #
+brew install graphviz  #
+brew install lazygit   # git TUI
+brew install gitui     # git TUI
+brew install glow      # markdown reader
+brew install ranger    # filemanager
+brew install opam      # ocaml package manager
+brew install comby     #
 # brew install showkey       #
 # brew install scrcpy        #
 # brew install stylua        #
@@ -91,7 +91,7 @@ brew install lsd
 brew install git-delta
 # brew install dust
 brew install duf
-brew install broot
+# brew install broot
 # brew install tldr or npm install --global tldr
 
 # brew install screenfetch   # Terminal system info

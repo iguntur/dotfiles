@@ -8,10 +8,15 @@ progName="$(basename $0)"
 base_dir="$(cd $(dirname $0) && pwd)"
 
 dotfiles_links=(
-	## Shell
+	## Login Shell
+	"profile"
 	"bash_profile"
+	"zprofile"
+
+	## Non Login Shell
 	"bashrc"
 	"zshrc"
+
 	## Terminal Editor
 	"tmux.conf"
 	"condarc"
@@ -25,6 +30,7 @@ dotfiles_files=(
 
 config_dirs=(
 	"git"
+	"atuin"
 	# "alacritty"
 )
 
