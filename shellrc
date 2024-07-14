@@ -184,13 +184,13 @@ esac
 ################################################################################
 # ngrok
 ################################################################################
-if cmd_exists ngrok; then
-	case $SHELL_NAME in
-	zsh)
-		source <(ngrok completion)
-		;;
-	esac
-fi
+# if cmd_exists ngrok; then
+# 	case $SHELL_NAME in
+# 	zsh)
+# 		source <(ngrok completion)
+# 		;;
+# 	esac
+# fi
 
 ################################################################################
 # mockery
