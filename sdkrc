@@ -109,3 +109,12 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 ## MySQL Client
 # brew install mysql-client
 export PATH="$PATH:$(brew --prefix)/opt/mysql-client/bin"
+
+################################################################################
+# bun completions
+################################################################################
+[ -s "/Users/guntur/.bun/_bun" ] && source "/Users/guntur/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
