@@ -25,20 +25,20 @@ alias dev="cd ~/dev"
 ##
 
 ## enable color support of ls and also add handy aliases
-if cmd_exists gdircolors; then
-	test -r ~/.dotfiles/dircolors && eval "$(gdircolors -b ~/.dotfiles/dircolors)" || eval "$(gdircolors -b)"
-	alias ls='gls --color=auto'
-	alias grep='grep --color=auto'
-	alias fgrep='fgrep --color=auto'
-	alias egrep='egrep --color=auto'
-else
-	alias ls="gls"
-fi
+# if cmd_exists gdircolors; then
+# 	test -r ~/.dotfiles/dircolors && eval "$(gdircolors -b ~/.dotfiles/dircolors)" || eval "$(gdircolors -b)"
+# 	alias ls='gls --color=auto'
+# 	alias grep='grep --color=auto'
+# 	alias fgrep='fgrep --color=auto'
+# 	alias egrep='egrep --color=auto'
+# else
+# 	alias ls="gls"
+# fi
 
-alias l="exa -1 -G --group-directories-first --classify --icons"
-alias ls="exa -1 -G --group-directories-first --classify --icons"
-alias lt="exa -T --group-directories-first --classify --icons"
-alias la="exa -1 -G --group-directories-first --classify --icons --all" # show hidden files and directory
+# alias l="eza -1 -G --group-directories-first --classify --icons"
+alias ls="eza -1 -G --group-directories-first --classify --icons"
+alias lt="eza -T --group-directories-first --classify --icons"
+alias la="eza -1 -G --group-directories-first --classify --icons --all" # show hidden files and directory
 
 # alias l="ls -Alh --group-directories-first"
 # alias ll="ls -lh --group-directories-first"

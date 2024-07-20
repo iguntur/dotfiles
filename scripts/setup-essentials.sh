@@ -43,7 +43,7 @@ brew install diff-so-fancy # Git diff with color
 brew install bat           # Another "cat"
 brew install htop          # Terminal activity manager
 brew install tree          # show directory with tree
-brew install exa           # "ls" like with color
+brew install eza           # "ls" like with color
 brew install highlight     # for fzf
 # brew install sshfs         # mount filesystem over ssh
 brew install watch     # watch command

@@ -1,15 +1,15 @@
 #!/bin/bash
 
-if command -v exa >/dev/null 2>&1; then
+if command -v eza >/dev/null 2>&1; then
 	# --git-ignore \
 	# --ignore-glob .git \
-	exa -Tgalh \
+	eza -Tgalh \
 		--git \
 		--group-directories-first \
 		--icons \
 		-L 1 \
 		"$@"
 else
-	echo "exa command not found"
-	echo "install with: brew install exa"
+	echo "eza command not found"
+	echo "install with: brew install eza"
 fi
