@@ -104,7 +104,6 @@ brew install --cask android-file-transfer
 ## Command-line completions
 brew install bash-completion
 brew install docker-completion
-brew install docker-compose-completion
 
 ## Databases
 brew install mysql-client
