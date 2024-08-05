@@ -37,8 +37,12 @@ alias dev="cd ~/dev"
 
 # alias l="eza -1 -G --group-directories-first --classify --icons"
 alias ls="eza -1 -G --group-directories-first --classify --icons"
-alias lt="eza -T --group-directories-first --classify --icons"
 alias la="eza -1 -G --group-directories-first --classify --icons --all" # show hidden files and directory
+alias lt="eza -T --group-directories-first --classify --icons -L1"
+
+for ((i = 1; i <= 5; i++)); do
+	alias lt$i="eza -T --group-directories-first --classify --icons -L$i"
+done
 
 # alias l="ls -Alh --group-directories-first"
 # alias ll="ls -lh --group-directories-first"
@@ -46,6 +50,9 @@ alias la="eza -1 -G --group-directories-first --classify --icons --all" # show h
 # alias ld="ls -Alhd */" # only directories
 alias l="lx"
 alias ll="lx"
+
+alias lH="lx $HOME"
+alias ltH="lt $HOME -L1"
 
 ##
 ## Easier common functions
