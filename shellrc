@@ -145,9 +145,11 @@ case "$SHELL_NAME" in
 bash)
 	[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 	eval "$(atuin init bash --disable-up-arrow)"
+	source <(atuin gen-completions --shell bash)
 	;;
 zsh)
 	eval "$(atuin init zsh --disable-up-arrow)"
+	source <(atuin gen-completions --shell zsh)
 	;;
 esac
 
